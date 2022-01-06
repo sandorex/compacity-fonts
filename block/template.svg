@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 1024">
+    <g name="digits">
+        <rect width="128" height="128"/>
+        <rect y="128" width="128" height="128"/>
+        <rect y="256" width="128" height="128"/>
+
+        <rect y="640" width="128" height="128"/>
+        <rect y="768" width="128" height="128"/>
+        <rect y="896" width="128" height="128"/>
+    </g>
+
+    <!-- this is the center guide  -->
+    <rect y="485" width="128" height="64"/>
+</svg>
