@@ -27,8 +27,13 @@ def build():
 
     print("Building font '{} {}'".format(font.familyname, font.version))
 
+    path = os.path.join(OUTPUT_DIR, font.familyname.lower().replace(' ', '-'))
+
     # export ttf
-    font.generate(os.path.join(OUTPUT_DIR, font.familyname.lower().replace(' ', '-') + '.ttf'))
+    font.generate(path + '.ttf')
+
+    # woff doesn't export properly either..
+    # font.generate(path + '.woff')
 
     # OTF is not looking quite right so it's disabled
     # font.generate(os.path.join(OUTPUT_DIR, font.fontname + '.otf')) # export otf

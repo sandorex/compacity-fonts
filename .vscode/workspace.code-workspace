@@ -5,7 +5,12 @@
         },
         {
             "path": "..\\block"
+        },
+        {
+            "path": "..\\docs"
         }
     ],
-    "settings": {}
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "docs"
+    }
 }
