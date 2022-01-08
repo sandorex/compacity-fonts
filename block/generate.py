@@ -26,7 +26,9 @@ GLYPH_OUTPUT_DIR = 'glyphs'
 DIGITS_GROUP_ID = 'digits'
 
 def generate_assets():
-    os.makedirs(os.path.join(OUTPUT_DIR, GLYPH_OUTPUT_DIR), exist_ok=True)
+    # TODO: remove the built glyphs or just check if there are any so there arent
+    # any issues introduced by old generated glyphs
+    os.makedirs(os.path.join(OUTPUT_DIR, GLYPH_OUTPUT_DIR))
 
     print('Generating glyphs')
 
@@ -56,9 +58,8 @@ def generate_assets():
             print('Error: could not find the digits group "{}"'.format(DIGITS_GROUP_ID))
             sys.exit(1)
 
-        binary = format(x % pow(2, n), 'b').zfill(n)
-        for i, b in enumerate(binary):
-            if b == '0' or b == None:
+        for i, child in enumerate(digit_group):
+            if i != x:
                 digit_group[i].parentNode.removeChild(digit_group[i])
 
         return doc
@@ -75,13 +76,8 @@ def generate_assets():
         print('Error: digits group not found')
 
     num_of_digits = len(digits.childNodes)
-    maximum_value = pow(2, num_of_digits) - 1
 
-    # print('digits:', num_of_digits)
-    # print('maximum value:', maximum_value)
-    # print('outputting to: "{}"'.format(os.path.join(os.curdir, OUTPUT_DIR)))
-
-    for i in range(maximum_value + 1):
+    for i in range(num_of_digits):
         with open(os.path.join(OUTPUT_DIR, GLYPH_OUTPUT_DIR, str(i) + '.svg'), 'w') as file:
             file.write(template_digit(i, num_of_digits).toxml())
 

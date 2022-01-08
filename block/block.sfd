@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1641613338
+ModificationTime: 1641625126
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -75,7 +75,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 257 56
+BeginChars: 266 77
 
 StartChar: A
 Encoding: 65 65 0
@@ -738,89 +738,36 @@ EndChar
 StartChar: a
 Encoding: 97 97 26
 Width: 128
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-SplineSet
-128 270 m 1
- 0 270 l 1
- 0 334 l 1
- 128 334 l 1
- 128 270 l 1
-128 51 m 1
- 0 51 l 1
- 0 179 l 1
- 128 179 l 1
- 128 51 l 1
-128 435 m 1
- 0 435 l 1
- 0 563 l 1
- 0 691 l 1
- 128 691 l 1
- 128 563 l 1
- 128 435 l 1
-EndSplineSet
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: b
 Encoding: 98 98 27
 Width: 128
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-SplineSet
-128 270 m 1
- 0 270 l 1
- 0 334 l 1
- 128 334 l 1
- 128 270 l 1
-128 -205 m 1
- 0 -205 l 1
- 0 -77 l 1
- 128 -77 l 1
- 128 -205 l 1
-128 51 m 1
- 0 51 l 1
- 0 179 l 1
- 128 179 l 1
- 128 51 l 1
-128 435 m 1
- 0 435 l 1
- 0 563 l 1
- 0 691 l 1
- 128 691 l 1
- 128 563 l 1
- 128 435 l 1
-EndSplineSet
+Refer: 62 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: c
 Encoding: 99 99 28
 Width: 128
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-SplineSet
-128 270 m 1
- 0 270 l 1
- 0 334 l 1
- 128 334 l 1
- 128 270 l 1
-128 -77 m 1
- 0 -77 l 1
- 0 51 l 1
- 0 179 l 1
- 128 179 l 1
- 128 51 l 1
- 128 -77 l 1
-128 435 m 1
- 0 435 l 1
- 0 563 l 1
- 0 691 l 1
- 128 691 l 1
- 128 563 l 1
- 128 435 l 1
-EndSplineSet
+Refer: 62 -1 N 1 0 0 1 0 0 2
+Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: d
@@ -857,21 +804,12 @@ EndChar
 StartChar: e
 Encoding: 101 101 30
 Width: 128
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-SplineSet
-128 270 m 1
- 0 270 l 1
- 0 334 l 1
- 128 334 l 1
- 128 270 l 1
-128 691 m 1
- 0 691 l 1
- 0 819 l 1
- 128 819 l 1
- 128 691 l 1
-EndSplineSet
+Refer: 57 -1 N 1 0 0 1 0 0 2
+Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: f
@@ -1481,6 +1419,7 @@ EndChar
 StartChar: space
 Encoding: 32 32 52
 Width: 256
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Substitution2: "to-blockspace-1" blockspace
@@ -1489,6 +1428,7 @@ EndChar
 StartChar: comma
 Encoding: 44 44 53
 Width: 256
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 EndChar
@@ -1496,6 +1436,7 @@ EndChar
 StartChar: period
 Encoding: 46 46 54
 Width: 512
+UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 EndChar
@@ -1503,20 +1444,328 @@ EndChar
 StartChar: blockspace
 Encoding: 256 -1 55
 Width: 256
+UnlinkRmOvrlpSave: 1
 Flags: HW
-HStem: 270 64<0 256>
-VStem: 0 256<270 334>
+LayerCount: 2
+Fore
+Refer: 56 -1 N 2 0 0 1 0 0 2
+EndChar
+
+StartChar: block-line
+Encoding: 257 -1 56
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
 LayerCount: 2
 Fore
 SplineSet
-128 270 m 1
- 0 270 l 1
+0 270 m 1
  0 334 l 1
  128 334 l 1
- 256 334 l 1
- 256 270 l 1
  128 270 l 1
+ 0 270 l 1
 EndSplineSet
+EndChar
+
+StartChar: block-u1
+Encoding: 258 -1 57
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 691 m 1
+ 0 819 l 1
+ 128 819 l 1
+ 128 691 l 1
+ 0 691 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-u2
+Encoding: 259 -1 58
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 563 m 1
+ 0 691 l 1
+ 128 691 l 1
+ 128 563 l 1
+ 0 563 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-u3
+Encoding: 260 -1 59
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 435 m 1
+ 0 563 l 1
+ 128 563 l 1
+ 128 435 l 1
+ 0 435 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-c1
+Encoding: 261 -1 60
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 307 m 1
+ 0 435 l 1
+ 128 435 l 1
+ 128 307 l 1
+ 0 307 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-c2
+Encoding: 262 -1 61
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 179 m 1
+ 0 307 l 1
+ 128 307 l 1
+ 128 179 l 1
+ 0 179 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-d1
+Encoding: 263 -1 62
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 51 m 1
+ 0 179 l 1
+ 128 179 l 1
+ 128 51 l 1
+ 0 51 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-d2
+Encoding: 264 -1 63
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 -77 m 1
+ 0 51 l 1
+ 128 51 l 1
+ 128 -77 l 1
+ 0 -77 l 1
+EndSplineSet
+EndChar
+
+StartChar: block-d3
+Encoding: 265 -1 64
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 -205 m 1
+ 0 -77 l 1
+ 128 -77 l 1
+ 128 -205 l 1
+ 0 -205 l 1
+EndSplineSet
+EndChar
+
+StartChar: glyph65
+Encoding: 34 34 65
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 64 -1 N 1 0 0 1 128 0 2
+Refer: 57 -1 N 1 0 0 1 128 0 2
+EndChar
+
+StartChar: glyph66
+Encoding: 33 33 66
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 64 -1 N 1 0 0 1 128 0 2
+Refer: 62 -1 N 1 0 0 1 128 0 2
+Refer: 61 -1 N 1 0 0 1 128 0 2
+Refer: 60 -1 N 1 0 0 1 128 0 2
+Refer: 59 -1 N 1 0 0 1 128 0 2
+Refer: 58 -1 N 1 0 0 1 128 0 2
+Refer: 57 -1 N 1 0 0 1 128 0 2
+EndChar
+
+StartChar: glyph67
+Encoding: 48 48 67
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph68
+Encoding: 49 49 68
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph69
+Encoding: 50 50 69
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 59 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph70
+Encoding: 51 51 70
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 59 -1 N 1 0 0 1 0 0 2
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph71
+Encoding: 52 52 71
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 60 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph72
+Encoding: 53 53 72
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 60 -1 N 1 0 0 1 0 0 2
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph73
+Encoding: 54 54 73
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 60 -1 N 1 0 0 1 0 0 2
+Refer: 59 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph74
+Encoding: 55 55 74
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 60 -1 N 1 0 0 1 0 0 2
+Refer: 59 -1 N 1 0 0 1 0 0 2
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph75
+Encoding: 56 56 75
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 61 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph76
+Encoding: 57 57 76
+Width: 128
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 61 -1 N 1 0 0 1 0 0 2
+Refer: 58 -1 N 1 0 0 1 0 0 2
+Refer: 64 -1 N 1 0 0 1 0 0 2
+Refer: 57 -1 N 1 0 0 1 0 0 2
 EndChar
 EndChars
 EndSplineFont
