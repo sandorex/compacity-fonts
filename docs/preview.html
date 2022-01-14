@@ -17,14 +17,11 @@
             font-style: normal;
         }
 
-        h1, h2, h3, p {
-            /* removes bolding, breaks block font */
-            font-weight: normal;
-        }
-
         .block {
-            font-family: 'Compacity Block';
-            font-size: 150%;
+            font-family: 'Compacity Block' !important;
+            font-size: 150% !important;
+            font-weight: normal !important;
+            line-height: 1.3em; /* makes numbered lists readable */
         }
 
         #wrapper {
@@ -43,6 +40,7 @@
             <option value="block" selected>Block</option>
         </optgroup>
     </select>
+
     <div id="wrapper">
         <h1>Universal Declaration of Human Rights</h1>
         <h2>Preamble</h2>
@@ -200,10 +198,12 @@
             fontClass = selection;
         }
 
+        // allows keyboard toggle
         document.body.addEventListener('keyup', function(e) {
             toggle();
         });
 
+        // allows touchscreen and mouse toggle
         WRAPPER_DIV.addEventListener('click', function(e) {
             toggle();
         });
