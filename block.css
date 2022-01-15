@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Compacity Block';
+    src: url(./compacity-block.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.compacity-block {
+    font-family: 'Compacity Block' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
