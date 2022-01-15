@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1642229193
+ModificationTime: 1642232737
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -75,7 +75,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 266 77
+BeginChars: 266 79
 
 StartChar: A
 Encoding: 65 65 0
@@ -1078,6 +1078,44 @@ Refer: 61 -1 N 1 0 0 1 0 0 2
 Refer: 58 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: glyph77
+Encoding: 40 40 77
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 64 -1 N 1 0 0 1 128 0 2
+Refer: 63 -1 N 1 0 0 1 128 0 2
+Refer: 62 -1 N 1 0 0 1 128 0 2
+Refer: 61 -1 N 1 0 0 1 128 0 2
+Refer: 60 -1 N 1 0 0 1 128 0 2
+Refer: 59 -1 N 1 0 0 1 128 0 2
+Refer: 58 -1 N 1 0 0 1 128 0 2
+Refer: 57 -1 N 1 0 0 1 128 0 2
+Refer: 56 -1 N 1 0 0 1 128 0 2
+EndChar
+
+StartChar: glyph78
+Encoding: 41 41 78
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 64 -1 N 1 0 0 1 128 0 2
+Refer: 63 -1 N 1 0 0 1 128 0 2
+Refer: 62 -1 N 1 0 0 1 128 0 2
+Refer: 61 -1 N 1 0 0 1 128 0 2
+Refer: 60 -1 N 1 0 0 1 128 0 2
+Refer: 59 -1 N 1 0 0 1 128 0 2
+Refer: 58 -1 N 1 0 0 1 128 0 2
+Refer: 57 -1 N 1 0 0 1 128 0 2
+Refer: 56 -1 N 1 0 0 1 128 0 2
 EndChar
 EndChars
 EndSplineFont

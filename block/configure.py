@@ -128,6 +128,27 @@ def configure():
 
         ('block-d3', psMat.translate(CHAR_WIDTH, 0)),
     ])
+    new_char('(', width=CHAR_WIDTH*3, references=[
+        (BLOCK_1, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_2, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_3, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_4, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_5, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_6, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_7, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_8, psMat.translate(CHAR_WIDTH, 0)),
+    ])
+    new_char(')', width=CHAR_WIDTH*3, references=[
+        (BLOCK_0, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_1, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_2, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_3, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_4, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_5, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_6, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_7, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_8, psMat.translate(CHAR_WIDTH, 0)),
+    ])
 
     ### SPECIAL GLYPHS ###
     new_char(name='blockspace', width=CHAR_WIDTH*2, references=[
