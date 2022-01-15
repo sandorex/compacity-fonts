@@ -18,10 +18,12 @@
         }
 
         .block {
-            font-family: 'Compacity Block' !important;
-            font-size: 150% !important;
-            font-weight: normal !important;
-            line-height: 1.3em; /* makes numbered lists readable */
+            font-size: 150%;
+        }
+        .block, .block h1, .block h2, .block h3 {
+            font-family: 'Compacity Block';
+            font-weight: normal;
+            line-height: 1.3em; /* so that ordered lists can be readable */
         }
 
         #wrapper {
@@ -31,15 +33,24 @@
             -ms-user-select: none;
             user-select: none;
         }
+
+        /* hide buttons and stuff when printing */
+        @media print {
+            #ui {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <button onclick="toggle();">Toggle</button>
-    <select id="font-select" onchange="selectFont(this.value);">
-        <optgroup label="Compacity Fonts">
-            <option value="block" selected>Block</option>
-        </optgroup>
-    </select>
+    <div id="ui">
+        <button onclick="toggle();">Toggle</button>
+        <select id="font-select" onchange="selectFont(this.value);">
+            <optgroup label="Compacity Fonts">
+                <option value="block" selected>Block</option>
+            </optgroup>
+        </select>
+    </div>
 
     <div id="wrapper">
         <h1>Universal Declaration of Human Rights</h1>

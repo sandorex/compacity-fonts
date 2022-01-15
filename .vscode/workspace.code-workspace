@@ -4,10 +4,10 @@
             "path": ".."
         },
         {
-            "path": "..\\block"
+            "path": "..\\docs"
         },
         {
-            "path": "..\\docs"
+            "path": "..\\block"
         }
     ],
     "settings": {
