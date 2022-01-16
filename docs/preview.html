@@ -203,10 +203,26 @@
                 fontEnabled = true;
                 WRAPPER_DIV.classList.add(fontClass);
             }
+
+            updateLink();
         }
 
         function selectFont(selection) {
             fontClass = selection;
+            updateLink();
+        }
+
+        // updates current url with up to date GET parameters
+        function updateLink() {
+            var url = new URL(location.origin + location.pathname);
+
+            if (fontEnabled) {
+                url.searchParams.append('toggled', '');
+            }
+
+            url.searchParams.append('font', fontClass);
+
+            window.history.pushState({}, '', url);
         }
 
         // allows keyboard toggle
@@ -218,6 +234,33 @@
         WRAPPER_DIV.addEventListener('click', function(e) {
             toggle();
         });
+
+        // get the GET parameters on startup
+        var params = new URLSearchParams(window.location.search);
+        if (params.has('toggled')) {
+            toggle();
+        }
+
+        // read the get parameters
+        if (params.has('font')) {
+            var font = params.get('font');
+
+            var found = false;
+            for (var fontElement of SELECT_ELEMENT.options) {
+                if (font == fontElement.value) {
+                    found = true;
+                }
+            }
+
+            if (!found) {
+                alert("Invalid font '" + font + "'");
+            } else {
+                selectFont(font);
+            }
+        }
+
+        // update for the default font selection
+        updateLink();
     </script>
 </body>
 </html>
