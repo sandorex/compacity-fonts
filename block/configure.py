@@ -111,22 +111,23 @@ def configure():
         new_char(name=ch, outline=os.path.join(path, filename))
 
     ### GLYPHS ###
+    new_char('\'', width=0)
     new_char(' ', width=CHAR_WIDTH*2)
     new_char(',', width=CHAR_WIDTH * 2)
     new_char('.', width=CHAR_WIDTH * 4)
     new_char('"', width=CHAR_WIDTH*3, references=[
-        ('block-u1', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-d3', psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_U1, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_D3, psMat.translate(CHAR_WIDTH, 0)),
     ])
     new_char('!', width=CHAR_WIDTH*3, references=[
-        ('block-u1', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-u2', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-u3', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-c1', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-c2', psMat.translate(CHAR_WIDTH, 0)),
-        ('block-d1', psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_U1, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_U2, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_U3, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_C1, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_C2, psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_D1, psMat.translate(CHAR_WIDTH, 0)),
 
-        ('block-d3', psMat.translate(CHAR_WIDTH, 0)),
+        (BLOCK_D3, psMat.translate(CHAR_WIDTH, 0)),
     ])
     new_char('(', width=CHAR_WIDTH*3, references=[
         (BLOCK_1, psMat.translate(CHAR_WIDTH, 0)),
