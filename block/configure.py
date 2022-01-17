@@ -108,10 +108,18 @@ def configure():
 
     # add all the base block glyphs
     for ch, filename in BLOCKS:
-        new_char(name=ch, outline=os.path.join(path, filename))
+        new_char(name=ch, width=0, outline=os.path.join(path, filename))
 
     ### GLYPHS ###
+    # visually unecessary
     new_char('\'', width=0)
+
+    # used as a prefix when writing raw segments
+    new_char(';', width=0)
+
+    # used as a space when writing raw segments
+    new_char(name='one-width-space', width=CHAR_WIDTH)
+
     new_char(' ', width=CHAR_WIDTH*2)
     new_char(',', width=CHAR_WIDTH * 2)
     new_char('.', width=CHAR_WIDTH * 4)

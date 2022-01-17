@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1642306463
+ModificationTime: 1642461125
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -45,8 +45,33 @@ HheadDOffset: 1
 OS2Vendor: 'PfEd'
 Lookup: 1 0 0 "to-blockspace" { "to-blockspace-1"  } []
 Lookup: 6 0 0 "contextual-lookup-space-to-blockspace" { "contextual-lookup-space-to-blockspace-1"  } ['calt' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
+Lookup: 1 0 0 "to-bit" { "to-bit-1"  } []
+Lookup: 6 0 0 "contextual-lookup-to-raw-bit" { "contextual-lookup-to-raw-bit-1"  } ['calt' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
+ChainSub2: class "contextual-lookup-to-raw-bit-1" 3 3 3 2
+  Class: 79 glyph67 glyph68 glyph69 glyph70 glyph71 glyph72 glyph73 glyph74 glyph75 glyph76
+  Class: 9 semicolon
+  BClass: 79 glyph67 glyph68 glyph69 glyph70 glyph71 glyph72 glyph73 glyph74 glyph75 glyph76
+  BClass: 9 semicolon
+  FClass: 79 glyph67 glyph68 glyph69 glyph70 glyph71 glyph72 glyph73 glyph74 glyph75 glyph76
+  FClass: 9 semicolon
+ 1 2 0
+  ClsList: 1
+  BClsList: 2 2
+  FClsList:
+ 1
+  SeqLookup: 0 "to-bit"
+ 1 2 0
+  ClsList: 2
+  BClsList: 2 2
+  FClsList:
+ 1
+  SeqLookup: 0 "to-bit"
+  ClassNames: "All_Others" "numbers" "prefix"
+  BClassNames: "All_Others" "numbers" "prefix"
+  FClassNames: "All_Others" "numbers" "prefix"
+EndFPST
 ChainSub2: class "contextual-lookup-space-to-blockspace-1" 3 3 3 1
   Class: 103 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
   Class: 5 space
@@ -65,20 +90,20 @@ ChainSub2: class "contextual-lookup-space-to-blockspace-1" 3 3 3 1
   FClassNames: "All_Others" "letters" "space"
 EndFPST
 LangName: 1033 "" "" "" "" "" "" "" "" "" "" "" "" "" "Copyright (c) 2022, Aleksandar Radivojevic,+AAoA-with Reserved Font Name Compacity Block.+AAoACgAA-This Font Software is licensed under the SIL Open Font License, Version 1.1.+AAoA-This license is copied below, and is also available with a FAQ at:+AAoA-http://scripts.sil.org/OFL+AAoACgAK------------------------------------------------------------+AAoA-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007+AAoA------------------------------------------------------------+AAoACgAA-PREAMBLE+AAoA-The goals of the Open Font License (OFL) are to stimulate worldwide+AAoA-development of collaborative font projects, to support the font creation+AAoA-efforts of academic and linguistic communities, and to provide a free and+AAoA-open framework in which fonts may be shared and improved in partnership+AAoA-with others.+AAoACgAA-The OFL allows the licensed fonts to be used, studied, modified and+AAoA-redistributed freely as long as they are not sold by themselves. The+AAoA-fonts, including any derivative works, can be bundled, embedded, +AAoA-redistributed and/or sold with any software provided that any reserved+AAoA-names are not used by derivative works. The fonts and derivatives,+AAoA-however, cannot be released under any other type of license. The+AAoA-requirement for fonts to remain under this license does not apply+AAoA-to any document created using the fonts or their derivatives.+AAoACgAA-DEFINITIONS+AAoAIgAA-Font Software+ACIA refers to the set of files released by the Copyright+AAoA-Holder(s) under this license and clearly marked as such. This may+AAoA-include source files, build scripts and documentation.+AAoACgAi-Reserved Font Name+ACIA refers to any names specified as such after the+AAoA-copyright statement(s).+AAoACgAi-Original Version+ACIA refers to the collection of Font Software components as+AAoA-distributed by the Copyright Holder(s).+AAoACgAi-Modified Version+ACIA refers to any derivative made by adding to, deleting,+AAoA-or substituting -- in part or in whole -- any of the components of the+AAoA-Original Version, by changing formats or by porting the Font Software to a+AAoA-new environment.+AAoACgAi-Author+ACIA refers to any designer, engineer, programmer, technical+AAoA-writer or other person who contributed to the Font Software.+AAoACgAA-PERMISSION & CONDITIONS+AAoA-Permission is hereby granted, free of charge, to any person obtaining+AAoA-a copy of the Font Software, to use, study, copy, merge, embed, modify,+AAoA-redistribute, and sell modified and unmodified copies of the Font+AAoA-Software, subject to the following conditions:+AAoACgAA-1) Neither the Font Software nor any of its individual components,+AAoA-in Original or Modified Versions, may be sold by itself.+AAoACgAA-2) Original or Modified Versions of the Font Software may be bundled,+AAoA-redistributed and/or sold with any software, provided that each copy+AAoA-contains the above copyright notice and this license. These can be+AAoA-included either as stand-alone text files, human-readable headers or+AAoA-in the appropriate machine-readable metadata fields within text or+AAoA-binary files as long as those fields can be easily viewed by the user.+AAoACgAA-3) No Modified Version of the Font Software may use the Reserved Font+AAoA-Name(s) unless explicit written permission is granted by the corresponding+AAoA-Copyright Holder. This restriction only applies to the primary font name as+AAoA-presented to the users.+AAoACgAA-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font+AAoA-Software shall not be used to promote, endorse or advertise any+AAoA-Modified Version, except to acknowledge the contribution(s) of the+AAoA-Copyright Holder(s) and the Author(s) or with their explicit written+AAoA-permission.+AAoACgAA-5) The Font Software, modified or unmodified, in part or in whole,+AAoA-must be distributed entirely under this license, and must not be+AAoA-distributed under any other license. The requirement for fonts to+AAoA-remain under this license does not apply to any document created+AAoA-using the Font Software.+AAoACgAA-TERMINATION+AAoA-This license becomes null and void if any of the above conditions are+AAoA-not met.+AAoACgAA-DISCLAIMER+AAoA-THE FONT SOFTWARE IS PROVIDED +ACIA-AS IS+ACIA, WITHOUT WARRANTY OF ANY KIND,+AAoA-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF+AAoA-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT+AAoA-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE+AAoA-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,+AAoA-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL+AAoA-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING+AAoA-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM+AAoA-OTHER DEALINGS IN THE FONT SOFTWARE." "http://scripts.sil.org/OFL"
-Encoding: ISO8859-1
-Compacted: 1
+Encoding: Custom
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
+WinInfo: 0 39 14
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 266 80
+BeginChars: 84 82
 
 StartChar: A
-Encoding: 65 65 0
+Encoding: 18 65 0
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -89,7 +114,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: B
-Encoding: 66 66 1
+Encoding: 19 66 1
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -101,7 +126,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: C
-Encoding: 67 67 2
+Encoding: 20 67 2
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -113,7 +138,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: D
-Encoding: 68 68 3
+Encoding: 21 68 3
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -125,7 +150,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: E
-Encoding: 69 69 4
+Encoding: 22 69 4
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -136,7 +161,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: F
-Encoding: 70 70 5
+Encoding: 23 70 5
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -149,7 +174,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: G
-Encoding: 71 71 6
+Encoding: 24 71 6
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -160,7 +185,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: H
-Encoding: 72 72 7
+Encoding: 25 72 7
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -173,7 +198,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: I
-Encoding: 73 73 8
+Encoding: 26 73 8
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -185,7 +210,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: J
-Encoding: 74 74 9
+Encoding: 27 74 9
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -199,7 +224,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: K
-Encoding: 75 75 10
+Encoding: 28 75 10
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -211,7 +236,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: L
-Encoding: 76 76 11
+Encoding: 29 76 11
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -225,7 +250,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: M
-Encoding: 77 77 12
+Encoding: 30 77 12
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -239,7 +264,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: N
-Encoding: 78 78 13
+Encoding: 31 78 13
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -252,7 +277,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: O
-Encoding: 79 79 14
+Encoding: 32 79 14
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -263,7 +288,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: P
-Encoding: 80 80 15
+Encoding: 33 80 15
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -275,7 +300,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: Q
-Encoding: 81 81 16
+Encoding: 34 81 16
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -290,7 +315,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: R
-Encoding: 82 82 17
+Encoding: 35 82 17
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -301,7 +326,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: S
-Encoding: 83 83 18
+Encoding: 36 83 18
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -313,7 +338,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: T
-Encoding: 84 84 19
+Encoding: 37 84 19
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -326,7 +351,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: U
-Encoding: 85 85 20
+Encoding: 38 85 20
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -340,7 +365,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: V
-Encoding: 86 86 21
+Encoding: 39 86 21
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -354,7 +379,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: W
-Encoding: 87 87 22
+Encoding: 40 87 22
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -369,7 +394,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: X
-Encoding: 88 88 23
+Encoding: 41 88 23
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -384,7 +409,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: Y
-Encoding: 89 89 24
+Encoding: 42 89 24
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -399,7 +424,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: Z
-Encoding: 90 90 25
+Encoding: 43 90 25
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -414,7 +439,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: a
-Encoding: 97 97 26
+Encoding: 44 97 26
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -425,7 +450,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: b
-Encoding: 98 98 27
+Encoding: 45 98 27
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -437,7 +462,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: c
-Encoding: 99 99 28
+Encoding: 46 99 28
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -449,7 +474,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: d
-Encoding: 100 100 29
+Encoding: 47 100 29
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -461,7 +486,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: e
-Encoding: 101 101 30
+Encoding: 48 101 30
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -472,7 +497,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: f
-Encoding: 102 102 31
+Encoding: 49 102 31
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -485,7 +510,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: g
-Encoding: 103 103 32
+Encoding: 50 103 32
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -496,7 +521,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: h
-Encoding: 104 104 33
+Encoding: 51 104 33
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -509,7 +534,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: i
-Encoding: 105 105 34
+Encoding: 52 105 34
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -521,7 +546,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: j
-Encoding: 106 106 35
+Encoding: 53 106 35
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -535,7 +560,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: k
-Encoding: 107 107 36
+Encoding: 54 107 36
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -547,7 +572,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: l
-Encoding: 108 108 37
+Encoding: 55 108 37
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -561,7 +586,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: m
-Encoding: 109 109 38
+Encoding: 56 109 38
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -575,7 +600,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: n
-Encoding: 110 110 39
+Encoding: 57 110 39
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -588,7 +613,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: o
-Encoding: 111 111 40
+Encoding: 58 111 40
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -599,7 +624,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: p
-Encoding: 112 112 41
+Encoding: 59 112 41
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -611,7 +636,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: q
-Encoding: 113 113 42
+Encoding: 60 113 42
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -626,7 +651,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: r
-Encoding: 114 114 43
+Encoding: 61 114 43
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -637,7 +662,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: s
-Encoding: 115 115 44
+Encoding: 62 115 44
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -649,7 +674,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: t
-Encoding: 116 116 45
+Encoding: 63 116 45
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -662,7 +687,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: u
-Encoding: 117 117 46
+Encoding: 64 117 46
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -676,7 +701,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: v
-Encoding: 118 118 47
+Encoding: 65 118 47
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -690,7 +715,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: w
-Encoding: 119 119 48
+Encoding: 66 119 48
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -705,7 +730,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: x
-Encoding: 120 120 49
+Encoding: 67 120 49
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -720,7 +745,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: y
-Encoding: 121 121 50
+Encoding: 68 121 50
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -735,7 +760,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: z
-Encoding: 122 122 51
+Encoding: 69 122 51
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -750,7 +775,7 @@ Refer: 56 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: space
-Encoding: 32 32 52
+Encoding: 0 32 52
 Width: 256
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -759,7 +784,7 @@ Substitution2: "to-blockspace-1" blockspace
 EndChar
 
 StartChar: comma
-Encoding: 44 44 53
+Encoding: 6 44 53
 Width: 256
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -767,7 +792,7 @@ LayerCount: 2
 EndChar
 
 StartChar: period
-Encoding: 46 46 54
+Encoding: 7 46 54
 Width: 512
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -775,7 +800,7 @@ LayerCount: 2
 EndChar
 
 StartChar: blockspace
-Encoding: 256 -1 55
+Encoding: 70 -1 55
 Width: 256
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -785,8 +810,8 @@ Refer: 56 -1 N 2 0 0 1 0 0 2
 EndChar
 
 StartChar: block-line
-Encoding: 257 -1 56
-Width: 128
+Encoding: 71 -1 56
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -801,8 +826,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-u1
-Encoding: 258 -1 57
-Width: 128
+Encoding: 72 -1 57
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -817,8 +842,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-u2
-Encoding: 259 -1 58
-Width: 128
+Encoding: 73 -1 58
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -833,8 +858,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-u3
-Encoding: 260 -1 59
-Width: 128
+Encoding: 74 -1 59
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -849,8 +874,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-c1
-Encoding: 261 -1 60
-Width: 128
+Encoding: 75 -1 60
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -865,8 +890,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-c2
-Encoding: 262 -1 61
-Width: 128
+Encoding: 76 -1 61
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -881,8 +906,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-d1
-Encoding: 263 -1 62
-Width: 128
+Encoding: 77 -1 62
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -897,8 +922,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-d2
-Encoding: 264 -1 63
-Width: 128
+Encoding: 78 -1 63
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -913,8 +938,8 @@ EndSplineSet
 EndChar
 
 StartChar: block-d3
-Encoding: 265 -1 64
-Width: 128
+Encoding: 79 -1 64
+Width: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -929,7 +954,7 @@ EndSplineSet
 EndChar
 
 StartChar: glyph65
-Encoding: 34 34 65
+Encoding: 2 34 65
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -940,7 +965,7 @@ Refer: 57 -1 N 1 0 0 1 128 0 2
 EndChar
 
 StartChar: glyph66
-Encoding: 33 33 66
+Encoding: 1 33 66
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -956,7 +981,7 @@ Refer: 57 -1 N 1 0 0 1 128 0 2
 EndChar
 
 StartChar: glyph67
-Encoding: 48 48 67
+Encoding: 8 48 67
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -964,10 +989,11 @@ LayerCount: 2
 Fore
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-line
 EndChar
 
 StartChar: glyph68
-Encoding: 49 49 68
+Encoding: 9 49 68
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -976,10 +1002,11 @@ Fore
 Refer: 58 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-u1
 EndChar
 
 StartChar: glyph69
-Encoding: 50 50 69
+Encoding: 10 50 69
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -988,10 +1015,11 @@ Fore
 Refer: 59 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-u2
 EndChar
 
 StartChar: glyph70
-Encoding: 51 51 70
+Encoding: 11 51 70
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1001,10 +1029,11 @@ Refer: 59 -1 N 1 0 0 1 0 0 2
 Refer: 58 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-u3
 EndChar
 
 StartChar: glyph71
-Encoding: 52 52 71
+Encoding: 12 52 71
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1013,10 +1042,11 @@ Fore
 Refer: 60 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-c1
 EndChar
 
 StartChar: glyph72
-Encoding: 53 53 72
+Encoding: 13 53 72
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1026,10 +1056,11 @@ Refer: 60 -1 N 1 0 0 1 0 0 2
 Refer: 58 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-c2
 EndChar
 
 StartChar: glyph73
-Encoding: 54 54 73
+Encoding: 14 54 73
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1039,10 +1070,11 @@ Refer: 60 -1 N 1 0 0 1 0 0 2
 Refer: 59 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-d1
 EndChar
 
 StartChar: glyph74
-Encoding: 55 55 74
+Encoding: 15 55 74
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1053,10 +1085,11 @@ Refer: 59 -1 N 1 0 0 1 0 0 2
 Refer: 58 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-d2
 EndChar
 
 StartChar: glyph75
-Encoding: 56 56 75
+Encoding: 16 56 75
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1065,10 +1098,11 @@ Fore
 Refer: 61 -1 N 1 0 0 1 0 0 2
 Refer: 64 -1 N 1 0 0 1 0 0 2
 Refer: 57 -1 N 1 0 0 1 0 0 2
+Substitution2: "to-bit-1" block-d3
 EndChar
 
 StartChar: glyph76
-Encoding: 57 57 76
+Encoding: 17 57 76
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1081,7 +1115,7 @@ Refer: 57 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: glyph77
-Encoding: 40 40 77
+Encoding: 4 40 77
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1098,7 +1132,7 @@ Refer: 57 -1 N 1 0 0 1 128 0 2
 EndChar
 
 StartChar: glyph78
-Encoding: 41 41 78
+Encoding: 5 41 78
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
@@ -1116,8 +1150,27 @@ Refer: 56 -1 N 1 0 0 1 128 0 2
 EndChar
 
 StartChar: glyph79
-Encoding: 39 39 79
+Encoding: 3 39 79
 Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+EndChar
+
+StartChar: semicolon
+Encoding: 80 59 80
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Substitution2: "to-bit-1" one-width-space
+EndChar
+
+StartChar: one-width-space
+Encoding: 81 -1 81
+Width: 128
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
