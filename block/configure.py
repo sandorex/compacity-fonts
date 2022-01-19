@@ -111,18 +111,21 @@ def configure():
         new_char(name=ch, width=0, outline=os.path.join(path, filename))
 
     ### GLYPHS ###
-    # visually unecessary
-    new_char('\'', width=0)
+    for c in [
+        ';', # used as a prefix when writing raw segments
 
-    # used as a prefix when writing raw segments
-    new_char(';', width=0)
+        # visually unecessary
+        ',',
+        '-',
+        '—',
+    ]:
+        new_char(c, width=0)
 
     # used as a space when writing raw segments
     new_char(name='one-width-space', width=CHAR_WIDTH)
-
     new_char(' ', width=CHAR_WIDTH*2)
-    new_char(',', width=CHAR_WIDTH * 2)
-    new_char('.', width=CHAR_WIDTH * 4)
+    new_char(',', width=CHAR_WIDTH*2)
+    new_char('.', width=CHAR_WIDTH*8)
     new_char('"', width=CHAR_WIDTH*3, references=[
         (BLOCK_U1, psMat.translate(CHAR_WIDTH, 0)),
         (BLOCK_D3, psMat.translate(CHAR_WIDTH, 0)),
@@ -174,7 +177,7 @@ def configure():
         new_char(name=name, references=refs)
 
     # save to new project just in case it has fcked it up for some reason
-    font.save('new.' + PROJECT_FILE)
+    font.save(PROJECT_FILE)
 
 if __name__ == '__main__':
     configure()
