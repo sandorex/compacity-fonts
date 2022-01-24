@@ -29,6 +29,7 @@
             font-family: 'Compacity Block';
             font-weight: normal;
             line-height: 1.3em;
+            text-rendering: geometricPrecision;
         }
 
         #wrapper {
@@ -43,20 +44,52 @@
             padding-right: 0.2em;
         }
 
-        .block-preview:hover {
+        .block-preview:hover, .block-preview:active, .block-preview:focus {
             font-family: 'Noto Sans', sans-serif;
-            /* font-size: 1.5em; */
-            /* width: auto !important; */
         }
 
         .story-container {
-            /* margin: 10px; */
             font-size: 1.4em;
             line-height: 0.5em;
         }
 
         .color-hover:hover {
             color:red;
+        }
+
+        @media (pointer: coarse), (hover: none) {
+            [title] {
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+            }
+
+            [title]:focus::after {
+                content: attr(title);
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 0.7em;
+                line-height: initial;
+                position: absolute;
+                top: 90%;
+                left: 10%;
+                color: white;
+                background-color: gray;
+                opacity: 1;
+                border: 1px solid;
+                width: fit-content;
+                padding: 3px;
+                z-index: 1;
+            }
+
+            /* disable selection on mobile cause it's not needed and annoying */
+            body {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
         }
     </style>
 </head>
@@ -195,6 +228,7 @@
                     wholeSentenceReveal.textContent = ":";
                     wholeSentenceReveal.classList.add('color-hover');
                     wholeSentenceReveal.title = line;
+                    wholeSentenceReveal.setAttribute('tabindex', 0);
 
                     div.appendChild(wholeSentenceReveal);
                     div.innerHTML += '&nbsp&nbsp&nbsp';
@@ -206,14 +240,13 @@
                     wordSpan.classList.add('color-hover');
                     wordSpan.textContent = word + ' ';
                     wordSpan.title = word;
+                    wordSpan.setAttribute('tabindex', 0);
 
                     div.appendChild(wordSpan);
                 }
 
                 div.appendChild(document.createElement('br'));
             }
-
-            // console.log(div);
 
             return {
                 title: title,
