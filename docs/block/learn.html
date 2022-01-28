@@ -107,10 +107,10 @@
                     <br><br>
 
                     The parts making up any glyph in this font are
-                    <span class="block">;;1;;; ;;2;;; ;;3;;; ;;0;;; ;;6;;; ;;7;;; ;;8;;;</span> and <span class="block">;;4;;; ;;5;;;</span>
+                    <span class="block">`1` `2` `3` `0` `6` `7` `8` </span> and <span class="block">`4` `5` </span>
                     two center ones for non-letter glyphs for total of 9 parts
                     <br>
-                    The line <span class="block">;;0;;;;</span> is in every letter and space between letters
+                    The line <span class="block">`0` </span> is in every letter and space between letters
                     <br><br>
                     The following text is made up of 2 sentences, a comma and period are almost same with period being a longer break in text
                     <br>
@@ -120,17 +120,17 @@
                     <br>
                     <b>Do note that uppercase and lowercase letters are the same in this font</b>
                     <br><br>
-                    Numbers are written using all the parts except the line <span class="block-preview">;;0;;;</span> as if they were binary bits with the first one being LSB, for example 13 (1011) would be <span class="block-preview">;;1;;2;;4;;;</span>
+                    Numbers are written using all the parts except the line <span class="block-preview">`0` </span> as if they were binary bits with the first one being LSB, for example 13 (1011) would be <span class="block-preview">;;1;;2;;4;;;</span>
                     <br>
-                    You could write up to 63 dec with just one glyph, another example <span class="block">;;1;;3;;4;;6;;;</span> is 45 but you would have to manually write it
+                    You could write up to 63 dec with just one glyph, another example <span class="block">`1`3`4`6` </span> is 45 but you would have to manually write it
                     <br>
                     <b>Do note that numbers above 9 currently have to be written manually, although i plan on a version where all numbers 0-63 will be atomagically written using one character, but it's complex to do without breaking any numbers above that</b>
                     <br><br>
                     I've added a way to manually write the characters
                     <br>
-                    The "syntax" is <b>;;[0-8]</b> (where 0 is the line) and <b>;;;</b> for a space of one character width, as these characters are zero-width and you can write the parts of a character manually
+                    The "syntax" is <b>/`[0-8 ]/</b> (where 0 is the line) and <b>` </b> for a space of one character width, as these characters are zero-width and you can write the parts of a character manually
                     <br>
-                    As an example, here is parts 1 and 3, <span class="block-preview">;;1;;3;;;</span>
+                    As an example, here is parts 1 and 3, <span class="block-preview">`1`3` </span>
                     <br><br>
                     There is a collection of short-ish stories below where you can hover over the text and will tell you what the word is, if you hover over the double colon on the left it will tell you the whole sentence
                     <br><br>
