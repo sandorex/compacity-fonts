@@ -26,14 +26,14 @@ from typing import Any, Dict, List, Tuple, Union
 from buildsystem.builder import new_glyph
 
 import re, fontforge, time
+import buildsystem.logger as log
 import project as p
 import config
 
 try:
     import user_config # type: ignore
-    USER_CONFIG = True
 except ImportError:
-    USER_CONFIG = False
+    user_config = None
 
 B_LI = 'bblock.0'
 B_U1 = 'bblock.1'
@@ -46,24 +46,30 @@ B_D2 = 'bblock.7'
 B_D3 = 'bblock.8'
 
 def conf_blocks(font):
+    log.info('Configuring base block glyphs')
+
     # names of the svgs for block pieces
     BLOCKS = [
         (B_U1, '1.svg'),
         (B_U2, '2.svg'),
         (B_U3, '3.svg'),
 
-        (B_C1, '7.svg'),
+        (B_C1, '4.svg'),
         (B_LI, '0.svg'),
-        (B_C2, '8.svg'),
+        (B_C2, '5.svg'),
 
-        (B_D1, '4.svg'),
-        (B_D2, '5.svg'),
-        (B_D3, '6.svg'),
+        (B_D1, '6.svg'),
+        (B_D2, '7.svg'),
+        (B_D3, '8.svg'),
     ]
 
     for name, file in BLOCKS:
-        new_glyph(font, None, name=name, width=0, color=0x69f08d,
-            outline_path=CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR / file)
+        try:
+            new_glyph(font, None, name=name, width=0, color=0x69f08d,
+                outline_path=CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR / file)
+        except FileNotFoundError as ex:
+            log.erro(f"Error configuring base glyph '{name}' as the outline was not found, due to this error the glyph has been erased!")
+            raise
 
 def to_block(pattern, matrix=None):
     """Converts a string to blocks for easier changes to layout
@@ -108,16 +114,25 @@ def to_block(pattern, matrix=None):
 
 if __name__ == '__main__':
     font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
-    # conf_blocks(font) # TODO: genereator script
+    log.info(f'Configuring project {font.fullname} {font.version}')
+
+    # only configure base blocks if they are generated
+    if os.path.exists(CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR):
+        conf_blocks(font)
+
     config.configure(font)
 
     font.comment = f'Last configured on {time.ctime()}'
     font.save()
 
-    if USER_CONFIG:
+    if user_config is not None:
+        log.info('Configuring user modified project')
+
         # set font name and such only when first making the project to allow
         # the user to change anything without it being overwritten
         if not os.path.exists(CURDIR / p.USER_PROJECT_FILE):
+            log.info('User project file does not exist, creating it from the regular one')
+
             user_font = font
 
             # used as font name when picking fonts
@@ -132,6 +147,10 @@ if __name__ == '__main__':
             user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
 
         user_config.configure(user_font)
+
+        # only configure base blocks if they are generated
+        if os.path.exists(CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR):
+            conf_blocks(user_font)
 
         # only visible in the fontforge i think
         user_font.comment = f'USER MODIFIED\nLast configured on {time.ctime()}'

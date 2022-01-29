@@ -4,7 +4,7 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Sat Jan 29 12:35:03 2022"
+UComments: "Last configured on Sat Jan 29 17:40:05 2022"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
 Version: 0.1
 DefaultBaseFilename: compacity-block
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1643456103
+ModificationTime: 1643474405
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -94,6 +94,7 @@ ChainSub2: class "contextual-lookup-space-to-blockspace-1" 3 3 3 1
 EndFPST
 LangName: 1033 "" "" "" "" "" "" "" "" "" "" "" "" "" "Copyright (c) 2022, Aleksandar Radivojevic,+AAoA-with Reserved Font Name Compacity Block.+AAoACgAA-This Font Software is licensed under the SIL Open Font License, Version 1.1.+AAoA-This license is copied below, and is also available with a FAQ at:+AAoA-http://scripts.sil.org/OFL+AAoACgAK------------------------------------------------------------+AAoA-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007+AAoA------------------------------------------------------------+AAoACgAA-PREAMBLE+AAoA-The goals of the Open Font License (OFL) are to stimulate worldwide+AAoA-development of collaborative font projects, to support the font creation+AAoA-efforts of academic and linguistic communities, and to provide a free and+AAoA-open framework in which fonts may be shared and improved in partnership+AAoA-with others.+AAoACgAA-The OFL allows the licensed fonts to be used, studied, modified and+AAoA-redistributed freely as long as they are not sold by themselves. The+AAoA-fonts, including any derivative works, can be bundled, embedded, +AAoA-redistributed and/or sold with any software provided that any reserved+AAoA-names are not used by derivative works. The fonts and derivatives,+AAoA-however, cannot be released under any other type of license. The+AAoA-requirement for fonts to remain under this license does not apply+AAoA-to any document created using the fonts or their derivatives.+AAoACgAA-DEFINITIONS+AAoAIgAA-Font Software+ACIA refers to the set of files released by the Copyright+AAoA-Holder(s) under this license and clearly marked as such. This may+AAoA-include source files, build scripts and documentation.+AAoACgAi-Reserved Font Name+ACIA refers to any names specified as such after the+AAoA-copyright statement(s).+AAoACgAi-Original Version+ACIA refers to the collection of Font Software components as+AAoA-distributed by the Copyright Holder(s).+AAoACgAi-Modified Version+ACIA refers to any derivative made by adding to, deleting,+AAoA-or substituting -- in part or in whole -- any of the components of the+AAoA-Original Version, by changing formats or by porting the Font Software to a+AAoA-new environment.+AAoACgAi-Author+ACIA refers to any designer, engineer, programmer, technical+AAoA-writer or other person who contributed to the Font Software.+AAoACgAA-PERMISSION & CONDITIONS+AAoA-Permission is hereby granted, free of charge, to any person obtaining+AAoA-a copy of the Font Software, to use, study, copy, merge, embed, modify,+AAoA-redistribute, and sell modified and unmodified copies of the Font+AAoA-Software, subject to the following conditions:+AAoACgAA-1) Neither the Font Software nor any of its individual components,+AAoA-in Original or Modified Versions, may be sold by itself.+AAoACgAA-2) Original or Modified Versions of the Font Software may be bundled,+AAoA-redistributed and/or sold with any software, provided that each copy+AAoA-contains the above copyright notice and this license. These can be+AAoA-included either as stand-alone text files, human-readable headers or+AAoA-in the appropriate machine-readable metadata fields within text or+AAoA-binary files as long as those fields can be easily viewed by the user.+AAoACgAA-3) No Modified Version of the Font Software may use the Reserved Font+AAoA-Name(s) unless explicit written permission is granted by the corresponding+AAoA-Copyright Holder. This restriction only applies to the primary font name as+AAoA-presented to the users.+AAoACgAA-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font+AAoA-Software shall not be used to promote, endorse or advertise any+AAoA-Modified Version, except to acknowledge the contribution(s) of the+AAoA-Copyright Holder(s) and the Author(s) or with their explicit written+AAoA-permission.+AAoACgAA-5) The Font Software, modified or unmodified, in part or in whole,+AAoA-must be distributed entirely under this license, and must not be+AAoA-distributed under any other license. The requirement for fonts to+AAoA-remain under this license does not apply to any document created+AAoA-using the Font Software.+AAoACgAA-TERMINATION+AAoA-This license becomes null and void if any of the above conditions are+AAoA-not met.+AAoACgAA-DISCLAIMER+AAoA-THE FONT SOFTWARE IS PROVIDED +ACIA-AS IS+ACIA, WITHOUT WARRANTY OF ANY KIND,+AAoA-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF+AAoA-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT+AAoA-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE+AAoA-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,+AAoA-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL+AAoA-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING+AAoA-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM+AAoA-OTHER DEALINGS IN THE FONT SOFTWARE." "http://scripts.sil.org/OFL"
 Encoding: Custom
+Compacted: 1
 UnicodeInterp: none
 NameList: Adobe Glyph List
 DisplaySize: -48
@@ -102,7 +103,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 95 86
+BeginChars: 96 86
 
 StartChar: A
 Encoding: 18 65 0
@@ -111,9 +112,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -124,10 +125,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -138,10 +139,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -152,10 +153,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -166,9 +167,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -179,11 +180,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -194,9 +195,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -207,11 +208,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -222,10 +223,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -236,12 +237,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -252,10 +253,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -266,12 +267,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -282,12 +283,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -298,11 +299,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -313,9 +314,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -326,10 +327,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -340,13 +341,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -357,9 +358,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -370,10 +371,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -384,11 +385,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -399,12 +400,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -415,12 +416,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -431,13 +432,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -448,13 +449,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -465,13 +466,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -482,13 +483,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -499,9 +500,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -512,10 +513,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -526,10 +527,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -540,10 +541,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -554,9 +555,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -567,11 +568,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -582,9 +583,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -595,11 +596,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -610,10 +611,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -624,12 +625,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -640,10 +641,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -654,12 +655,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -670,12 +671,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -686,11 +687,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -701,9 +702,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -714,10 +715,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -728,13 +729,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -745,9 +746,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -758,10 +759,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -772,11 +773,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -787,12 +788,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -803,12 +804,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -819,13 +820,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -836,13 +837,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -853,13 +854,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -870,13 +871,13 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 84 -1 N 1 0 0 1 0 0 2
 Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 81 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 82 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Refer: 80 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -888,7 +889,7 @@ Flags: HW
 LayerCount: 2
 Substitution2: "to-bit-1" one-width-space
 Substitution2: "to-blockspace-1" blockspace
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -899,9 +900,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 128 0 2
 Refer: 84 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 83 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -912,8 +913,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 84 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
@@ -924,315 +925,301 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 81 -1 N 2 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 80 -1 N 2 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
-StartChar: block-line
-Encoding: 71 -1 56
-Width: 0
-UnlinkRmOvrlpSave: 1
-Flags: HW
-LayerCount: 2
-Fore
-SplineSet
-0 270 m 1
- 0 334 l 1
- 128 334 l 1
- 128 270 l 1
- 0 270 l 1
-EndSplineSet
-EndChar
-
 StartChar: glyph65
-Encoding: 2 34 57
+Encoding: 2 34 56
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 128 0 2
 Refer: 77 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph66
-Encoding: 1 33 58
+Encoding: 1 33 57
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 128 0 2
-Refer: 83 -1 N 1 0 0 1 128 0 2
-Refer: 79 -1 N 1 0 0 1 128 0 2
+Refer: 84 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
 Refer: 78 -1 N 1 0 0 1 128 0 2
 Refer: 77 -1 N 1 0 0 1 128 0 2
-Refer: 82 -1 N 1 0 0 1 128 0 2
-Refer: 80 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph67
-Encoding: 8 48 59
+Encoding: 8 48 58
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.0
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph68
-Encoding: 9 49 60
+Encoding: 9 49 59
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.1
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph69
-Encoding: 10 50 61
+Encoding: 10 50 60
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph70
-Encoding: 11 51 62
+Encoding: 11 51 61
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.3
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph71
-Encoding: 12 52 63
+Encoding: 12 52 62
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 80 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 79 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.4
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph72
-Encoding: 13 53 64
+Encoding: 13 53 63
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 80 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
+Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.5
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph73
-Encoding: 14 54 65
+Encoding: 14 54 64
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 80 -1 N 1 0 0 1 0 0 2
 Refer: 79 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.6
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph74
-Encoding: 15 55 66
+Encoding: 15 55 65
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 80 -1 N 1 0 0 1 0 0 2
 Refer: 79 -1 N 1 0 0 1 0 0 2
 Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.7
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph75
-Encoding: 16 56 67
+Encoding: 16 56 66
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
+Refer: 81 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
 Substitution2: "to-bit-1" bblock.8
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph76
-Encoding: 17 57 68
+Encoding: 17 57 67
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 85 -1 N 1 0 0 1 0 0 2
+Refer: 81 -1 N 1 0 0 1 0 0 2
 Refer: 77 -1 N 1 0 0 1 0 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 84 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1 0 0 1 0 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph77
-Encoding: 4 40 69
+Encoding: 4 40 68
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 128 0 2
 Refer: 84 -1 N 1 0 0 1 128 0 2
 Refer: 83 -1 N 1 0 0 1 128 0 2
-Refer: 79 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
 Refer: 78 -1 N 1 0 0 1 128 0 2
 Refer: 77 -1 N 1 0 0 1 128 0 2
-Refer: 82 -1 N 1 0 0 1 128 0 2
-Refer: 80 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph78
-Encoding: 5 41 70
+Encoding: 5 41 69
 Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 85 -1 N 1 0 0 1 128 0 2
 Refer: 84 -1 N 1 0 0 1 128 0 2
 Refer: 83 -1 N 1 0 0 1 128 0 2
-Refer: 79 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
 Refer: 78 -1 N 1 0 0 1 128 0 2
 Refer: 77 -1 N 1 0 0 1 128 0 2
-Refer: 82 -1 N 1 0 0 1 128 0 2
-Refer: 80 -1 N 1 0 0 1 128 0 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph79
-Encoding: 3 39 71
+Encoding: 3 39 70
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
 EndChar
 
 StartChar: semicolon
-Encoding: 80 59 72
+Encoding: 80 59 71
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: b3b3b3
 EndChar
 
 StartChar: one-width-space
-Encoding: 81 -1 73
+Encoding: 81 -1 72
 Width: 128
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
 
 StartChar: glyph82
-Encoding: 84 45 74
+Encoding: 84 45 73
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: b3b3b3
 EndChar
 
 StartChar: glyph83
-Encoding: 85 8212 75
+Encoding: 85 8212 74
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: b3b3b3
 EndChar
 
 StartChar: grave
-Encoding: 82 96 76
+Encoding: 82 96 75
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 12:35:03 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: b3b3b3
 EndChar
 
 StartChar: bblock.1
-Encoding: 86 -1 77
+Encoding: 86 -1 76
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1246,12 +1233,12 @@ SplineSet
  128 691 l 1
  0 691 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
-Colour: 96ff94
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.2
-Encoding: 87 -1 78
+Encoding: 87 -1 77
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1265,11 +1252,12 @@ SplineSet
  128 563 l 1
  0 563 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.3
-Encoding: 88 -1 79
+Encoding: 88 -1 78
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1283,11 +1271,12 @@ SplineSet
  128 435 l 1
  0 435 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.4
-Encoding: 89 -1 80
+Encoding: 89 -1 79
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1301,11 +1290,12 @@ SplineSet
  128 307 l 1
  0 307 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.0
-Encoding: 90 -1 81
+Encoding: 90 -1 80
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1319,11 +1309,12 @@ SplineSet
  128 270 l 1
  0 270 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.5
-Encoding: 91 -1 82
+Encoding: 91 -1 81
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1337,11 +1328,12 @@ SplineSet
  128 179 l 1
  0 179 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.6
-Encoding: 92 -1 83
+Encoding: 92 -1 82
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1355,11 +1347,12 @@ SplineSet
  128 51 l 1
  0 51 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.7
-Encoding: 93 -1 84
+Encoding: 93 -1 83
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1373,11 +1366,12 @@ SplineSet
  128 -77 l 1
  0 -77 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
 EndChar
 
 StartChar: bblock.8
-Encoding: 94 -1 85
+Encoding: 94 -1 84
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1
@@ -1391,7 +1385,19 @@ SplineSet
  128 -205 l 1
  0 -205 l 1
 EndSplineSet
-Comment: "DO NOT EDIT+AAoA-Autogenerated on Sat Jan 29 11:49:52 2022"
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: 69f08d
+EndChar
+
+StartChar: glyph85
+Encoding: 95 92 85
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
 EndChar
 EndChars
 EndSplineFont

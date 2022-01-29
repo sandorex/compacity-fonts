@@ -7,6 +7,6 @@ def configure(font):
     """Function ran by the configure script"""
     pass
 
-def generate(output_dir):
+def generate(root_dir, output_dir):
     """Function ran by the generate script"""
     pass

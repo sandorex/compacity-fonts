@@ -23,19 +23,25 @@ CURDIR = Path(os.path.dirname(__file__))
 sys.path.append(str(CURDIR.absolute().parent))
 
 from buildsystem.builder import export_font
+import buildsystem.logger as log
 
 import fontforge
 import project as p
 
 if __name__ == '__main__':
-    # TODO: log some info
+    log.info(f"Using FontForge {fontforge.version()}")
+    log.info('Formats enabled:')
+    for i in p.FORMATS:
+        print(f'- {i}')
+    print()
+
     font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
 
-    print(f"Exporting font '{font.familyname}' version {font.version} using FontForge {fontforge.version()}")
+    log.info(f"Exporting font '{font.fullname}' version {font.version}")
     export_font(font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
 
     if os.path.exists(CURDIR / p.USER_PROJECT_FILE):
         user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
-        print(f"Also exporting user modified version")
+        log.info('Exporting user modified font')
         export_font(user_font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
 

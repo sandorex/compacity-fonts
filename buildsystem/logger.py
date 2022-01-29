@@ -15,12 +15,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# project.py: Contains globals for the project
+"""Really simple logging code for convenience"""
 
-PROJECT_FILE = 'block.sfd'
-USER_PROJECT_FILE = 'user.' + PROJECT_FILE
-CHAR_WIDTH = 128
-OUTPUT_DIR = 'build'
-ASSETS_OUTPUT_DIR = 'generated'
-ASSETS_DIR = 'assets'
-FORMATS = ['ttf']
+def info(msg, *args, **kwargs):
+    print(msg, *args, **kwargs)
+
+def warn(msg, *args, **kwargs):
+    print(':: ' + msg, *args, **kwargs)
+
+def erro(msg, *args, **kwargs):
+    print('!! ' + msg, *args, **kwargs)

@@ -97,7 +97,7 @@ def special(font):
     """Configures special characters, that have varying width and function"""
     ## ZERO WIDTH ##
     # TODO: add almost all symbols here until they are recreated to fit
-    for i in list(r';-`—'):
+    for i in list(r';-`—\''):
         new_glyph(font, i, width=0, color=0xb3b3b3)
 
     ## OTHER ##
