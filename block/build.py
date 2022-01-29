@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# compacity-fonts block
+# compacity-fonts
 #
 # Copyright 2022 Aleksandar Radivojevic
 #
@@ -15,29 +15,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# build.py: Builds the font into ttf and otf files
+# build.py: Exports the font
 
-import fontforge, os, string, sys
+import os, sys
+from pathlib import Path
+CURDIR = Path(os.path.dirname(__file__))
+sys.path.append(str(CURDIR.absolute().parent))
 
-from generate import OUTPUT_DIR
-from configure import PROJECT_FILE
+from buildsystem.builder import export_font
 
-def build():
-    font = fontforge.open(PROJECT_FILE)
-
-    print("Building font '{} {}'".format(font.familyname, font.version))
-
-    path = os.path.join(OUTPUT_DIR, font.familyname.lower().replace(' ', '-'))
-
-    # export ttf
-    font.generate(path + '.ttf')
-
-    # woff doesn't export properly either..
-    # font.generate(path + '.woff')
-
-    # OTF is not looking quite right so it's disabled
-    # font.generate(os.path.join(OUTPUT_DIR, font.fontname + '.otf')) # export otf
+import fontforge
+import project as p
 
 if __name__ == '__main__':
-    build()
+    # TODO: log some info
+    font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
+
+    print(f"Exporting font '{font.familyname}' version {font.version} using FontForge {fontforge.version()}")
+    export_font(font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
+
+    if os.path.exists(CURDIR / p.USER_PROJECT_FILE):
+        user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
+        print(f"Also exporting user modified version")
+        export_font(user_font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
 

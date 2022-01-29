@@ -4,3 +4,5 @@ __pycache__/
 *$py.class
 
 build/
+user_config.py
+user.*.sfd

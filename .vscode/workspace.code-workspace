@@ -1,16 +1,31 @@
 {
 	"folders": [
         {
-            "path": ".."
+            "path": "..",
+            "name": "Root"
         },
         {
-            "path": "..\\docs"
+            "path": "../buildsystem",
+            "name": "Build System"
         },
         {
-            "path": "..\\block"
+            "path": "../docs",
+            "name": "Website (docs)"
+        },
+        {
+            "path": "../block",
+            "name": "Compacity Block"
         }
     ],
     "settings": {
         "liveServer.settings.multiRootWorkspaceName": "compacity-fonts",
+        "python.defaultInterpreterPath": "c:\\Program Files (x86)\\FontForgeBuilds\\bin\\ffpython.exe",
+        "python.pythonPath": "c:\\Program Files (x86)\\FontForgeBuilds\\bin\\ffpython.exe",
+
+        // fixes script sys.path hacks
+        "python.analysis.extraPaths": [
+            "${workspaceFolder}/..",
+        ],
+        "python.languageServer": "Pylance",
     }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# compacity-fonts block
+# compacity-fonts
 #
 # Copyright 2022 Aleksandar Radivojevic
 #
@@ -15,170 +15,125 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# configure.py: Configures font project for fontforge
+# configure.py: Configures fontforge project
 
-import fontforge, os, string, sys, glob, psMat, json
+import os, sys
+from pathlib import Path
+CURDIR = Path(os.path.dirname(__file__))
+sys.path.append(str(CURDIR.absolute().parent))
 
-from generate import OUTPUT_DIR, GLYPH_OUTPUT_DIR
+from typing import Any, Dict, List, Tuple, Union
+from buildsystem.builder import new_glyph
+
+import re, fontforge, time
+import project as p
 import config
 
-PROJECT_FILE = 'block.sfd'
-CHAR_WIDTH = 128
+try:
+    import user_config # type: ignore
+    USER_CONFIG = True
+except ImportError:
+    USER_CONFIG = False
 
-BLOCK_LINE = 'block-line'
-BLOCK_U1 = 'block-u1'
-BLOCK_U2 = 'block-u2'
-BLOCK_U3 = 'block-u3'
-BLOCK_C1 = 'block-c1'
-BLOCK_C2 = 'block-c2'
-BLOCK_D1 = 'block-d1'
-BLOCK_D2 = 'block-d2'
-BLOCK_D3 = 'block-d3'
+B_LI = 'bblock.0'
+B_U1 = 'bblock.1'
+B_U2 = 'bblock.2'
+B_U3 = 'bblock.3'
+B_C1 = 'bblock.4'
+B_C2 = 'bblock.5'
+B_D1 = 'bblock.6'
+B_D2 = 'bblock.7'
+B_D3 = 'bblock.8'
 
-# names of the svgs for block pieces
-BLOCKS = [
-    (BLOCK_LINE, '0.svg'),
+def conf_blocks(font):
+    # names of the svgs for block pieces
+    BLOCKS = [
+        (B_U1, '1.svg'),
+        (B_U2, '2.svg'),
+        (B_U3, '3.svg'),
 
-    (BLOCK_U1, '1.svg'),
-    (BLOCK_U2, '2.svg'),
-    (BLOCK_U3, '3.svg'),
+        (B_C1, '7.svg'),
+        (B_LI, '0.svg'),
+        (B_C2, '8.svg'),
 
-    (BLOCK_C1, '7.svg'),
-    (BLOCK_C2, '8.svg'),
+        (B_D1, '4.svg'),
+        (B_D2, '5.svg'),
+        (B_D3, '6.svg'),
+    ]
 
-    (BLOCK_D1, '4.svg'),
-    (BLOCK_D2, '5.svg'),
-    (BLOCK_D3, '6.svg'),
-]
+    for name, file in BLOCKS:
+        new_glyph(font, None, name=name, width=0, color=0x69f08d,
+            outline_path=CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR / file)
 
-# aliases
-BLOCK_0 = BLOCK_LINE
-BLOCK_1 = BLOCK_U1
-BLOCK_2 = BLOCK_U2
-BLOCK_3 = BLOCK_U3
-BLOCK_4 = BLOCK_C1
-BLOCK_5 = BLOCK_C2
-BLOCK_6 = BLOCK_D1
-BLOCK_7 = BLOCK_D2
-BLOCK_8 = BLOCK_D3
+def to_block(pattern, matrix=None):
+    """Converts a string to blocks for easier changes to layout
 
-def configure():
-    font = fontforge.open(PROJECT_FILE)
+    `matrix` is matrix that is applied to all parts
+    """
+    blocks = []
+    char = '#'
 
-    print("Configuring font '{} {}'".format(font.familyname, font.version))
+    # i just gave up and gone for regex, probably a nicer solution but im tired
+    # of this thing..
+    result = re.match(r'(...) ([# ]{2}|\|\|) (...)', pattern)
+    if result is None:
+        print('error') # TODO
+        return []
 
-    path = os.path.join(OUTPUT_DIR, GLYPH_OUTPUT_DIR)
+    l, c, r = result.groups()
 
-    def glyph_path(index):
-        return os.path.join(path, str(index) + '.svg')
+    # middle and line
+    if c == '||':
+        blocks.append(B_LI)
+    else:
+        for i in range(len(c)):
+            if c[i] == char:
+                blocks.append([B_C1, B_C2][i])
 
-    def new_char(ch=None, outline=None, *, name=None, width=CHAR_WIDTH, references=None):
-        if ch is None:
-            char = font.createChar(-1, name)
-        else:
-            # TODO: FIXME: this is a mess...
-            if name is not None:
-                char = font.createChar(ord(ch), name)
-            else:
-                char = font.createChar(ord(ch))
+    # upper part
+    for i in range(len(l)):
+        if l[i] == char:
+            blocks.append([B_U1, B_U2, B_U3][i])
 
-        char.clear() # without this it may put references over outlines.. ugh
-        char.width = width
+    # lower part
+    for i in range(len(r)):
+        if r[i] == char:
+            blocks.append([B_D1, B_D2, B_D3][i])
 
-        if outline is not None:
-            if os.path.exists(outline):
-                char.importOutlines(outline)
-            else:
-                print('Error: glyph outline "{}" not found'.format(outline))
-                sys.exit(1)
+    # apply matrix to all blocks
+    if matrix is not None:
+        return [ (i, matrix) for i in blocks ]
 
-        if references is not None:
-            for i in references:
-                # TODO: check if references are valid
-                if isinstance(i, tuple):
-                    char.addReference(i[0], i[1])
-                else:
-                    char.addReference(i)
-
-        # TODO: try char.unlinkRmOvrlpSave = True
-        char.unlinkRmOvrlpSave = True
-        # char.removeOverlap() # important
-
-        return char
-
-    # add all the base block glyphs
-    for ch, filename in BLOCKS:
-        new_char(name=ch, width=0, outline=os.path.join(path, filename))
-
-    ### GLYPHS ###
-    for c in [
-        ';', # used as a prefix when writing raw segments
-
-        # visually unecessary
-        ',',
-        '-',
-        '—',
-    ]:
-        new_char(c, width=0)
-
-    # used as a space when writing raw segments
-    new_char(name='one-width-space', width=CHAR_WIDTH)
-    new_char(' ', width=CHAR_WIDTH*2)
-    new_char(',', width=CHAR_WIDTH*2)
-    new_char('.', width=CHAR_WIDTH*8)
-    new_char('"', width=CHAR_WIDTH*3, references=[
-        (BLOCK_U1, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_D3, psMat.translate(CHAR_WIDTH, 0)),
-    ])
-    new_char('!', width=CHAR_WIDTH*3, references=[
-        (BLOCK_U1, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_U2, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_U3, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_C1, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_C2, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_D1, psMat.translate(CHAR_WIDTH, 0)),
-
-        (BLOCK_D3, psMat.translate(CHAR_WIDTH, 0)),
-    ])
-    new_char('(', width=CHAR_WIDTH*3, references=[
-        (BLOCK_1, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_2, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_3, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_4, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_5, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_6, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_7, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_8, psMat.translate(CHAR_WIDTH, 0)),
-    ])
-    new_char(')', width=CHAR_WIDTH*3, references=[
-        (BLOCK_0, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_1, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_2, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_3, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_4, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_5, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_6, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_7, psMat.translate(CHAR_WIDTH, 0)),
-        (BLOCK_8, psMat.translate(CHAR_WIDTH, 0)),
-    ])
-
-    ### SPECIAL GLYPHS ###
-    new_char(name='blockspace', width=CHAR_WIDTH*2, references=[
-        ('block-line', psMat.scale(2, 1))
-    ])
-
-    # load layout
-    bindings, special = config.generate()
-
-    for ch, refs in bindings.items():
-        new_char(ch, references=refs)
-
-    for name, refs in special.items():
-        new_char(name=name, references=refs)
-
-    # save to new project just in case it has fcked it up for some reason
-    font.save(PROJECT_FILE)
+    return blocks
 
 if __name__ == '__main__':
-    configure()
+    font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
+    # conf_blocks(font) # TODO: genereator script
+    config.configure(font)
 
+    font.comment = f'Last configured on {time.ctime()}'
+    font.save()
+
+    if USER_CONFIG:
+        # set font name and such only when first making the project to allow
+        # the user to change anything without it being overwritten
+        if not os.path.exists(CURDIR / p.USER_PROJECT_FILE):
+            user_font = font
+
+            # used as font name when picking fonts
+            user_font.familyname = user_font.familyname + ' (M)'
+
+            # human readable name, but i do not know the difference compared to familyname
+            user_font.fullname = user_font.fullname + ' (M)'
+
+            # used when exporting the font
+            user_font.default_base_filename = user_font.default_base_filename + '-user-mod'
+        else:
+            user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
+
+        user_config.configure(user_font)
+
+        # only visible in the fontforge i think
+        user_font.comment = f'USER MODIFIED\nLast configured on {time.ctime()}'
+
+        user_font.save(str(CURDIR / p.USER_PROJECT_FILE))
