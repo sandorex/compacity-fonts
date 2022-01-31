@@ -4,7 +4,7 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Sat Jan 29 17:40:05 2022"
+UComments: "Last configured on Mon Jan 31 13:57:31 2022"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
 Version: 0.1
 DefaultBaseFilename: compacity-block
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1643474405
+ModificationTime: 1643633851
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5

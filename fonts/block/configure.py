@@ -20,7 +20,7 @@
 import os, sys
 from pathlib import Path
 CURDIR = Path(os.path.dirname(__file__))
-sys.path.append(str(CURDIR.absolute().parent))
+sys.path.append(str(CURDIR.absolute().parent.parent))
 
 from buildsystem.builder import new_glyph
 
