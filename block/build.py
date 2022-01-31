@@ -22,26 +22,12 @@ from pathlib import Path
 CURDIR = Path(os.path.dirname(__file__))
 sys.path.append(str(CURDIR.absolute().parent))
 
-from buildsystem.builder import export_font
-import buildsystem.logger as log
-
-import fontforge
+import buildsystem.macro as macro
 import project as p
 
 if __name__ == '__main__':
-    log.info(f"Using FontForge {fontforge.version()}")
-    log.info('Formats enabled:')
-    for i in p.FORMATS:
-        print(f'- {i}')
-    print()
-
-    font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
-
-    log.info(f"Exporting font '{font.fullname}' version {font.version}")
-    export_font(font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
-
-    if os.path.exists(CURDIR / p.USER_PROJECT_FILE):
-        user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
-        log.info('Exporting user modified font')
-        export_font(user_font, CURDIR / p.OUTPUT_DIR, p.FORMATS)
-
+    macro.build(CURDIR,
+    p.OUTPUT_DIR,
+    p.PROJECT_FILE,
+    p.USER_PROJECT_FILE,
+    p.FORMATS)

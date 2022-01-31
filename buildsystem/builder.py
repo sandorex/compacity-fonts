@@ -68,6 +68,14 @@ def new_glyph(font,
     else:
         raise TypeError('Invalid arguments provided')
 
+    # test file path before modifying the gylph
+    if outline_path is not None:
+        outline_path = str(outline_path)
+
+        if not os.path.exists(outline_path):
+            raise FileNotFoundError(
+                errno.ENOENT, os.strerror(errno.ENOENT), outline_path)
+
     glyph.clear()
     glyph.unlinkRmOvrlpSave = True
 
@@ -78,13 +86,6 @@ def new_glyph(font,
         glyph.width = width
 
     if outline_path is not None:
-        outline_path = str(outline_path)
-
-        # test if file exists
-        if not os.path.exists(outline_path):
-            raise FileNotFoundError(
-                errno.ENOENT, os.strerror(errno.ENOENT), outline_path)
-
         glyph.importOutlines(outline_path)
 
     if refs is not None and refs:

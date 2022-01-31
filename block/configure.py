@@ -22,18 +22,12 @@ from pathlib import Path
 CURDIR = Path(os.path.dirname(__file__))
 sys.path.append(str(CURDIR.absolute().parent))
 
-from typing import Any, Dict, List, Tuple, Union
 from buildsystem.builder import new_glyph
 
-import re, fontforge, time
+import re
 import buildsystem.logger as log
+import buildsystem.macro as macro
 import project as p
-import config
-
-try:
-    import user_config # type: ignore
-except ImportError:
-    user_config = None
 
 B_LI = 'bblock.0'
 B_U1 = 'bblock.1'
@@ -67,8 +61,8 @@ def conf_blocks(font):
         try:
             new_glyph(font, None, name=name, width=0, color=0x69f08d,
                 outline_path=CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR / file)
-        except FileNotFoundError as ex:
-            log.erro(f"Error configuring base glyph '{name}' as the outline was not found, due to this error the glyph has been erased!")
+        except Exception as ex:
+            log.warn(f"Error while configuring base glyph '{name}', the glyph may be corrupted!")
             raise
 
 def to_block(pattern, matrix=None):
@@ -113,46 +107,9 @@ def to_block(pattern, matrix=None):
     return blocks
 
 if __name__ == '__main__':
-    font = fontforge.open(str(CURDIR / p.PROJECT_FILE))
-    log.info(f'Configuring project {font.fullname} {font.version}')
-
-    # only configure base blocks if they are generated
-    if os.path.exists(CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR):
-        conf_blocks(font)
-
-    config.configure(font)
-
-    font.comment = f'Last configured on {time.ctime()}'
-    font.save()
-
-    if user_config is not None:
-        log.info('Configuring user modified project')
-
-        # set font name and such only when first making the project to allow
-        # the user to change anything without it being overwritten
-        if not os.path.exists(CURDIR / p.USER_PROJECT_FILE):
-            log.info('User project file does not exist, creating it from the regular one')
-
-            user_font = font
-
-            # used as font name when picking fonts
-            user_font.familyname = user_font.familyname + ' (M)'
-
-            # human readable name, but i do not know the difference compared to familyname
-            user_font.fullname = user_font.fullname + ' (M)'
-
-            # used when exporting the font
-            user_font.default_base_filename = user_font.default_base_filename + '-user-mod'
-        else:
-            user_font = fontforge.open(str(CURDIR / p.USER_PROJECT_FILE))
-
-        user_config.configure(user_font)
-
-        # only configure base blocks if they are generated
-        if os.path.exists(CURDIR / p.OUTPUT_DIR / p.ASSETS_OUTPUT_DIR):
-            conf_blocks(user_font)
-
-        # only visible in the fontforge i think
-        user_font.comment = f'USER MODIFIED\nLast configured on {time.ctime()}'
-
-        user_font.save(str(CURDIR / p.USER_PROJECT_FILE))
+    macro.configure(CURDIR,
+        p.PROJECT_FILE,
+        p.USER_PROJECT_FILE,
+        p.OUTPUT_DIR,
+        p.ASSETS_OUTPUT_DIR,
+        pre_configure=conf_blocks)
