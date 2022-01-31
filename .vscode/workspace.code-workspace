@@ -13,9 +13,9 @@
             "name": "Website (docs)"
         },
         {
-            "path": "../block",
-            "name": "Compacity Block"
-        }
+            "path": "../fonts",
+            "name": "Fonts"
+        },
     ],
     "settings": {
         "liveServer.settings.multiRootWorkspaceName": "compacity-fonts",
