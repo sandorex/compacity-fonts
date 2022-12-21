@@ -28,11 +28,8 @@ from . import builder, logger as log, templater
 
 import os, time, importlib
 
-def configure(curdir: Any, project_file: str, user_project_file: Optional[str], output_dir: str, assets_output_dir: str, *, pre_configure: Callable[[Any], None]=None, post_configure: Optional[Callable[[Any], None]]=None):
+def configure(curdir: Any, project_file: str, user_project_file: Optional[str], output_dir: str, assets_output_dir: str, *, use_config_file: bool=True, project_save_prefix: str='', pre_configure: Callable[[Any], None]=None, post_configure: Optional[Callable[[Any], None]]=None):
     """Configure script main macro"""
-
-    # NOTE: intentionally not catching the possible exception
-    config = importlib.import_module('config', package=None)
 
     font = fontforge.open(os.path.join(curdir, project_file))
     log.info(f'Configuring project {font.fullname} {font.version}')
@@ -40,7 +37,10 @@ def configure(curdir: Any, project_file: str, user_project_file: Optional[str], 
     if pre_configure is not None:
         pre_configure(font)
 
-    config.configure(font)
+    if use_config_file:
+        # NOTE: intentionally not catching the possible exception
+        config = importlib.import_module('config', package=None)
+        config.configure(font)
 
     if post_configure is not None:
         post_configure(font)
@@ -88,7 +88,7 @@ def configure(curdir: Any, project_file: str, user_project_file: Optional[str], 
 
             # only visible in the fontforge i think
             user_font.comment = f'USER MODIFIED\nLast configured on {time.ctime()}'
-            user_font.save(os.path.join(curdir, user_project_file))
+            user_font.save()
 
 def generate(curdir: Any, output_dir: str, assets_output_dir: str, assets_dir: str, *, process_user_config: bool=True, template_files=[], fn: Optional[Callable[[], None]]=None):
     """Generate script main macro"""

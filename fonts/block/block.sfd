@@ -4,7 +4,7 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Mon Jan 31 13:57:31 2022"
+UComments: "Last configured on Wed Dec 21 22:03:37 2022"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
 Version: 0.1
 DefaultBaseFilename: compacity-block
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1643633851
+ModificationTime: 1671656617
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -103,7 +103,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 96 86
+BeginChars: 99 89
 
 StartChar: A
 Encoding: 18 65 0
@@ -1391,6 +1391,39 @@ EndChar
 
 StartChar: glyph85
 Encoding: 95 92 85
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph86
+Encoding: 96 63 86
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph87
+Encoding: 97 64 87
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph88
+Encoding: 98 126 88
 Width: 0
 VWidth: 0
 UnlinkRmOvrlpSave: 1

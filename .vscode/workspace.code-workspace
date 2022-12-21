@@ -18,9 +18,8 @@
         },
     ],
     "settings": {
-        "liveServer.settings.multiRootWorkspaceName": "compacity-fonts",
+        "liveServer.settings.multiRootWorkspaceName": "Website (docs)",
         "python.defaultInterpreterPath": "c:\\Program Files (x86)\\FontForgeBuilds\\bin\\ffpython.exe",
-        "python.pythonPath": "c:\\Program Files (x86)\\FontForgeBuilds\\bin\\ffpython.exe",
 
         // fixes script sys.path hacks
         "python.analysis.extraPaths": [

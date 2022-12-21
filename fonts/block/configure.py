@@ -65,6 +65,13 @@ def conf_blocks(font):
             log.warn(f"Error while configuring base glyph '{name}', the glyph may be corrupted!")
             raise
 
+    # these dont seem to do anything
+    # font.unlinkReferences()
+    # font.removeOverlap()
+
+    # i think this helps a lot
+    font.round()
+
 def to_block(pattern, matrix=None):
     """Converts a string to blocks for easier changes to layout
 

@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "c:\\Program Files (x86)\\FontForgeBuilds\\bin\\ffpython.exe",
     "files.exclude": {
         "docs/": true,
         "buildsystem/": true,
