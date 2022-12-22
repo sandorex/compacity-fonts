@@ -1,0 +1,64 @@
+name: Build n Release
+
+permissions:
+  contents: write
+
+on: push
+
+env:
+  # NOTE: fonts are added here with spaces between
+  FONTS: "block"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install fontforge
+      run: sudo apt-get install -y fontforge python3-fontforge
+
+    # Build the fonts
+    - name: Build
+      run: | # this should probably be automated using make or something
+        for font in $FONTS; do
+            python fonts/${font}/generate-assets.py
+            echo
+            python fonts/${font}/configure.py
+            echo
+            python fonts/${font}/build.py
+        done
+
+    # Package the required files into a zip
+    - name: Package
+      run: |
+        mkdir dist
+
+        for font in $FONTS; do
+            mkdir "$font"
+            cp LICENSE fonts/${font}/README.md fonts/${font}/build/*.ttf dist/${font}/
+            zip -r compacity-${font}.zip dist/${font}
+        done
+
+    - name: Get Version
+      id: version
+      run: |
+        echo "commit=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+    - name: Release Dev Build
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Dev Build (${{ steps.version.outputs.commit }})
+        tag_name: LATEST
+        fail_on_unmatched_files: true
+        prerelease: true
+        files: | # NOTE: files have to be overriden otherwise they will stay outdated so no ttf files
+          *.zip
+
+    - name: Release Tagged Build
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        fail_on_unmatched_files: true
+        files: |
+          *.zip
