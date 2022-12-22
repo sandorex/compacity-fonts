@@ -32,11 +32,10 @@ jobs:
     # Package the required files into a zip
     - name: Package
       run: |
-        mkdir dist
-
         for font in $FONTS; do
-            mkdir "$font"
-            cp LICENSE fonts/${font}/README.md fonts/${font}/build/*.ttf dist/${font}/
+            mkdir -p "dist/$font"
+            cp FONT.LICENSE dist/${font}/LICENSE
+            cp fonts/${font}/README.md fonts/${font}/build/*.ttf dist/${font}/
             zip -r compacity-${font}.zip dist/${font}
         done
 
@@ -49,7 +48,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         name: Dev Build (${{ steps.version.outputs.commit }})
-        tag_name: LATEST
+        tag_name: DEV
         fail_on_unmatched_files: true
         prerelease: true
         files: | # NOTE: files have to be overriden otherwise they will stay outdated so no ttf files
