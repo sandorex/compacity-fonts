@@ -33,10 +33,10 @@ jobs:
     - name: Package
       run: |
         for font in $FONTS; do
-            mkdir -p "dist/$font"
-            cp FONT.LICENSE dist/${font}/LICENSE
-            cp fonts/${font}/README.md fonts/${font}/build/*.ttf dist/${font}/
-            zip -r compacity-${font}.zip dist/${font}
+            zip -r compacity-${font}.zip      \
+                   fonts/${font}/README.md    \
+                   fonts/${font}/FONT.LICENSE \
+                   fonts/${font}/build/*.ttf
         done
 
     - name: Get Version
