@@ -32,13 +32,18 @@ jobs:
     # Package the required files into a zip
     - name: Package
       run: |
+        export DIR=$PWD
+
         mkdir dist
         cd dist
 
         for font in $FONTS; do
-            cp ../FONT.LICENSE ./LICENSE
-            cp ../fonts/${font}/README.md ../fonts/${font}/build/*.ttf ./
-            zip -r ./*
+            mkdir -p $DIR/dist/$font
+            cd $DIR/dist/$font
+
+            cp $DIR/FONT.LICENSE ./LICENSE
+            cp $DIR/fonts/${font}/README.md $DIR/fonts/${font}/build/*.ttf ./
+            zip -r $DIR/compacity-${font}.zip ./*
         done
 
     - name: Get Version
