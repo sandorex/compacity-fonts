@@ -32,11 +32,13 @@ jobs:
     # Package the required files into a zip
     - name: Package
       run: |
+        mkdir dist
+        cd dist
+
         for font in $FONTS; do
-            zip -r compacity-${font}.zip      \
-                   fonts/${font}/README.md    \
-                   fonts/${font}/FONT.LICENSE \
-                   fonts/${font}/build/*.ttf
+            cp ../FONT.LICENSE ./LICENSE
+            cp ../fonts/${font}/README.md ../fonts/${font}/build/*.ttf ./
+            zip -r ./*
         done
 
     - name: Get Version
@@ -51,6 +53,7 @@ jobs:
         tag_name: DEV
         fail_on_unmatched_files: true
         prerelease: true
+        body: Latest dev build from commit ${{ steps.version.outputs.commit }}
         files: | # NOTE: files have to be overriden otherwise they will stay outdated so no ttf files
           *.zip
 
