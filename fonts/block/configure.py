@@ -120,3 +120,4 @@ if __name__ == '__main__':
         p.OUTPUT_DIR,
         p.ASSETS_OUTPUT_DIR,
         pre_configure=conf_blocks)
+

@@ -4,7 +4,7 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Wed Dec 21 22:03:37 2022"
+UComments: "Last configured on Tue Apr 18 10:13:09 2023"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
 Version: 0.1
 DefaultBaseFilename: compacity-block
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1671656617
+ModificationTime: 1681805589
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -103,7 +103,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 99 89
+BeginChars: 103 93
 
 StartChar: A
 Encoding: 18 65 0
@@ -1155,13 +1155,16 @@ EndChar
 
 StartChar: glyph79
 Encoding: 3 39 70
-Width: 0
+Width: 384
 VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
+Fore
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
-Colour: b3b3b3
+Colour: ffffffff
 EndChar
 
 StartChar: semicolon
@@ -1431,6 +1434,62 @@ Flags: HW
 LayerCount: 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: b3b3b3
+EndChar
+
+StartChar: glyph89
+Encoding: 99 8220 89
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph90
+Encoding: 100 8221 90
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph91
+Encoding: 101 8216 91
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph92
+Encoding: 102 8217 92
+Width: 384
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
 EndChar
 EndChars
 EndSplineFont

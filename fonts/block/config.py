@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # compacity-fonts
 #
-# Copyright 2022 Aleksandar Radivojevic
+# Copyright 2022-2023 Aleksandar Radivojevic
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ def special(font):
     """Configures special characters, that have varying width and function"""
     ## ZERO WIDTH ##
     # TODO: add almost all symbols here until they are recreated to fit
-    for i in list(r';-`—\'?@~'):
+    for i in list(r';-`—?@~'):
         new_glyph(font, i, width=0, color=0xb3b3b3)
 
     ## OTHER ##
@@ -108,8 +108,10 @@ def special(font):
     new_glyph(font, '.', refs=b('         #', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*5)
 
     new_glyph(font, ',', refs=b('        ##', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
-    new_glyph(font, '"', refs=b('##        ', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
     new_glyph(font, '!', refs=b('### ## # #', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
+    # make all quotes the same
+    for i in '“”"‘’\'':
+        new_glyph(font, i, refs=b('##        ', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
 
     new_glyph(font, '(', refs=b('### ## ###', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
     new_glyph(font, ')', refs=b('### ## ###', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
