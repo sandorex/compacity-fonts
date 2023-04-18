@@ -4,9 +4,9 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Tue Apr 18 11:37:45 2023"
+UComments: "Last configured on Wed Apr 19 01:20:12 2023"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
-Version: 0.1
+Version: 0.2
 DefaultBaseFilename: compacity-block
 ItalicAngle: 0
 UnderlinePosition: -102
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1681810665
+ModificationTime: 1681860012
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -93,8 +93,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -106,9 +106,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -120,9 +120,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -134,9 +134,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -148,8 +148,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -161,10 +161,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -176,8 +176,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -189,10 +189,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -204,9 +204,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -218,11 +218,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -234,9 +234,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -248,11 +248,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -264,11 +264,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -280,10 +280,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -295,8 +295,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -308,9 +308,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -322,12 +322,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -339,8 +339,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -352,9 +352,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -366,10 +366,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -381,11 +381,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -397,11 +397,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -413,12 +413,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -430,12 +430,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -447,12 +447,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -464,12 +464,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -481,8 +481,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -494,9 +494,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -508,9 +508,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -522,9 +522,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -536,8 +536,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -549,10 +549,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -564,8 +564,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -577,10 +577,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -592,9 +592,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -606,11 +606,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -622,9 +622,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -636,11 +636,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -652,11 +652,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -668,10 +668,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -683,8 +683,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -696,9 +696,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -710,12 +710,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -727,8 +727,8 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -740,9 +740,9 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -754,10 +754,10 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -769,11 +769,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -785,11 +785,11 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -801,12 +801,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -818,12 +818,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -835,12 +835,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 77 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 77 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -852,12 +852,12 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 0 0 2
-Refer: 83 -1 N 1 0 0 1 0 0 2
-Refer: 82 -1 N 1 0 0 1 0 0 2
-Refer: 78 -1 N 1 0 0 1 0 0 2
-Refer: 76 -1 N 1 0 0 1 0 0 2
-Refer: 80 -1 N 1 0 0 1 0 0 2
+Refer: 84 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 83 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 82 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 78 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 76 -1 N 1.03125 0 0 1.03125 4 0 2
+Refer: 80 -1 N 1.03125 0 0 1.03125 4 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar

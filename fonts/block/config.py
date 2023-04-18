@@ -27,37 +27,44 @@ from buildsystem.builder import new_glyph
 from configure import to_block as b
 from project import CHAR_WIDTH
 
-import psMat
+import psMat, math
 import configure as c
+
+# this is a magic number but i do not want to spend too much time on this until
+# i rework whole build system
+#
+# it makes the characters overlap a bit so it renders better, this may work
+# even better if done in the actual template of blocks
+CH_VECTOR = psMat.compose(psMat.scale(1.03125), psMat.translate(4))
 
 def letters(font):
     LETTERS = {
-        "a": b(r'  # ||    '),
-        "b": b(r'  # || #  '),
-        "c": b(r'    || ## '),
-        "d": b(r' ## ||    '),
-        "e": b(r' #  ||    '),
-        "f": b(r'### ||    '),
-        "g": b(r'    || #  '),
-        "h": b(r' ## || #  '),
-        "i": b(r'# # ||    '),
-        "j": b(r'# # || ## '),
-        "k": b(r' #  ||  # '),
-        "l": b(r' ## || ## '),
-        "m": b(r'  # || ###'),
-        "n": b(r'  # || # #'),
-        "o": b(r'#   ||    '),
-        "p": b(r'##  ||    '),
-        "q": b(r' ## || ###'),
-        "r": b(r'    ||  # '),
-        "s": b(r'    ||  ##'),
-        "t": b(r'    || ###'),
-        "u": b(r'##  ||  ##'),
-        "v": b(r'##  || ## '),
-        "w": b(r'##  || ###'),
-        "x": b(r'### || ## '),
-        "y": b(r' ## || ###'),
-        "z": b(r'# # || ###'),
+        "a": b(r'  # ||    ', CH_VECTOR),
+        "b": b(r'  # || #  ', CH_VECTOR),
+        "c": b(r'    || ## ', CH_VECTOR),
+        "d": b(r' ## ||    ', CH_VECTOR),
+        "e": b(r' #  ||    ', CH_VECTOR),
+        "f": b(r'### ||    ', CH_VECTOR),
+        "g": b(r'    || #  ', CH_VECTOR),
+        "h": b(r' ## || #  ', CH_VECTOR),
+        "i": b(r'# # ||    ', CH_VECTOR),
+        "j": b(r'# # || ## ', CH_VECTOR),
+        "k": b(r' #  ||  # ', CH_VECTOR),
+        "l": b(r' ## || ## ', CH_VECTOR),
+        "m": b(r'  # || ###', CH_VECTOR),
+        "n": b(r'  # || # #', CH_VECTOR),
+        "o": b(r'#   ||    ', CH_VECTOR),
+        "p": b(r'##  ||    ', CH_VECTOR),
+        "q": b(r' ## || ###', CH_VECTOR),
+        "r": b(r'    ||  # ', CH_VECTOR),
+        "s": b(r'    ||  ##', CH_VECTOR),
+        "t": b(r'    || ###', CH_VECTOR),
+        "u": b(r'##  ||  ##', CH_VECTOR),
+        "v": b(r'##  || ## ', CH_VECTOR),
+        "w": b(r'##  || ###', CH_VECTOR),
+        "x": b(r'### || ## ', CH_VECTOR),
+        "y": b(r' ## || ###', CH_VECTOR),
+        "z": b(r'# # || ###', CH_VECTOR),
     }
 
     # clone layout for uppercase letters
@@ -88,6 +95,9 @@ def numbers(font):
                 blocks.append(blocklist[j])
 
         NUMBERS[str(i)] = blocks
+
+    # TODO this should also use CH_VECTOR but it requires too much code and im
+    # lazy as im gonna rework it anyways
 
     # add the glyphs
     for k, v in NUMBERS.items():
