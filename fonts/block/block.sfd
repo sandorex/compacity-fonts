@@ -4,7 +4,7 @@ FullName: Compacity Block
 FamilyName: Compacity Block
 Weight: Regular
 Copyright: Copyright 2022 Aleksandar Radivojevic
-UComments: "Last configured on Tue Apr 18 10:13:09 2023"
+UComments: "Last configured on Tue Apr 18 11:37:45 2023"
 FontLog: "Compact font made to save space and for fun.. mostly fun"
 Version: 0.1
 DefaultBaseFilename: compacity-block
@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1641441649
-ModificationTime: 1681805589
+ModificationTime: 1681810665
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -43,8 +43,6 @@ HheadAOffset: 1
 HheadDescent: 0
 HheadDOffset: 1
 OS2Vendor: 'PfEd'
-Lookup: 1 0 0 "to-blockspace" { "to-blockspace-1"  } []
-Lookup: 6 0 0 "contextual-lookup-space-to-blockspace" { "contextual-lookup-space-to-blockspace-1"  } ['calt' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
 Lookup: 1 0 0 "to-bit" { "to-bit-1"  } []
 Lookup: 6 0 0 "contextual-lookup-to-raw-bit" { "contextual-lookup-to-raw-bit-1"  } ['calt' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
@@ -75,23 +73,6 @@ ChainSub2: class "contextual-lookup-to-raw-bit-1" 4 4 4 2
   BClassNames: "All_Others" "numbers" "prefix" "space"
   FClassNames: "All_Others" "numbers" "prefix" "space"
 EndFPST
-ChainSub2: class "contextual-lookup-space-to-blockspace-1" 3 3 3 1
-  Class: 103 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
-  Class: 5 space
-  BClass: 103 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
-  BClass: 5 space
-  FClass: 103 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
-  FClass: 5 space
- 1 1 1
-  ClsList: 2
-  BClsList: 1
-  FClsList: 1
- 1
-  SeqLookup: 0 "to-blockspace"
-  ClassNames: "All_Others" "letters" "space"
-  BClassNames: "All_Others" "letters" "space"
-  FClassNames: "All_Others" "letters" "space"
-EndFPST
 LangName: 1033 "" "" "" "" "" "" "" "" "" "" "" "" "" "Copyright (c) 2022, Aleksandar Radivojevic,+AAoA-with Reserved Font Name Compacity Block.+AAoACgAA-This Font Software is licensed under the SIL Open Font License, Version 1.1.+AAoA-This license is copied below, and is also available with a FAQ at:+AAoA-http://scripts.sil.org/OFL+AAoACgAK------------------------------------------------------------+AAoA-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007+AAoA------------------------------------------------------------+AAoACgAA-PREAMBLE+AAoA-The goals of the Open Font License (OFL) are to stimulate worldwide+AAoA-development of collaborative font projects, to support the font creation+AAoA-efforts of academic and linguistic communities, and to provide a free and+AAoA-open framework in which fonts may be shared and improved in partnership+AAoA-with others.+AAoACgAA-The OFL allows the licensed fonts to be used, studied, modified and+AAoA-redistributed freely as long as they are not sold by themselves. The+AAoA-fonts, including any derivative works, can be bundled, embedded, +AAoA-redistributed and/or sold with any software provided that any reserved+AAoA-names are not used by derivative works. The fonts and derivatives,+AAoA-however, cannot be released under any other type of license. The+AAoA-requirement for fonts to remain under this license does not apply+AAoA-to any document created using the fonts or their derivatives.+AAoACgAA-DEFINITIONS+AAoAIgAA-Font Software+ACIA refers to the set of files released by the Copyright+AAoA-Holder(s) under this license and clearly marked as such. This may+AAoA-include source files, build scripts and documentation.+AAoACgAi-Reserved Font Name+ACIA refers to any names specified as such after the+AAoA-copyright statement(s).+AAoACgAi-Original Version+ACIA refers to the collection of Font Software components as+AAoA-distributed by the Copyright Holder(s).+AAoACgAi-Modified Version+ACIA refers to any derivative made by adding to, deleting,+AAoA-or substituting -- in part or in whole -- any of the components of the+AAoA-Original Version, by changing formats or by porting the Font Software to a+AAoA-new environment.+AAoACgAi-Author+ACIA refers to any designer, engineer, programmer, technical+AAoA-writer or other person who contributed to the Font Software.+AAoACgAA-PERMISSION & CONDITIONS+AAoA-Permission is hereby granted, free of charge, to any person obtaining+AAoA-a copy of the Font Software, to use, study, copy, merge, embed, modify,+AAoA-redistribute, and sell modified and unmodified copies of the Font+AAoA-Software, subject to the following conditions:+AAoACgAA-1) Neither the Font Software nor any of its individual components,+AAoA-in Original or Modified Versions, may be sold by itself.+AAoACgAA-2) Original or Modified Versions of the Font Software may be bundled,+AAoA-redistributed and/or sold with any software, provided that each copy+AAoA-contains the above copyright notice and this license. These can be+AAoA-included either as stand-alone text files, human-readable headers or+AAoA-in the appropriate machine-readable metadata fields within text or+AAoA-binary files as long as those fields can be easily viewed by the user.+AAoACgAA-3) No Modified Version of the Font Software may use the Reserved Font+AAoA-Name(s) unless explicit written permission is granted by the corresponding+AAoA-Copyright Holder. This restriction only applies to the primary font name as+AAoA-presented to the users.+AAoACgAA-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font+AAoA-Software shall not be used to promote, endorse or advertise any+AAoA-Modified Version, except to acknowledge the contribution(s) of the+AAoA-Copyright Holder(s) and the Author(s) or with their explicit written+AAoA-permission.+AAoACgAA-5) The Font Software, modified or unmodified, in part or in whole,+AAoA-must be distributed entirely under this license, and must not be+AAoA-distributed under any other license. The requirement for fonts to+AAoA-remain under this license does not apply to any document created+AAoA-using the Font Software.+AAoACgAA-TERMINATION+AAoA-This license becomes null and void if any of the above conditions are+AAoA-not met.+AAoACgAA-DISCLAIMER+AAoA-THE FONT SOFTWARE IS PROVIDED +ACIA-AS IS+ACIA, WITHOUT WARRANTY OF ANY KIND,+AAoA-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF+AAoA-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT+AAoA-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE+AAoA-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,+AAoA-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL+AAoA-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING+AAoA-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM+AAoA-OTHER DEALINGS IN THE FONT SOFTWARE." "http://scripts.sil.org/OFL"
 Encoding: Custom
 Compacted: 1
@@ -103,7 +84,7 @@ FitToEm: 0
 BeginPrivate: 0
 EndPrivate
 TeXData: 1 0 0 262144 131072 87381 838656 1048576 87381 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 103 93
+BeginChars: 121 111
 
 StartChar: A
 Encoding: 18 65 0
@@ -888,7 +869,6 @@ UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Substitution2: "to-bit-1" one-width-space
-Substitution2: "to-blockspace-1" blockspace
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -1117,11 +1097,12 @@ EndChar
 
 StartChar: glyph77
 Encoding: 4 40 68
-Width: 384
+Width: 512
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
+Refer: 76 -1 N 1 0 0 1 256 0 2
 Refer: 84 -1 N 1 0 0 1 128 0 2
 Refer: 83 -1 N 1 0 0 1 128 0 2
 Refer: 82 -1 N 1 0 0 1 128 0 2
@@ -1136,19 +1117,20 @@ EndChar
 
 StartChar: glyph78
 Encoding: 5 41 69
-Width: 384
+Width: 512
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 84 -1 N 1 0 0 1 128 0 2
-Refer: 83 -1 N 1 0 0 1 128 0 2
-Refer: 82 -1 N 1 0 0 1 128 0 2
-Refer: 78 -1 N 1 0 0 1 128 0 2
-Refer: 77 -1 N 1 0 0 1 128 0 2
 Refer: 76 -1 N 1 0 0 1 128 0 2
-Refer: 81 -1 N 1 0 0 1 128 0 2
-Refer: 79 -1 N 1 0 0 1 128 0 2
+Refer: 84 -1 N 1 0 0 1 256 0 2
+Refer: 83 -1 N 1 0 0 1 256 0 2
+Refer: 82 -1 N 1 0 0 1 256 0 2
+Refer: 78 -1 N 1 0 0 1 256 0 2
+Refer: 77 -1 N 1 0 0 1 256 0 2
+Refer: 76 -1 N 1 0 0 1 256 0 2
+Refer: 81 -1 N 1 0 0 1 256 0 2
+Refer: 79 -1 N 1 0 0 1 256 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
 EndChar
@@ -1156,7 +1138,6 @@ EndChar
 StartChar: glyph79
 Encoding: 3 39 70
 Width: 384
-VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -1405,13 +1386,20 @@ EndChar
 
 StartChar: glyph86
 Encoding: 96 63 86
-Width: 0
-VWidth: 0
+Width: 384
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
+Fore
+Refer: 84 -1 N 1 0 0 1 128 0 2
+Refer: 83 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
+Refer: 78 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
-Colour: b3b3b3
+Colour: ffffffff
 EndChar
 
 StartChar: glyph87
@@ -1439,7 +1427,6 @@ EndChar
 StartChar: glyph89
 Encoding: 99 8220 89
 Width: 384
-VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -1453,7 +1440,6 @@ EndChar
 StartChar: glyph90
 Encoding: 100 8221 90
 Width: 384
-VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -1467,7 +1453,6 @@ EndChar
 StartChar: glyph91
 Encoding: 101 8216 91
 Width: 384
-VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -1481,7 +1466,6 @@ EndChar
 StartChar: glyph92
 Encoding: 102 8217 92
 Width: 384
-VWidth: 0
 UnlinkRmOvrlpSave: 1
 Flags: HW
 LayerCount: 2
@@ -1490,6 +1474,240 @@ Refer: 77 -1 N 1 0 0 1 128 0 2
 Refer: 76 -1 N 1 0 0 1 128 0 2
 Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
 Colour: ffffffff
+EndChar
+
+StartChar: glyph93
+Encoding: 103 123 93
+Width: 512
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 76 -1 N 1 0 0 1 256 0 2
+Refer: 84 -1 N 1 0 0 1 128 0 2
+Refer: 83 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
+Refer: 78 -1 N 1 0 0 1 128 0 2
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph94
+Encoding: 104 91 94
+Width: 512
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 76 -1 N 1 0 0 1 256 0 2
+Refer: 84 -1 N 1 0 0 1 128 0 2
+Refer: 83 -1 N 1 0 0 1 128 0 2
+Refer: 82 -1 N 1 0 0 1 128 0 2
+Refer: 78 -1 N 1 0 0 1 128 0 2
+Refer: 77 -1 N 1 0 0 1 128 0 2
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 81 -1 N 1 0 0 1 128 0 2
+Refer: 79 -1 N 1 0 0 1 128 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph95
+Encoding: 105 93 95
+Width: 512
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 84 -1 N 1 0 0 1 256 0 2
+Refer: 83 -1 N 1 0 0 1 256 0 2
+Refer: 82 -1 N 1 0 0 1 256 0 2
+Refer: 78 -1 N 1 0 0 1 256 0 2
+Refer: 77 -1 N 1 0 0 1 256 0 2
+Refer: 76 -1 N 1 0 0 1 256 0 2
+Refer: 81 -1 N 1 0 0 1 256 0 2
+Refer: 79 -1 N 1 0 0 1 256 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph96
+Encoding: 106 125 96
+Width: 512
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 76 -1 N 1 0 0 1 128 0 2
+Refer: 84 -1 N 1 0 0 1 256 0 2
+Refer: 83 -1 N 1 0 0 1 256 0 2
+Refer: 82 -1 N 1 0 0 1 256 0 2
+Refer: 78 -1 N 1 0 0 1 256 0 2
+Refer: 77 -1 N 1 0 0 1 256 0 2
+Refer: 76 -1 N 1 0 0 1 256 0 2
+Refer: 81 -1 N 1 0 0 1 256 0 2
+Refer: 79 -1 N 1 0 0 1 256 0 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: ffffffff
+EndChar
+
+StartChar: glyph97
+Encoding: 107 58 97
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph98
+Encoding: 108 35 98
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph99
+Encoding: 109 36 99
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph100
+Encoding: 110 37 100
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph101
+Encoding: 111 94 101
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph102
+Encoding: 112 38 102
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph103
+Encoding: 113 42 103
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph104
+Encoding: 114 47 104
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph105
+Encoding: 115 124 105
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph106
+Encoding: 116 95 106
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph107
+Encoding: 117 61 107
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph108
+Encoding: 118 43 108
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph109
+Encoding: 119 60 109
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
+EndChar
+
+StartChar: glyph110
+Encoding: 120 62 110
+Width: 0
+VWidth: 0
+UnlinkRmOvrlpSave: 1
+Flags: HW
+LayerCount: 2
+Comment: "AUTO CONFIGURED GLYPH+AAoA-DO NOT EDIT"
+Colour: b3b3b3
 EndChar
 EndChars
 EndSplineFont
