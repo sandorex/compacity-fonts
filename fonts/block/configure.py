@@ -24,8 +24,7 @@ if __name__ == '__main__':
     # setup basic logger
     logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
 
-    def main():
-        font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-        logging.info(f'Configuring font {font.name} {font.version}')
-        config.gen(font)
-        font.save()
+    font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+    logging.info(f'Configuring font {font.name} {font.version}')
+    config.gen(font)
+    font.save()
