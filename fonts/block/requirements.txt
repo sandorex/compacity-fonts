@@ -1,3 +1,0 @@
-# do note that this is only required for generating the svgs
-drawsvg~=2.0
-

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/site.webmanifest">
+    <title>Compacity Block Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+        @font-face {
+            font-family: 'Compacity Block';
+            src: url(../fonts/compacity-block.ttf) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .block, .block-preview {
+            font-family: 'Compacity Block';
+            font-weight: normal;
+            line-height: 1.3em;
+            text-rendering: geometricPrecision;
+        }
+
+        #wrapper {
+            margin: 15px;
+        }
+
+        .letters-table {
+            font-size: 1.8em;
+        }
+        .letters-table th {
+            padding-left: 0.2em;
+            padding-right: 0.2em;
+        }
+
+        .block-preview:hover, .block-preview:active, .block-preview:focus {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .story-container {
+            font-size: 1.4em;
+            line-height: 0.5em;
+        }
+
+        .color-hover:hover {
+            color:red;
+        }
+
+        @media (pointer: coarse), (hover: none) {
+            [title] {
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+            }
+
+            [title]:focus::after {
+                content: attr(title);
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 0.7em;
+                line-height: initial;
+                position: absolute;
+                top: 90%;
+                left: 10%;
+                color: white;
+                background-color: gray;
+                opacity: 1;
+                border: 1px solid;
+                width: fit-content;
+                padding: 3px;
+                z-index: 1;
+            }
+
+            /* disable selection on mobile cause it's not needed and annoying */
+            body {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h2 style="text-align: center;">Compacity Block Reference</h2>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10">
+                    As i am lazy and have no idea how to make a tutorial, this is just going to be a quick reference
+                    <br><br>
+
+                    <span class="block-preview">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                    <br><br>
+
+                    The parts making up any glyph in this font are
+                    <span class="block">`1` `2` `3` `0` `6` `7` `8` </span> and <span class="block">`4` `5` </span>
+                    two center ones for non-letter glyphs for total of 9 parts
+                    <br>
+                    The line <span class="block">`0` </span> is in every letter and space between letters
+                    <br><br>
+                    The following text is made up of 2 sentences, a comma and period are almost same with period being a longer break in text
+                    <br>
+                    <span class="block-preview">Lorem ipsum dolor sit amet, consectetur adipiscing. Nullam tincidunt consectetur odio.</span>
+                    <br><br>
+                    While you can always change the mapping of letters, these are default letters that i've chosen cause it kinda made sense to me
+                    <br>
+                    <b>Do note that uppercase and lowercase letters are the same in this font</b>
+                    <br><br>
+                    Numbers are written using all the parts except the line <span class="block-preview">`0` </span> as if they were binary bits with the first one being LSB, for example 13 (1011) would be <span class="block-preview">;;1;;2;;4;;;</span>
+                    <br>
+                    You could write up to 63 dec with just one glyph, another example <span class="block">`1`3`4`6` </span> is 45 but you would have to manually write it
+                    <br>
+                    <b>Do note that numbers above 9 currently have to be written manually, although i plan on a version where all numbers 0-63 will be atomagically written using one character, but it's complex to do without breaking any numbers above that</b>
+                    <br><br>
+                    I've added a way to manually write the characters
+                    <br>
+                    The "syntax" is <b>/`[0-8 ]/</b> (where 0 is the line) and <b>` </b> for a space of one character width, as these characters are zero-width and you can write the parts of a character manually
+                    <br>
+                    As an example, here is parts 1 and 3, <span class="block-preview">`1`3` </span>
+                    <br><br>
+                    There is a collection of short-ish stories below where you can hover over the text and will tell you what the word is, if you hover over the double colon on the left it will tell you the whole sentence
+                    <br><br>
+                </div>
+                <div class="col-2 letters-table">
+                    <table>
+                        <tr>
+                            <th>A</th><th><span class="block">A</span></th>
+                            <th>B</th><th><span class="block">B</span></th>
+                            <th>C</th><th><span class="block">C</span></th>
+                        </tr>
+                        <tr>
+                            <th>D</th><th><span class="block">D</span></th>
+                            <th>E</th><th><span class="block">E</span></th>
+                            <th>F</th><th><span class="block">F</span></th>
+                        </tr>
+                        <tr>
+                            <th>G</th><th><span class="block">G</span></th>
+                            <th>H</th><th><span class="block">H</span></th>
+                            <th>I</th><th><span class="block">I</span></th>
+                        </tr>
+                        <tr>
+                            <th>J</th><th><span class="block">J</span></th>
+                            <th>K</th><th><span class="block">K</span></th>
+                            <th>L</th><th><span class="block">L</span></th>
+                        </tr>
+                        <tr>
+                            <th>M</th><th><span class="block">M</span></th>
+                            <th>N</th><th><span class="block">N</span></th>
+                            <th>O</th><th><span class="block">O</span></th>
+                        </tr>
+                        <tr>
+                            <th>P</th><th><span class="block">P</span></th>
+                            <th>Q</th><th><span class="block">Q</span></th>
+                            <th>R</th><th><span class="block">R</span></th>
+                        </tr>
+                        <tr>
+                            <th>S</th><th><span class="block">S</span></th>
+                            <th>T</th><th><span class="block">T</span></th>
+                            <th>U</th><th><span class="block">U</span></th>
+                        </tr>
+                        <tr>
+                            <th>V</th><th><span class="block">V</span></th>
+                            <th>W</th><th><span class="block">W</span></th>
+                            <th>X</th><th><span class="block">X</span></th>
+                        </tr>
+                        <tr>
+                            <th>Y</th><th><span class="block">Y</span></th>
+                            <th>Z</th><th><span class="block">Z</span></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+                <details class="story" data-story-path="01-the-tale-of-peter-rabbit">
+                    <summary>Story 01 - <i>The Tale of Peter Rabbit</i> by <b>Beatrix Potter</b></summary>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        'use strict';
+
+        async function newStory(story) {
+            let response = await fetch('../stories/' + story + '.txt');
+
+            if (response.status != 200) {
+                console.log(new Error("getting file: '" + path
+                + "'\ncode: '" + response.status
+                + "'\nmsg: '" + response.statusText + "'"));
+
+                return null;
+            }
+
+            let rawText = await response.text();
+
+            let data = rawText.split(/\r?\n/); // split newlines
+            let url = data.shift();
+            let title = data.shift();
+            data.shift(); // expected newline
+
+            let div = document.createElement('div');
+            div.classList.add('story-container');
+
+            for (let line of data) {
+                let words = line.split(/[,. ]+/);
+
+                // add marker to reveal whole sentence
+                if (words.length > 1) {
+                    let wholeSentenceReveal = document.createElement('span');
+                    wholeSentenceReveal.textContent = ":";
+                    wholeSentenceReveal.classList.add('color-hover');
+                    wholeSentenceReveal.title = line;
+                    wholeSentenceReveal.setAttribute('tabindex', 0);
+
+                    div.appendChild(wholeSentenceReveal);
+                    div.innerHTML += '&nbsp&nbsp&nbsp';
+                }
+
+                for (let word of words) {
+                    let wordSpan = document.createElement('span');
+                    wordSpan.classList.add('block');
+                    wordSpan.classList.add('color-hover');
+                    wordSpan.textContent = word + ' ';
+                    wordSpan.title = word;
+                    wordSpan.setAttribute('tabindex', 0);
+
+                    div.appendChild(wordSpan);
+                }
+
+                div.appendChild(document.createElement('br'));
+            }
+
+            return {
+                title: title,
+                url: url,
+                div: div,
+            }
+        }
+
+        let stories = document.getElementsByClassName('story');
+        for (let story of stories) {
+            story.addEventListener('toggle', function(e) {
+                // do not populate twice
+                if (story.childElementCount > 1)
+                    return;
+
+                let storyData = newStory(story.dataset.storyPath);
+                storyData.then(data => {
+                    story.appendChild(data.div);
+
+                    let link = document.createElement('a');
+                    link.text = 'Respectifully stolen from here'
+                    link.href = data.url;
+                    story.appendChild(link);
+                });
+
+                story.removeEventListener('toggle', this);
+            })
+        }
+    </script>
+</body>
+</html>

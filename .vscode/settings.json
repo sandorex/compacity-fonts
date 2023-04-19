@@ -1,7 +1,0 @@
-{
-    "files.exclude": {
-        "docs/": true,
-        "buildsystem/": true,
-        "fonts/": true,
-    }
-}
