@@ -48,6 +48,8 @@ def block(x: str, translate=None):
         if bottom[i] != ' ':
             blocks.append(6 + i)
 
+    blocks = [ 'bblock.' + str(x) for x in blocks ]
+
     if translate is not None:
         return [ (x, psMat.translate(translate)) for x in blocks ]
     else:
@@ -93,8 +95,8 @@ def gen(font: font.Font):
     # NOTE: add extra letters here
 
     # uppercase letters are gonna be the same
-    for key in dict(LETTERS).keys():
-        LETTERS[key.upper()] = LETTERS[key]
+    for key, value in dict(LETTERS).items():
+        LETTERS[key.upper()] = value
 
     for k, v in LETTERS.items():
         font.glyph().char(k) \
@@ -215,3 +217,6 @@ def gen(font: font.Font):
                         + block('         #', (g.BLOCK_SIZE, 0))) \
                     .width(g.BLOCK_SIZE * 4) \
                     .color(symbol_color)
+
+    # i do not know if this helps
+    font.round()
