@@ -70,7 +70,7 @@ class GlyphBuilder:
         if not os.path.exists(path):
             raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
-        self.glyph.importOutlines(path)
+        self.glyph.importOutlines(str(path))
 
         return self
 

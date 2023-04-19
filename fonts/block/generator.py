@@ -18,10 +18,16 @@
 # generator.py: generator script for outlines for block font
 # requires drawsvg
 
-OUTPUT_DIR = 'out'
+import pathlib
+DIR = pathlib.Path(__file__).parent.resolve()
+
+OUTPUT_DIR = DIR / 'out'
 NAME_FORMAT = '{index}.svg'
 
+# name prefix for the block segments
+BBLOCK = 'bblock.{index}'
 BLOCK_COUNT = 8
+# TODO experiment with rectangle, wider blocks?
 BLOCK_SIZE = 128
 LINE_W = BLOCK_SIZE
 LINE_H = BLOCK_SIZE / 2
@@ -32,10 +38,16 @@ LINE_H = BLOCK_SIZE / 2
 OVERLAP = 2
 
 def generate():
+    # drawsvg is intentionally here cause everything else uses fontforge python
+    # and dependencies cannot be installed there
+    # this does not need to be called all the time anyways
     import drawsvg as dsvg
     import os
 
-    os.mkdir(OUTPUT_DIR)
+    print('Generating svgs')
+
+    # make the directories ignore existing
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     for i in range(BLOCK_COUNT):
         d = dsvg.Drawing(BLOCK_SIZE, BLOCK_SIZE * BLOCK_COUNT)
@@ -44,7 +56,7 @@ def generate():
 
     # generate the line
     d = dsvg.Drawing(BLOCK_SIZE, BLOCK_SIZE * BLOCK_COUNT)
-    d.append(dsvg.Rectangle(0, BLOCK_SIZE * 4, LINE_W + OVERLAP, LINE_H, fill='#000000'))
+    d.append(dsvg.Rectangle(0, (BLOCK_SIZE * 4) - LINE_H / 2, LINE_W + OVERLAP, LINE_H, fill='#000000'))
     d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=0)))
 
 if __name__ == '__main__':

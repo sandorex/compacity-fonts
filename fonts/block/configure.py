@@ -15,16 +15,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
+if __name__ == '__main__':
+    import logging
 
-from builder.font import Font
-from . import PROJECT_FILE, PROJECT_ROOT, ROOT
+    from builder.font import Font
+    from . import config, PROJECT_FILE, PROJECT_ROOT
 
-# setup basic logger
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
+    # setup basic logger
+    logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
 
-# TODO: add option to package font into zip for easier CI
-def main():
-    font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    logging.info(f'Exporting font {font.name} {font.version} as ttf')
-    font.export(ROOT / 'build')
+    def main():
+        font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+        logging.info(f'Configuring font {font.name} {font.version}')
+        config.gen(font)
+        font.save()
