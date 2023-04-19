@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # compacity-fonts
 #
-# Copyright 2022 Aleksandar Radivojevic
+# Copyright 2023 Aleksandar Radivojevic
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# 	 http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,129 +15,141 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# config.py: Dynamic configuration file for the font
+# config.py: dynamic configuration file for the font
 
-import sys
+import os
 
-if __name__ == '__main__':
-    print('Please run configure.py script instead')
-    sys.exit(1)
+from . import generator as g
+from builder import font
 
-from buildsystem.builder import new_glyph
-from configure import to_block as b
-from project import CHAR_WIDTH
+# TODO add translate to this function, maybe also scale...
+def block(x: str):
+    x = x.replace(' ', '')
 
-import psMat, math
-import configure as c
+    top = x[:3]
+    middle = x[3:5]
+    bottom = x[5:]
 
-# this is a magic number but i do not want to spend too much time on this until
-# i rework whole build system
-#
-# it makes the characters overlap a bit so it renders better, this may work
-# even better if done in the actual template of blocks
-CH_VECTOR = psMat.compose(psMat.scale(1.03125), psMat.translate(4))
+    blocks = []
 
-def letters(font):
-    LETTERS = {
-        "a": b(r'  # ||    ', CH_VECTOR),
-        "b": b(r'  # || #  ', CH_VECTOR),
-        "c": b(r'    || ## ', CH_VECTOR),
-        "d": b(r' ## ||    ', CH_VECTOR),
-        "e": b(r' #  ||    ', CH_VECTOR),
-        "f": b(r'### ||    ', CH_VECTOR),
-        "g": b(r'    || #  ', CH_VECTOR),
-        "h": b(r' ## || #  ', CH_VECTOR),
-        "i": b(r'# # ||    ', CH_VECTOR),
-        "j": b(r'# # || ## ', CH_VECTOR),
-        "k": b(r' #  ||  # ', CH_VECTOR),
-        "l": b(r' ## || ## ', CH_VECTOR),
-        "m": b(r'  # || ###', CH_VECTOR),
-        "n": b(r'  # || # #', CH_VECTOR),
-        "o": b(r'#   ||    ', CH_VECTOR),
-        "p": b(r'##  ||    ', CH_VECTOR),
-        "q": b(r' ## || ###', CH_VECTOR),
-        "r": b(r'    ||  # ', CH_VECTOR),
-        "s": b(r'    ||  ##', CH_VECTOR),
-        "t": b(r'    || ###', CH_VECTOR),
-        "u": b(r'##  ||  ##', CH_VECTOR),
-        "v": b(r'##  || ## ', CH_VECTOR),
-        "w": b(r'##  || ###', CH_VECTOR),
-        "x": b(r'### || ## ', CH_VECTOR),
-        "y": b(r' ## || ###', CH_VECTOR),
-        "z": b(r'# # || ###', CH_VECTOR),
-    }
+    for i in range(3):
+        if top[i] != ' ':
+            blocks.append(i)
 
-    # clone layout for uppercase letters
-    for k, v in dict(LETTERS).items():
-        LETTERS[k.upper()] = v
+    if middle == '||':
+        blocks.append(0)
+    else:
+        for i in range(2):
+            if middle[i] != ' ':
+                blocks.append(3 + i)
 
-    # add the glyphs
+    for i in range(3):
+        if bottom[i] != ' ':
+            blocks.append(i)
+
+    # TODO g.OUTPUT_DIR may need to be set to absolute path
+    return [ os.path.join(g.OUTPUT_DIR, g.NAME_FORMAT.format(index=i)) for i in blocks ]
+
+def gen(font: font.Font):
+    ## LETTERS ##
+    LETTERS = {}
+
+    LETTERS['a'] = '  # ||    '
+    LETTERS['b'] = '  # || #  '
+    LETTERS['c'] = '    || ## '
+    LETTERS['d'] = ' ## ||    '
+    LETTERS['e'] = ' #  ||    '
+    LETTERS['f'] = '### ||    '
+    LETTERS['g'] = '    || #  '
+    LETTERS['h'] = ' ## || #  '
+    LETTERS['i'] = '# # ||    '
+    LETTERS['j'] = '# # || ## '
+    LETTERS['k'] = ' #  ||  # '
+    LETTERS['l'] = ' ## || ## '
+    LETTERS['m'] = '  # || ###'
+    LETTERS['n'] = '  # || # #'
+    LETTERS['o'] = '#   ||    '
+    LETTERS['p'] = '##  ||    '
+    LETTERS['q'] = ' ## || ###'
+    LETTERS['r'] = '    ||  # '
+    LETTERS['s'] = '    ||  ##'
+    LETTERS['t'] = '    || ###'
+    LETTERS['u'] = '##  ||  ##'
+    LETTERS['v'] = '##  || ## '
+    LETTERS['w'] = '##  || ###'
+    LETTERS['x'] = '### || ## '
+    LETTERS['y'] = ' ## || ###'
+    LETTERS['z'] = '# # || ###'
+
+    # NOTE: add extra letters here
+
+    # uppercase letters are gonna be the same
+    for key in dict(LETTERS).keys:
+        LETTERS[key.upper()] = LETTERS[key]
+
     for k, v in LETTERS.items():
-        new_glyph(font, k, width=CHAR_WIDTH, refs=v)
+        font.glyph().char(k) \
+                    .clear() \
+                    .width(g.BLOCK_SIZE) \
+                    .refs(block(v)) \
+                    .color(0xd97dfa) \
+                    .set_unlink_overlap_on_save()
 
-def numbers(font):
+    ## NUMBERS ##
     NUMBERS = {}
 
-    blocklist = [
-        c.B_U2,
-        c.B_U3,
-        c.B_C1,
-        c.B_C2,
-        c.B_D1,
-        c.B_D2,
-    ]
+    NUMBERS['0'] = '#        #'
+    NUMBERS['1'] = '#       ##'
+    NUMBERS['2'] = '#       # '
+    NUMBERS['3'] = '#       ##'
+    NUMBERS['4'] = '#      #  '
+    NUMBERS['5'] = '#      # #'
+    NUMBERS['6'] = '#      ## '
+    NUMBERS['7'] = '#      ###'
+    NUMBERS['8'] = '#     #   '
+    NUMBERS['9'] = '#     #  #'
 
-    # generates 0 to 9 glyphs as if the blocks defined above were binary digits
-    for i, b in enumerate(map(lambda x: format(x, 'b').zfill(6), range(10))):
-        blocks = [ c.B_U1, c.B_D3 ]
-        for j, ch in enumerate(reversed(b)):
-            if ch == '1':
-                blocks.append(blocklist[j])
+    for k, v in LETTERS.items():
+        font.glyph().char(k) \
+                    .clear() \
+                    .width(g.BLOCK_SIZE) \
+                    .refs(block(v)) \
+                    .color(0x87dbfa) \
+                    .set_unlink_overlap_on_save()
 
-        NUMBERS[str(i)] = blocks
+    # these characters wont be rendered at all
+    # TODO maybe add one small character that can indicate that there are useless
+    # characters there
+    ZERO_WIDTH = r';:-`—@#$%^&*~/\\|_=+~`<>'
 
-    # TODO this should also use CH_VECTOR but it requires too much code and im
-    # lazy as im gonna rework it anyways
+    for k in ZERO_WIDTH:
+        font.glyph().char(k) \
+                    .clear() \
+                    .width(0) \
+                    .color(0x3b0f1e)
 
-    # add the glyphs
-    for k, v in NUMBERS.items():
-        new_glyph(font, k, width=CHAR_WIDTH, refs=v)
+    ## SYMBOLS ##
+    symbol_color = 0xdede59
 
-def special(font):
-    """Configures special characters, that have varying width and function"""
-    ## ZERO WIDTH ##
-    # TODO: add almost all symbols here until they are recreated to fit
-    for i in list(r';:-`—@#$%^&*~/\\|_=+~`<>'):
-        new_glyph(font, i, width=0, color=0xb3b3b3)
+    font.glyph().name('one-width-space') \
+                .clear() \
+                .width(g.BLOCK_SIZE) \
+                .color(symbol_color)
 
-    ## OTHER ##
-    space_width = CHAR_WIDTH * 2
+    font.glyph().char(' ') \
+                .clear() \
+                .width(g.BLOCK_SIZE * 2) \
+                .color(symbol_color)
 
-    new_glyph(font, None, name='one-width-space', width=CHAR_WIDTH)
-    new_glyph(font, ' ', width=space_width)
-    new_glyph(font, '.', refs=b('         #', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*5)
+    font.glyph().char('.') \
+                .clear() \
+                .refs(block('         #')) \
+                .width(g.BLOCK_SIZE * 5) \
+                .color(symbol_color)
 
-    new_glyph(font, ',', refs=b('        ##', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
-    new_glyph(font, '!', refs=b('### ## # #', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
-    new_glyph(font, '?', refs=b('# # ## ###', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
-
-    # make all quotes the same
-    for i in '“”"‘’\'':
-        new_glyph(font, i, refs=b('##        ', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*3)
-
-    for i in '({[':
-        new_glyph(font, i, refs=b('### ## ###', psMat.translate(CHAR_WIDTH, 0))
-                            +   b('#         ', psMat.translate(CHAR_WIDTH * 2, 0)), width=CHAR_WIDTH*4)
-
-    for i in ')]}':
-        new_glyph(font, i, refs=b('### ## ###', psMat.translate(CHAR_WIDTH*2, 0))
-                            +   b('#         ', psMat.translate(CHAR_WIDTH, 0)), width=CHAR_WIDTH*4)
-
-    new_glyph(font, None, refs=b('    ||    ', psMat.scale(2, 1)), name='blockspace', width=space_width)
-
-def configure(font):
-    """The function ran by configure script"""
-    letters(font)
-    numbers(font)
-    special(font)
+    font.glyph().char(',') \
+                .clear() \
+                .refs(block('        ##')) \
+                .width(g.BLOCK_SIZE * 3) \
+                .color(symbol_color)
 

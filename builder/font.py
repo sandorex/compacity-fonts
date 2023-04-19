@@ -19,8 +19,93 @@
 
 import fontforge
 import os
+import errno
 
-from typing import Union, Any
+from typing import Any, Tuple, List
+
+class GlyphBuilder:
+    def __init__(self, font):
+        self.glyph = None
+
+    def _defaults(self):
+        '''Sets defaults for glyph'''
+        self.glyph.color = -1
+        self.glyph.changed = True
+
+    def char(self, ch):
+        if self.glyph is None:
+            if isinstance(ch, int):
+                self.glyph = self.font.createChar(ch)
+            elif isinstance(ch, str):
+                # convert first char to int
+                self.glyph = self.font.createChar(ord(ch[0]))
+
+            self._defaults()
+
+        return self
+
+    def name(self, name):
+        if self.glyph is None:
+            self.glyph = self.font.createChar(-1, name)
+
+            self._defaults()
+        else:
+            self.glyph.name = name
+
+        return self
+
+    def clear(self):
+        self.glyph.clear()
+
+        return self
+
+    def width(self, width: int):
+        self.glyph.width = width
+
+        return self
+
+    def outline(self, path):
+        if not os.path.exists(path):
+            raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+
+        self.glyph.importOutlines(path)
+
+        return self
+
+    def ref(self, ref: Any, transformation: Any = None):
+        if transformation is not None:
+            self.glyph.addReference(ref, transformation)
+        else:
+            self.glyph.addReference(ref)
+
+        return self
+
+    def refs(self, ref: List[Tuple[Any, Any]]):
+        for ref, transformation in ref:
+            self.ref(ref, transformation)
+
+        return self
+
+    def color(self, color: int):
+        self.glyph.color = color
+
+        return self
+
+    def comment(self, comment: str):
+        self.glyph.comment = comment
+
+        return self
+
+    def set_unlink_overlap_on_save(self):
+        self.glyph.unlinkRmOvrlpSave = True
+
+        return self
+
+    def do(self, fn):
+        '''Do something with glyph itself'''
+        fn(self.glyph)
+
+        return self
 
 class Font:
     """Wrapper around fontforge Font object"""
@@ -39,22 +124,7 @@ class Font:
         # make sure the path exists
         os.makedirs(output_dir, exist_ok=True)
 
-        font.generate(os.path.join(output_dir, font.default_base_filename + '.' + format_))
+        self.font.generate(os.path.join(output_dir, self.font.default_base_filename + '.' + format_))
 
-    def new_glyph(self, x: Union[int, str]) -> Any:
-        if isinstance(x, int):
-            glyph = self.font.createChar(x)
-        elif isinstance(x, str):
-            if len(x) > 1:
-                glyph = self.font.createChar(-1, x)
-            else:
-                # convert first char to int
-                glyph = self.font.createChar(ord(x[0]))
-        else:
-            raise RuntimeError('Invalid arguments')
-
-        glyph.changed = True
-
-        return glyph
-
-
+    def glyph(self) -> GlyphBuilder:
+        return GlyphBuilder(self)
