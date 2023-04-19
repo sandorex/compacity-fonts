@@ -20,11 +20,13 @@
 import fontforge
 import os
 import errno
+import time
 
-from typing import Any, Tuple, List
+from typing import Any, Tuple, List, Union
 
 class GlyphBuilder:
     def __init__(self, font):
+        self.font = font.font
         self.glyph = None
 
     def _defaults(self):
@@ -80,9 +82,12 @@ class GlyphBuilder:
 
         return self
 
-    def refs(self, ref: List[Tuple[Any, Any]]):
-        for ref, transformation in ref:
-            self.ref(ref, transformation)
+    def refs(self, ref: List[Union[Any, Tuple[Any, Any]]]):
+        for i in ref:
+            if isinstance(i, tuple):
+                self.ref(*i)
+            else:
+                self.ref(i)
 
         return self
 
@@ -103,7 +108,7 @@ class GlyphBuilder:
 
     def do(self, fn):
         '''Do something with glyph itself'''
-        fn(self.glyph)
+        fn(self)
 
         return self
 
@@ -115,7 +120,16 @@ class Font:
 
     @staticmethod
     def open(path) -> 'Font':
-        return fontforge.open(path)
+        # str allows using pathlib.Path
+        return Font(fontforge.open(str(path)))
+
+    @property
+    def name(self) -> str:
+        return self.font.fullname
+
+    @property
+    def version(self) -> str:
+        return self.font.version
 
     def export(self, output_dir, format_='ttf'):
         # allows pathlib.Path
@@ -126,5 +140,13 @@ class Font:
 
         self.font.generate(os.path.join(output_dir, self.font.default_base_filename + '.' + format_))
 
+    def save(self):
+        # TODO: only update the last one to allow static comment
+        self.font.comment = f'Last configured on {time.ctime()}'
+        self.font.save()
+
     def glyph(self) -> GlyphBuilder:
         return GlyphBuilder(self)
+
+    def round(self):
+        self.font.round()

@@ -15,6 +15,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# TODO: move versioning to python and update the project file
+import logging
 
-PROJECT_FILE = 'block.sfd'
+from builder.font import Font
+from . import config
+from . import PROJECT_FILE
+from . import ROOT
+
+# setup basic logger
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
+
+# TODO: add args parsing
+# TODO: add option to package font into zip for easier CI
+def main():
+    # TODO logging
+    font = Font.open(ROOT / PROJECT_FILE)
+    logging.info('Font ' + font.name + ' ' + font.version)
+
+    logging.info('Configuring')
+    config.gen(font)
+
+    font.save()
+
+    logging.info('Exporting ttf ')
+    font.export(ROOT / 'build')
