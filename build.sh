@@ -96,11 +96,11 @@ for font in $fonts; do
 
         if [ -n "$CI" ]; then
             for i in "$@"; do
-                7za a "compacity-$i.7z" "./build/compacity-$i.ttf"
+                7za a "compacity-$i.7z" ./build/compacity-"$i".*
             done
 
             if [[ "$#" -gt 1 ]]; then
-                7za a compacity-fonts.7z ./build/*.ttf
+                7za a compacity-fonts.7z ./build/*
             fi
         fi
     fi
