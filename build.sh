@@ -46,16 +46,23 @@ done
 # restore positional parameters
 set -- "${POSITIONAL_ARGS[@]}"
 
+# default to build
+if [ -z "$GENERATE$CONFIGURE" ]; then
+    BUILD=1
+fi
+
 # print help if no args, or if no command is supplied
 if [ -n "$HELP" ] || [ -z "$1" ] || [ -z "$GENERATE$CONFIGURE$BUILD" ]; then
     cat <<EOF
-Usage: $0 [--generate] [--configure] [--build] [-h/--help] <fonts...>
+Usage: $0 [<commands...>] [-h/--help] <fonts...>
 
-Arguments (one of these must be used):
+Commands (you can use multiple):
     --generate          Generates the assets used in the font, not needed
                         unless generator script is modified
-    --configure         Applies the changes to fontforge project
+    --configure         Applies the changes to fontforge project, not needed
+                        unless font or the assets are modified
     --build             Builds the font files, format depends on the font
+                        (default if no other command is passed)
 
 Optional arguments:
     --ci                Packages the fonts, used for the CI builds
@@ -67,10 +74,14 @@ fi
 
 fonts=$*
 
+# show fontforge version in log
+echo -n "INFO: "
+fontforge -quiet -version | head -n 1
+
 for font in $fonts; do
     if [ -n "$GENERATE" ]; then
         # this cannot be run with the fontforge python
-        python "$FONTS_DIR/$font/generator.py"
+        python3 "$FONTS_DIR/$font/generator.py"
     fi
 
     if [ -n "$CONFIGURE" ]; then
@@ -82,11 +93,16 @@ for font in $fonts; do
     if [ -n "$BUILD" ]; then
         # fonts should build by default when ran as package
         fontforge -quiet -script -m "$FONTS_DIR.$font"
-    fi
 
-    if [ -n "$CI" ]; then
-        echo "CI build is not yet implemented"
-        exit 1
+        if [ -n "$CI" ]; then
+            for i in "$@"; do
+                7za a "compacity-$i.7z" "./build/compacity-$i.ttf"
+            done
+
+            if [[ "$#" -gt 1 ]]; then
+                7za a compacity-fonts.7z ./build/*.ttf
+            fi
+        fi
     fi
 done
 
