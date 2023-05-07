@@ -127,18 +127,22 @@ class Font:
     def name(self) -> str:
         return self.font.fullname
 
+    @name.setter
+    def name(self, value) -> str:
+        self.font.fullname = value
+
     @property
     def version(self) -> str:
         return self.font.version
 
-    def export(self, output_dir, format_='ttf'):
+    def export(self, output_dir, suffix='', format_='ttf'):
         # allows pathlib.Path
         output_dir = str(output_dir)
 
         # make sure the path exists
         os.makedirs(output_dir, exist_ok=True)
 
-        self.font.generate(os.path.join(output_dir, self.font.default_base_filename + '.' + format_))
+        self.font.generate(os.path.join(output_dir, self.font.default_base_filename + suffix + '.' + format_))
 
     def save(self):
         # TODO: only update the last one to allow static comment

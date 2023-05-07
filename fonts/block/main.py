@@ -18,13 +18,20 @@
 import logging
 
 from builder.font import Font
-from . import PROJECT_FILE, PROJECT_ROOT, ROOT
+from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS
 
 # setup basic logger
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
 
-# TODO: add option to package font into zip for easier CI
 def main():
-    font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    logging.info(f'Exporting font {font.name} {font.version} as ttf')
-    font.export(ROOT / 'build')
+    for suffix, options in VARIANTS:
+        font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+        if suffix:
+            font.name += ' ' + suffix
+
+        logging.info(f"Configuring font '{font.name}' {font.version}")
+        config.gen(font, options)
+
+        logging.info(f"Exporting font '{font.name}' {font.version}")
+        for format_ in FORMATS:
+            font.export(BUILD_DIR, format_=format_, suffix=f'-{suffix.lower()}' if suffix else '')

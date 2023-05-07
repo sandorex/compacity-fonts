@@ -25,17 +25,18 @@ OUTPUT_DIR = DIR / 'out'
 NAME_FORMAT = '{index}.svg'
 
 # name prefix for the block segments
-BBLOCK = 'bblock.{index}'
+BBLOCK = 'bblock.'
 BLOCK_COUNT = 8
-# TODO experiment with rectangle, wider blocks?
-BLOCK_SIZE = 128
-LINE_W = BLOCK_SIZE
-LINE_H = BLOCK_SIZE / 2
+# TODO doubling block height generates cool things
+BLOCK_WIDTH = 128
+BLOCK_HEIGHT = 128
+LINE_W = BLOCK_WIDTH
+LINE_H = BLOCK_HEIGHT / 2
 
 # adds pixels to width and height so outlines overlap, renders better on most
 # devices and applications
 # should not cause blur on its own unlike psMat.scale()
-OVERLAP = 2
+OVERLAP = 1
 
 def generate():
     # drawsvg is intentionally here cause everything else uses fontforge python
@@ -44,19 +45,20 @@ def generate():
     import drawsvg as dsvg
     import os
 
+    # TODO do logging library here
     print('Generating svgs')
 
     # make the directories ignore existing
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     for i in range(BLOCK_COUNT):
-        d = dsvg.Drawing(BLOCK_SIZE, BLOCK_SIZE * BLOCK_COUNT)
-        d.append(dsvg.Rectangle(0, BLOCK_SIZE * i, BLOCK_SIZE + OVERLAP, BLOCK_SIZE + OVERLAP, fill='#000000'))
+        d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
+        d.append(dsvg.Rectangle(0, BLOCK_HEIGHT * i, BLOCK_WIDTH + OVERLAP, BLOCK_HEIGHT + OVERLAP, fill='#000000'))
         d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=i + 1)))
 
     # generate the line
-    d = dsvg.Drawing(BLOCK_SIZE, BLOCK_SIZE * BLOCK_COUNT)
-    d.append(dsvg.Rectangle(0, (BLOCK_SIZE * 4) - LINE_H / 2, LINE_W + OVERLAP, LINE_H, fill='#000000'))
+    d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
+    d.append(dsvg.Rectangle(0, (BLOCK_HEIGHT * 4) - LINE_H / 2, LINE_W + OVERLAP, LINE_H, fill='#000000'))
     d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=0)))
 
 if __name__ == '__main__':

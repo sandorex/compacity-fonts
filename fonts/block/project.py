@@ -15,6 +15,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from enum import Flag, auto
+
 # TODO: move versioning to python and update the project file
 
 PROJECT_FILE = 'block.sfd'
+FORMATS = [ 'ttf' ]
+
+class Options(Flag):
+    NONE = 0
+
+    # there is no line separating top and bottom half, improves rendering in
+    # many cases, unfortunate but needed fix when not used to render pdfs
+    NOLINE = auto()
+
+VARIANTS = [
+    # this is the default with no suffix
+    ('', Options.NONE),
+
+    # add variants here
+    ('NL', Options.NOLINE)
+]
