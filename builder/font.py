@@ -144,6 +144,14 @@ class Font:
 
         self.font.generate(os.path.join(output_dir, self.font.default_base_filename + suffix + '.' + format_))
 
+    @property
+    def default_base_filename(self) -> str:
+        return self.font.default_base_filename
+
+    @default_base_filename.setter
+    def default_base_filename(self, value):
+        self.font.default_base_filename = value
+
     def save(self):
         # TODO: only update the last one to allow static comment
         self.font.comment = f'Last configured on {time.ctime()}'

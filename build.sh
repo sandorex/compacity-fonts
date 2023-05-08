@@ -15,6 +15,10 @@ while [ $# -gt 0 ]; do
             GENERATE=1
             shift
             ;;
+        --all)
+            ALL=1
+            shift
+            ;;
         --ci)
             CI=1
             shift
@@ -35,15 +39,29 @@ while [ $# -gt 0 ]; do
     esac
 done
 
+# find all project automatically
+if [[ -n "$ALL" ]]; then
+    # clear previous ones as they are useless
+    POSITIONAL_ARGS=()
+
+    for i in "$FONTS_DIR"/*/; do
+        # filter only python packages
+        if [[ -f "$i/__init__.py" ]]; then
+            POSITIONAL_ARGS+=("$(basename "$i")")
+        fi
+    done
+fi
+
 # restore positional parameters
 set -- "${POSITIONAL_ARGS[@]}"
 
 # print help if no args, or if no command is supplied
 if [ -n "$HELP" ] || [ -z "$1" ]; then
     cat <<EOF
-Usage: $0 [--regenerate] [--ci] [-h/--help] <fonts...>
+Usage: $0 [--generate] [--ci] [-h/--help] [--all] <fonts...>
 
 Optional arguments:
+    --all               Builds all fonts, any positional argument is ignored
     --generate          Generates the assets used in the font, not needed
                         unless generator script is modified
     --ci                Packages the fonts, used for the CI builds
@@ -68,11 +86,12 @@ for font in "$@"; do
 
     if [ -n "$CI" ]; then
         for i in "$@"; do
-            7za a "compacity-$i.7z" ./build/compacity-"$i"*
+            7za a "compacity-$i.7z" ./build/compacity-"$i"* >/dev/null
         done
 
+        # a complete package with all fonts if there are more than one
         if [[ "$#" -gt 1 ]]; then
-            7za a compacity-fonts.7z ./build/*
+            7za a compacity-fonts.7z ./build/* >/dev/null
         fi
     fi
 done

@@ -30,12 +30,11 @@ def main():
         font = Font.open(PROJECT_ROOT / PROJECT_FILE)
         if suffix:
             font.name += ' ' + suffix
+            font.default_base_filename += '-' + suffix.lower().replace(' ', '-')
 
         config.gen(font, options)
 
         for format_ in FORMATS:
-            font.export(BUILD_DIR,
-                        format_=format_,
-                        suffix=('-' + suffix.lower().replace(' ', '-')) if suffix else '')
+            font.export(BUILD_DIR, format_=format_)
 
         font.close()

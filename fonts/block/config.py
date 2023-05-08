@@ -26,6 +26,7 @@ from builder import font
 # code is not parametric anymore and now there is 'BLOCK.{index}.0' defined
 # cause of a bug...
 
+# TODO: remove the translate and use gylph.translate instead
 # returns names of glyphs not file paths
 def block(x: str, translate=None):
     '''Transforms a string into list of base glyph names'''
@@ -176,7 +177,7 @@ def gen(font: font.Font, options):
     font.glyph().name('one-width-space') \
                 .clear() \
                 .do(defaults) \
-                .width(g.BLOCK_WIDTH) \
+                .width(CHR_WIDTH) \
                 .color(symbol_color)
 
     # TODO check if this is actually used anymore
@@ -184,13 +185,13 @@ def gen(font: font.Font, options):
                 .clear() \
                 .do(defaults) \
                 .refs(block('    ||    ')) \
-                .width(g.BLOCK_WIDTH) \
+                .width(CHR_WIDTH) \
                 .color(symbol_color)
 
     font.glyph().char(' ') \
                 .clear() \
                 .do(defaults) \
-                .width(g.BLOCK_WIDTH * 2) \
+                .width(CHR_WIDTH * 2) \
                 .color(symbol_color)
 
     font.glyph().char('.') \
@@ -247,5 +248,5 @@ def gen(font: font.Font, options):
                     .width(g.BLOCK_WIDTH * 4) \
                     .color(symbol_color)
 
-    # i do not know if this helps
-    font.round()
+    # TODO disable italics cause they make it unreadable
+    # font.italicangle = 0
