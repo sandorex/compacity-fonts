@@ -65,6 +65,14 @@ def defaults(glyph: font.GlyphBuilder):
 # TODO: add a way to add the blocks to an existing font
 def gen(font: font.Font, options):
     '''Modified the font'''
+    CHR_WIDTH = g.BLOCK_WIDTH
+
+    # separated variant make the characters not touch eachother, this should
+    # not be used for all characters as special characters are already way
+    # bigger than single block width (128)
+    if Options.SEPARATED in options:
+        CHR_WIDTH = CHR_WIDTH * 2
+
     for i in range(g.BLOCK_COUNT + 1):
         font.glyph().name(g.BBLOCK + str(i)) \
                     .clear() \
@@ -121,7 +129,7 @@ def gen(font: font.Font, options):
         font.glyph().char(k) \
                     .clear() \
                     .do(defaults) \
-                    .width(g.BLOCK_WIDTH) \
+                    .width(CHR_WIDTH) \
                     .refs(block(v)) \
                     .color(0xd97dfa)
 
@@ -141,11 +149,11 @@ def gen(font: font.Font, options):
     NUMBERS['8'] = '#     #   '
     NUMBERS['9'] = '#     #  #'
 
-    for k, v in LETTERS.items():
+    for k, v in NUMBERS.items():
         font.glyph().char(k) \
                     .clear() \
                     .do(defaults) \
-                    .width(g.BLOCK_WIDTH) \
+                    .width(CHR_WIDTH) \
                     .refs(block(v)) \
                     .color(0x87dbfa)
 

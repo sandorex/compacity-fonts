@@ -22,6 +22,7 @@ from enum import Flag, auto
 PROJECT_FILE = 'block.sfd'
 FORMATS = [ 'ttf' ]
 
+# flags used to change the font but be able to mix and match features
 class Options(Flag):
     NONE = 0
 
@@ -29,10 +30,18 @@ class Options(Flag):
     # many cases, unfortunate but needed fix when not used to render pdfs
     NOLINE = auto()
 
+    # separates all the characters, looks kinda futuristic, rendering does not
+    # matter much in this case as they dont have to align perfectly
+    SEPARATED = auto()
+
+# mixes of features that will be built
+# font name suffix, options
 VARIANTS = [
     # this is the default with no suffix
     ('', Options.NONE),
 
     # add variants here
-    ('NL', Options.NOLINE)
+    ('NL', Options.NOLINE),
+    ('S', Options.SEPARATED),
+    ('S NL', Options.SEPARATED | Options.NOLINE)
 ]

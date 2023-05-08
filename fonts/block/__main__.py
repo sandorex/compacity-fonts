@@ -1,2 +1,2 @@
-from . import main
-main.main()
+from . import builder
+builder.main()

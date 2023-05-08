@@ -149,6 +149,9 @@ class Font:
         self.font.comment = f'Last configured on {time.ctime()}'
         self.font.save()
 
+    def close(self):
+        self.font.close()
+
     def glyph(self) -> GlyphBuilder:
         return GlyphBuilder(self)
 

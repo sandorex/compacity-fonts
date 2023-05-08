@@ -20,18 +20,22 @@ import logging
 from builder.font import Font
 from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS
 
-# setup basic logger
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
-
 def main():
+    # TODO when the file is generated from scratch just use globals from project.py
+    font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+    logging.info(f"Building font '{font.name}' version {font.version}")
+    font.close()
+
     for suffix, options in VARIANTS:
         font = Font.open(PROJECT_ROOT / PROJECT_FILE)
         if suffix:
             font.name += ' ' + suffix
 
-        logging.info(f"Configuring font '{font.name}' {font.version}")
         config.gen(font, options)
 
-        logging.info(f"Exporting font '{font.name}' {font.version}")
         for format_ in FORMATS:
-            font.export(BUILD_DIR, format_=format_, suffix=f'-{suffix.lower()}' if suffix else '')
+            font.export(BUILD_DIR,
+                        format_=format_,
+                        suffix=('-' + suffix.lower().replace(' ', '-')) if suffix else '')
+
+        font.close()

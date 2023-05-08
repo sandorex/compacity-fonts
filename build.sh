@@ -63,6 +63,7 @@ for font in "$@"; do
         python3 "$FONTS_DIR/$font/generator.py"
     fi
 
+    # the module is responsible for building itself
     fontforge -quiet -script -m "$FONTS_DIR.$font"
 
     if [ -n "$CI" ]; then

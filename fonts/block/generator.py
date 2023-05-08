@@ -21,13 +21,15 @@
 import pathlib
 DIR = pathlib.Path(__file__).parent.resolve()
 
+import logging
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
+
 OUTPUT_DIR = DIR / 'out'
 NAME_FORMAT = '{index}.svg'
 
 # name prefix for the block segments
 BBLOCK = 'bblock.'
 BLOCK_COUNT = 8
-# TODO doubling block height generates cool things
 BLOCK_WIDTH = 128
 BLOCK_HEIGHT = 128
 LINE_W = BLOCK_WIDTH
@@ -45,8 +47,8 @@ def generate():
     import drawsvg as dsvg
     import os
 
-    # TODO do logging library here
-    print('Generating svgs')
+    # TODO use font info from project.py
+    logging.info('Generating assets')
 
     # make the directories ignore existing
     os.makedirs(OUTPUT_DIR, exist_ok=True)
