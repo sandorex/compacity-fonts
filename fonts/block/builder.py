@@ -16,6 +16,7 @@
 # limitations under the License.
 
 import logging
+import copy
 
 from builder.font import Font
 from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS, project as p
@@ -25,20 +26,34 @@ def main():
     # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
     logging.info(f"Building font '{p.PROJECT_FAMILY_NAME}' version {p.PROJECT_VERSION}")
 
+    # font = Font()
+    # TODO maybe save the common file here? but do not push to git
+    # config.static_gen(font)
+    # font.save('test.sfd')
+    # font.close()
+
     for variant in VARIANTS:
+        # font = Font.open('test.sfd')
         # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
         font = Font()
         font.version = p.PROJECT_VERSION
+        # TODO use data from project.py
+        # TODO set font.copyright
         font.computer_name = 'CompacityBlock'
         font.family_name = 'Compacity Block'
+        font.human_name = font.family_name
         if variant.suffix:
             font.computer_name += '-' + variant.suffix.replace(' ', '')
             font.family_name += '-' + variant.suffix.replace(' ', '')
             font.human_name += ' ' + variant.suffix
 
+        logging.info(f"Building variant '{font.human_name}'")
+
         font.export_filename = font.computer_name
 
+        config.static_gen(font) # TODO temp execute only once before and save it
         config.gen(font, variant.options)
+        # font.font.unlinkReferences() # TODO?
 
         for format_ in FORMATS:
             font.export(BUILD_DIR, format_=format_)

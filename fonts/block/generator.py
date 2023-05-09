@@ -46,13 +46,11 @@ def generate():
     import drawsvg as dsvg
     import os
 
-    # TODO use font info from project.py
-    logging.info('Generating assets')
+    logging.info(f'Generating assets')
 
     # make the directories ignore existing
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # NOTE: the +1 cause for some reason it becomes uneven number in fontforge
     for i in range(BLOCK_COUNT):
         d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
         d.append(dsvg.Rectangle(0, BLOCK_HEIGHT * i, BLOCK_WIDTH + OVERLAP_W, BLOCK_HEIGHT + OVERLAP_H, fill='#000000'))

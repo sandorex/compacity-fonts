@@ -22,7 +22,7 @@ import os
 import errno
 import time
 
-from typing import Any, Tuple, List, Union
+from typing import Any, Tuple, List
 
 class GlyphBuilder:
     def __init__(self, font):
@@ -66,11 +66,19 @@ class GlyphBuilder:
 
         return self
 
-    def outline(self, path):
+    def outline(self, path, verbatim=True, **kwargs):
         if not os.path.exists(path):
             raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
-        self.glyph.importOutlines(str(path))
+        # i spent 3 weeks trying to fix the importing of SVGs and it kept
+        # giving me weird values and moving things around like it's scaling and
+        # i finally found that the culprit is this damn scale option that is ON
+        # BY FUCKING DEFAULT AND I SPENT FUCKING THREE WEEKS DEBUGGING IT AND
+        # ALMOST SCRAPPED THE WHOLE DAMN PROJECT JUST CAUSE SOMEONE THOUGHT IT
+        # WAS A GOOD IDEA TO SCALE SVGS BY DEFAULT
+        #
+        # relevant docs page: https://fontforge.org/docs/scripting/python/fontforge.html#fontforge.glyph.importOutlines
+        self.glyph.importOutlines(str(path), scale=not verbatim, simplify=not verbatim, **kwargs)
 
         return self
 
