@@ -18,10 +18,15 @@
 from enum import Flag, auto
 from collections import namedtuple
 
-# TODO: move versioning to python and update the project file
-
 PROJECT_FILE = 'block.sfd'
-FORMATS = [ 'ttf' ]
+PROJECT_FAMILY_NAME = 'Compacity Block'
+PROJECT_VERSION = '0.2'
+
+FEATURES_DIR = 'features'
+FEATURE_BLOCKSPACE = 'blockspace.fea'
+
+# which formats to build
+FORMATS = ['ttf']
 
 # flags used to change the font but be able to mix and match features
 class Options(Flag):
@@ -30,19 +35,16 @@ class Options(Flag):
     # makes the separator line invisible, may be harder to read
     NOLINE = auto()
 
-    # separates all the characters in X axis, it's more cool than usueable tho
-    SPARSE = auto()
-
     # makes the separator line continue between letters so sentences are one,
     # continuous block
-    SENTENCE_LINE = auto()
+    BLOCKSPACE = auto()
 
 Variant = namedtuple('Variant', ['suffix', 'options', 'description'])
 
 VARIANTS = [
     Variant(
         '',
-        Options.SENTENCE_LINE,
+        Options.BLOCKSPACE,
         'Original Compacity Block with words being attached together using the separator line'),
     Variant(
         'Separated',
@@ -51,13 +53,5 @@ VARIANTS = [
     Variant(
         'No Line',
         Options.NOLINE,
-        'Variant without the separator line'),
-    Variant(
-        'Sparse',
-        Options.SPARSE,
-        'Variant with all characters being spaced out'),
-    Variant(
-        'Sparse And No Line',
-        Options.SPARSE | Options.NOLINE,
-        'Variant with all characters being spaced out without separator line')
+        'Variant without the separator line')
 ]

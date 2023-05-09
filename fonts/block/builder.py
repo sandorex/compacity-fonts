@@ -18,16 +18,17 @@
 import logging
 
 from builder.font import Font
-from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS
+from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS, project as p
 
 def main():
     # TODO when the file is generated from scratch just use globals from project.py
-    font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    logging.info(f"Building font '{font.family_name}' version {font.version}")
-    font.close()
+    # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+    logging.info(f"Building font '{p.PROJECT_FAMILY_NAME}' version {p.PROJECT_VERSION}")
 
     for variant in VARIANTS:
-        font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+        # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
+        font = Font()
+        font.version = p.PROJECT_VERSION
         font.computer_name = 'CompacityBlock'
         font.family_name = 'Compacity Block'
         if variant.suffix:

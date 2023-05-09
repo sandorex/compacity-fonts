@@ -55,12 +55,12 @@ def generate():
     # NOTE: the +1 cause for some reason it becomes uneven number in fontforge
     for i in range(BLOCK_COUNT):
         d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
-        d.append(dsvg.Rectangle(0, BLOCK_HEIGHT * i + 1, BLOCK_WIDTH + OVERLAP_W, BLOCK_HEIGHT + OVERLAP_H, fill='#000000'))
+        d.append(dsvg.Rectangle(0, BLOCK_HEIGHT * i, BLOCK_WIDTH + OVERLAP_W, BLOCK_HEIGHT + OVERLAP_H, fill='#000000'))
         d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=i + 1)))
 
     # generate the line
     d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
-    d.append(dsvg.Rectangle(0, (BLOCK_HEIGHT * 4) - LINE_H / 2 + 1, LINE_W + OVERLAP_W, LINE_H, fill='#000000'))
+    d.append(dsvg.Rectangle(0, (BLOCK_HEIGHT * 4) - LINE_H / 2, LINE_W + OVERLAP_W, LINE_H, fill='#000000'))
     d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=0)))
 
 if __name__ == '__main__':

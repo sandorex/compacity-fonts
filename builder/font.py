@@ -74,20 +74,14 @@ class GlyphBuilder:
 
         return self
 
-    def ref(self, ref: Any, transformation: Any = None):
-        if transformation is not None:
-            self.glyph.addReference(ref, transformation)
-        else:
-            self.glyph.addReference(ref)
+    def ref(self, ref: Any):
+        self.glyph.addReference(ref)
 
         return self
 
-    def refs(self, ref: List[Union[Any, Tuple[Any, Any]]]):
+    def refs(self, ref: List[Any]):
         for i in ref:
-            if isinstance(i, tuple):
-                self.ref(*i)
-            else:
-                self.ref(i)
+            self.ref(i)
 
         return self
 
@@ -125,8 +119,11 @@ class GlyphBuilder:
 class Font:
     """Wrapper around fontforge Font object"""
 
-    def __init__(self, font):
-        self.font = font
+    def __init__(self, font=None):
+        if font:
+            self.font = font
+        else:
+            self.font = fontforge.font()
 
     @staticmethod
     def open(path) -> 'Font':
@@ -168,6 +165,10 @@ class Font:
     @property
     def version(self) -> str:
         return self.font.version
+
+    @version.setter
+    def version(self, value) -> str:
+        self.font.version = value
 
     def export(self, output_dir, format_='ttf'):
         # allows pathlib.Path
