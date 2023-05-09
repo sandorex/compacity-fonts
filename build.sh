@@ -86,12 +86,12 @@ for font in "$@"; do
 
     if [ -n "$CI" ]; then
         for i in "$@"; do
-            7za a "compacity-$i.7z" ./build/compacity-"$i"* >/dev/null
+            7za a "Compacity${i^}.7z" ./build/Compacity"${i^}"* >/dev/null
         done
 
         # a complete package with all fonts if there are more than one
         if [[ "$#" -gt 1 ]]; then
-            7za a compacity-fonts.7z ./build/* >/dev/null
+            7za a CompacityFonts.7z ./build/* >/dev/null
         fi
     fi
 done

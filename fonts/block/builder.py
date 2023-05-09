@@ -28,11 +28,13 @@ def main():
 
     for variant in VARIANTS:
         font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-        font.computer_name = 'compacity-block'
-        font.export_filename = 'compacity-block'
+        font.computer_name = 'CompacityBlock'
+        font.family_name = 'Compacity Block'
+        font.export_filename = 'CompacityBlock'
         if variant.suffix:
-            font.computer_name += '-' + variant.suffix.lower().replace(' ', '-')
-            font.export_filename = font.font.fontname
+            font.computer_name += '-' + variant.suffix.lower().replace(' ', '')
+            font.family_name += '-' + variant.suffix.lower()
+            font.export_filename = font.computer_name
 
         if variant.human_name:
             font.human_name += ' ' + variant.human_name
