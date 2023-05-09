@@ -30,14 +30,12 @@ def main():
         font = Font.open(PROJECT_ROOT / PROJECT_FILE)
         font.computer_name = 'CompacityBlock'
         font.family_name = 'Compacity Block'
-        font.export_filename = 'CompacityBlock'
         if variant.suffix:
-            font.computer_name += '-' + variant.suffix.lower().replace(' ', '')
-            font.family_name += '-' + variant.suffix.lower()
-            font.export_filename = font.computer_name
+            font.computer_name += '-' + variant.suffix.replace(' ', '')
+            font.family_name += '-' + variant.suffix.replace(' ', '')
+            font.human_name += ' ' + variant.suffix
 
-        if variant.human_name:
-            font.human_name += ' ' + variant.human_name
+        font.export_filename = font.computer_name
 
         config.gen(font, variant.options)
 

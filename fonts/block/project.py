@@ -31,38 +31,33 @@ class Options(Flag):
     NOLINE = auto()
 
     # separates all the characters in X axis, it's more cool than usueable tho
-    SEPARATED = auto()
+    SPARSE = auto()
 
     # makes the separator line continue between letters so sentences are one,
     # continuous block
     SENTENCE_LINE = auto()
 
-Variant = namedtuple('Variant', ['suffix', 'human_name', 'options', 'description'])
+Variant = namedtuple('Variant', ['suffix', 'options', 'description'])
 
 VARIANTS = [
     Variant(
         '',
-        '',
         Options.SENTENCE_LINE,
         'Original Compacity Block with words being attached together using the separator line'),
     Variant(
-        'WS',
-        'Word Separated',
+        'Separated',
         Options.NONE,
         'Variant with words being separated in a sentence'),
     Variant(
-        'NL',
-        'No Separator Line',
+        'No Line',
         Options.NOLINE,
         'Variant without the separator line'),
     Variant(
-        'S',
         'Sparse',
-        Options.SEPARATED,
+        Options.SPARSE,
         'Variant with all characters being spaced out'),
     Variant(
-        'S NL',
-        'Sparse & No Separator Line',
-        Options.SEPARATED | Options.NOLINE,
+        'Sparse And No Line',
+        Options.SPARSE | Options.NOLINE,
         'Variant with all characters being spaced out without separator line')
 ]

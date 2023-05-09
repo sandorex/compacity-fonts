@@ -113,7 +113,14 @@ class GlyphBuilder:
         return self
 
     def transform(self, matrix, round_=False):
-        self.glyph.transform(matrix, round=round_)
+        flags = ()
+
+        if round_:
+            flags = ('round')
+
+        self.glyph.transform(matrix, flags)
+
+        return self
 
 class Font:
     """Wrapper around fontforge Font object"""
