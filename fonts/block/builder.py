@@ -23,16 +23,21 @@ from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS
 def main():
     # TODO when the file is generated from scratch just use globals from project.py
     font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    logging.info(f"Building font '{font.name}' version {font.version}")
+    logging.info(f"Building font '{font.family_name}' version {font.version}")
     font.close()
 
-    for suffix, options in VARIANTS:
+    for variant in VARIANTS:
         font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-        if suffix:
-            font.name += ' ' + suffix
-            font.default_base_filename += '-' + suffix.lower().replace(' ', '-')
+        font.computer_name = 'compacity-block'
+        font.export_filename = 'compacity-block'
+        if variant.suffix:
+            font.computer_name += '-' + variant.suffix.lower().replace(' ', '-')
+            font.export_filename = font.font.fontname
 
-        config.gen(font, options)
+        if variant.human_name:
+            font.human_name += ' ' + variant.human_name
+
+        config.gen(font, variant.options)
 
         for format_ in FORMATS:
             font.export(BUILD_DIR, format_=format_)

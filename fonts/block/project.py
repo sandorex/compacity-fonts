@@ -16,6 +16,7 @@
 # limitations under the License.
 
 from enum import Flag, auto
+from collections import namedtuple
 
 # TODO: move versioning to python and update the project file
 
@@ -26,22 +27,42 @@ FORMATS = [ 'ttf' ]
 class Options(Flag):
     NONE = 0
 
-    # there is no line separating top and bottom half, improves rendering in
-    # many cases, unfortunate but needed fix when not used to render pdfs
+    # makes the separator line invisible, may be harder to read
     NOLINE = auto()
 
-    # separates all the characters, looks kinda futuristic, rendering does not
-    # matter much in this case as they dont have to align perfectly
+    # separates all the characters in X axis, it's more cool than usueable tho
     SEPARATED = auto()
 
-# mixes of features that will be built
-# font name suffix, options
-VARIANTS = [
-    # this is the default with no suffix
-    ('', Options.NONE),
+    # makes the separator line continue between letters so sentences are one,
+    # continuous block
+    SENTENCE_LINE = auto()
 
-    # add variants here
-    ('NL', Options.NOLINE),
-    ('S', Options.SEPARATED),
-    ('S NL', Options.SEPARATED | Options.NOLINE)
+Variant = namedtuple('Variant', ['suffix', 'human_name', 'options', 'description'])
+
+VARIANTS = [
+    Variant(
+        '',
+        '',
+        Options.SENTENCE_LINE,
+        'Original Compacity Block with words being attached together using the separator line'),
+    Variant(
+        'WS',
+        'Word Separated',
+        Options.NONE,
+        'Variant with words being separated in a sentence'),
+    Variant(
+        'NL',
+        'No Separator Line',
+        Options.NOLINE,
+        'Variant without the separator line'),
+    Variant(
+        'S',
+        'Sparse',
+        Options.SEPARATED,
+        'Variant with all characters being spaced out'),
+    Variant(
+        'S NL',
+        'Sparse & No Separator Line',
+        Options.SEPARATED | Options.NOLINE,
+        'Variant with all characters being spaced out without separator line')
 ]

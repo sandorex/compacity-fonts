@@ -112,6 +112,9 @@ class GlyphBuilder:
 
         return self
 
+    def transform(self, matrix, round_=False):
+        self.glyph.transform(matrix, round=round_)
+
 class Font:
     """Wrapper around fontforge Font object"""
 
@@ -124,32 +127,56 @@ class Font:
         return Font(fontforge.open(str(path)))
 
     @property
-    def name(self) -> str:
+    def computer_name(self):
+        return self.font.fontname
+
+    @computer_name.setter
+    def computer_name(self, value):
+        self.font.fontname = value
+
+    @property
+    def family_name(self):
+        return self.font.familyname
+
+    @family_name.setter
+    def family_name(self, value):
+        self.font.familyname = value
+
+    @property
+    def human_name(self):
         return self.font.fullname
 
-    @name.setter
-    def name(self, value) -> str:
+    @human_name.setter
+    def human_name(self, value):
         self.font.fullname = value
+
+    @property
+    def comment(self):
+        return self.font.comment
+
+    @comment.setter
+    def comment(self, value):
+        self.font.comment = value
 
     @property
     def version(self) -> str:
         return self.font.version
 
-    def export(self, output_dir, suffix='', format_='ttf'):
+    def export(self, output_dir, format_='ttf'):
         # allows pathlib.Path
         output_dir = str(output_dir)
 
         # make sure the path exists
         os.makedirs(output_dir, exist_ok=True)
 
-        self.font.generate(os.path.join(output_dir, self.font.default_base_filename + suffix + '.' + format_))
+        self.font.generate(os.path.join(output_dir, self.font.default_base_filename + '.' + format_))
 
     @property
-    def default_base_filename(self) -> str:
+    def export_filename(self) -> str:
         return self.font.default_base_filename
 
-    @default_base_filename.setter
-    def default_base_filename(self, value):
+    @export_filename.setter
+    def export_filename(self, value):
         self.font.default_base_filename = value
 
     def save(self):
@@ -163,5 +190,6 @@ class Font:
     def glyph(self) -> GlyphBuilder:
         return GlyphBuilder(self)
 
-    def round(self):
-        self.font.round()
+    def merge_feature(self, path, ignore_missing_glyphs=False):
+        """Merges adobe features file into the font"""
+        self.font.mergeFeature(str(path), ignore_missing_glyphs)
