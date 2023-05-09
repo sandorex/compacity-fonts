@@ -1,0 +1,33 @@
+#content {
+    font-size: 24px !important;
+    line-height: 0.9em;
+}
+
+#content > * {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.hover-block {
+    font-family: 'CompacityBlock';
+}
+
+.hover-block:hover {
+    font-family: inherit;
+}
+
+/* make it printable, the UI should not be visible */
+@media print {
+    body > .navbar,
+    body > footer {
+        display: none;
+    }
+
+    body {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+

@@ -1,0 +1,23 @@
+{
+    "name": "compacity-fonts-docs",
+    "version": "1.0.0",
+    "description": "Website for compacity fonts",
+    "main": "index.js",
+    "scripts": {
+        "gen": "ts-node ./scripts/generate.ts",
+        "get-fonts": "ts-node ./scripts/download-fonts.ts"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sandorex/compacity-fonts.git"
+    },
+    "author": "Sandorex",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sandorex/compacity-fonts/issues"
+    },
+    "homepage": "https://github.com/sandorex/compacity-fonts#readme"
+}
