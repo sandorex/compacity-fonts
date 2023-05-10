@@ -4,6 +4,7 @@ const CONTENT = document.getElementById('content');
 const FONT_SELECT = document.getElementById('font-select');
 const TEXT_SELECT = document.getElementById('text-select');
 
+let fontTexts = null;
 let lastFont = '';
 
 fetch('../data.json')
@@ -19,15 +20,19 @@ fetch('../data.json')
             // so the logic below need not be changed if format changes
             TEXT_SELECT.add(new Option(e.replaceAll('-', ' '), "../texts/" + e + ".html"))
         });
+
+        fontTexts = json['fontTexts'];
     });
 
 function getFont() {
-    return CONTENT.children[0].style.fontFamily;
+    return CONTENT.style.fontFamily;
 }
 
 function setFont(font) {
     lastFont = getFont();
-    CONTENT.children[0].style.fontFamily = font;
+    CONTENT.style.fontFamily = font;
+
+    // TODO: add font specific fonts to the FONT_SELECT
 }
 
 function updateFontSelect() {
@@ -56,10 +61,6 @@ function btnItalics(value) {
         CONTENT.style.fontStyle = 'italic';
     else
         CONTENT.style.fontStyle = '';
-}
-
-function selectFont(selectEl) {
-    setFont(selectEl.selectedOptions[0].value)
 }
 
 function selectText(value) {

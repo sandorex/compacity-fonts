@@ -1,71 +1,77 @@
+// this script generates data about fonts available and paths to them so they
+// don't have to be added manually
+
 import * as fs from 'fs';
 import * as path from 'path'
 
 const rootDir = path.join(__dirname, '..');
 const fontsDir = path.join(rootDir, 'fonts');
 const textsDir = path.join(rootDir, 'texts');
+const fontTextsDir = path.join(rootDir, 'fontTexts');
 const outDir = rootDir;
 
-const cssTemplate = `@font-face {
+function listDir(dir: string): { files: string[], dirs: string[] } {
+    let files: string[] = [];
+    let dirs: string[] = [];
+
+    try {
+        for (const file of fs.readdirSync(dir)) {
+            const stat = fs.statSync(path.join(dir, file));
+            if (stat.isFile())
+                files.push(file);
+            else if (stat.isDirectory())
+                dirs.push(file);
+        }
+    } catch(e) {
+        console.error("Error listing files in " + dir, e);
+        return { files: [], dirs: [] };
+    }
+
+    return { files: files, dirs: dirs };
+}
+
+(async () => {
+    let data: {
+        fonts: string[];
+        texts: string[];
+        fontTexts: Record<string, string[]>;
+    } = {} as any;
+
+    data.fonts = [];
+    data.texts = [];
+    data.fontTexts = {};
+
+    // generate css file that includes all the fonts and list of all fonts
+    let css = '';
+    listDir(fontsDir).files.forEach(f => {
+        const name = path.parse(f).name;
+
+        css += `@font-face {
     font-family: '$font';
     src: url(fonts/$path);
     font-weight: normal;
     font-style: normal;
 }
 
-`;
+`.replace('$font', name).replace('$path', f);
+        data.fonts.push(name);
+    });
 
-(async () => {
-    let data: Record<string, any> = {};
+    // write a css file that includes all the fonts
+    fs.writeFile(path.join(outDir, 'fonts.css'), css, (err: any) => {
+        if (err)
+            console.error("Error writing to file", err);
+    });
 
-    // generate css file that includes all the fonts and list of all fonts
-    try {
-        let css = '';
-        const files = await fs.promises.readdir(fontsDir);
+    // find all texts files but remove extension as all of them should be html
+    data.texts = listDir(textsDir).files.map(f => path.parse(f).name);
 
-        let fonts: Array<string> = [];
-        for (const file of files) {
-            const fileName = path.parse(file).name;
-            const filePath = path.join(fontsDir, file);
+    // find all font specific texts
+    listDir(fontTextsDir).dirs.forEach(d => {
+        data.fontTexts[d] = listDir(path.join(fontTextsDir, d)).files.map(f => path.parse(f).name);
+    });
 
-            const stat = await fs.promises.stat(filePath);
-            if (!stat.isFile())
-                continue;
-
-            css += cssTemplate.replace('$font', fileName).replace('$path', file);
-            fonts.push(fileName);
-        }
-
-        data['fonts'] = fonts;
-        fs.writeFile(path.join(outDir, 'fonts.css'), css, (err: any) => {
-            if (err) {
-                console.error("Error writing to file", err);
-            }
-        });
-    } catch(e) {
-        console.error("Error iterating over font files", e);
-    }
-
-    // iterate over texts and gather a list of them
-    try {
-        const files = await fs.promises.readdir(textsDir);
-
-        let texts: Array<string> = [];
-        for (const file of files) {
-            const fileName = path.parse(file).name;
-
-            const stat = await fs.promises.stat(path.join(textsDir, file));
-            if (!stat.isFile())
-                continue;
-
-            texts.push(fileName);
-        }
-
-        data['texts'] = texts;
-    } catch(e) {
-        console.error("Error iterating over texts", e);
-    }
-
+    // write all the data in easy readable JSON file
     fs.writeFile(path.join(outDir, 'data.json'), JSON.stringify(data), (err: any) => {
         if (err) {
             console.error("Error writing to file", err);

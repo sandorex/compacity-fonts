@@ -6,12 +6,18 @@ a:active { text-decoration: none; }
 
 #content {
     font-size: 24px !important;
-    line-height: 0.9em;
+    line-height: 1.2em;
+    margin-top: 85px;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 #content > * {
+    /* make sure that content style is inherited by the children so no updates required */
+    font-family: inherit !important;
+    line-height: inherit !important;
+    font-size: inherit !important;
+    font-style: inherit !important;
     overflow-y: hidden;
     white-space: pre-wrap;
     overflow-x: hidden;
@@ -30,8 +36,13 @@ a:active { text-decoration: none; }
     font-family: inherit;
 }
 
-/* make it printable, the UI should not be visible */
-@media print {
+/* make it printable, but serves for immersion mode too on fullscreen */
+@media print, all and (display-mode: fullscreen){
+    #content {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     body > .navbar,
     body > footer {
         display: none;
