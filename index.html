@@ -16,8 +16,9 @@
 <body>
     <nav class="navbar navbar-expand" style="border-bottom: 1px solid #BBBBBB; margin-bottom: 20px;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><b>Compacity Fonts</b></a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="navbar-brand d-none d-sm-inline" href="#"><b>Compacity Fonts</b></a>
+            <img src="img/favicon-32x32.png" class="d-inline d-sm-none" style="max-height: 32px;"></img>
+            <ul class="navbar-nav me-auto mb-0">
                 <div class="input-group">
                     <input type="checkbox" class="btn-check" id="btn-check-bold" autocomplete="off" onchange="btnBold(this.checked);">
                     <label class="btn" for="btn-check-bold">
@@ -28,11 +29,7 @@
                         <i><b>I</b></i>
                     </label>
                     <button type="button" class="btn" onclick="btnSwap();">
-                        <!-- arrow repeat icon from bootstrap icons -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                        </svg>
+                        <b>R</b>
                     </button>
                     <select class="form-select" id="font-select" onchange="setFont(this.selectedOptions[0].value)">
                         <option hidden selected value="">Select a font</option>
@@ -43,44 +40,43 @@
                     </select>
                 </div>
             </ul>
-            <ul class="navbar-nav mb-2 mb-lg-2 gap-2">
-                <a class="nav-link active col-3 me-auto" aria-current="page" href="#" data-bs-theme-value="light">
+            <ul class="navbar-nav mb-2" style="padding-left: 6px;">
+                <button type="button" class="btn" id="theme-toggle" onclick="toggleTheme();">
                     <!-- SUN ICON FROM BOOTSTRAP ICONS -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
                         <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
                     </svg>
-                </a>
-                <div class="vr col-3"></div>
-                <a class="nav-link active col-3 me-auto" aria-current="page" href="#" data-bs-theme-value="dark">
+
                     <!-- MOON ICON FROM BOOTSTRAP ICONS -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
-                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
                     </svg>
-                </a>
+                </button>
             </ul>
         </div>
     </nav>
 
-    <div id="content" class="container-fluid" style="padding-left: 30px; padding-right: 30px;">
+    <div id="content" class="container-fluid overflow-auto" style="">
         <!-- NOTE: always have one child so i dont have to make logic too complex -->
         <div></div>
     </div>
 
-    <div class="meme">
-        <img src="img/meme.jpg" class="rounded mx-auto d-block" style="max-height: 400px; filter: grayscale(1);"></img>
+    <div class="meme overflow-auto" style="padding-left: 20px; padding-right: 20px;" >
+        <img src="img/meme.jpg" id="meme-img" class="rounded mx-auto d-block img-fluid" style="max-height: 400px; filter: grayscale(1);"></img>
         <div class="text-center p-1">
-            <i class="hover-block" style="font-size: 28px;">All your font are belong to us</i>
+            <i class="hover-block" id="meme-text" style="font-size: 28px;">All your font are belong to us</i>
         </div>
     </div>
 
     <footer class="text-center fixed-bottom" style="background-color: var(--bs-body-bg); border-top: 1px solid #BBBBBB; margin-top: 20px;">
-        <div class="text-center pt-2">
+        <div class="text-center pt-1 pb-1">
             Copyright 2023 © <b>Aleksandar Radivojevic</b>
-            <a href="https://sandorex.github.io"><span class="badge rounded-pill text-bg-info mb-3">@sandorex</span></a>
+            <a href="https://sandorex.github.io" class="d-none d-sm-inline"><span class="badge rounded-pill text-bg-info mb-1">@sandorex</span></a>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="js/autotheme.js"></script>
+    <script src="js/theme-switcher.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/meme.js"></script>
 </body>
 </html>

@@ -19,8 +19,6 @@ fetch('../data.json')
             // so the logic below need not be changed if format changes
             TEXT_SELECT.add(new Option(e.replaceAll('-', ' '), "../texts/" + e + ".html"))
         });
-
-        // TODO: integrate https://meme-api.com/gimme
     });
 
 function getFont() {
