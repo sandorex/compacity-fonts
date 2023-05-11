@@ -14,7 +14,7 @@ a:active { text-decoration: none; }
 }
 
 #content {
-    font-size: 24px !important;
+    font-size: 24px;
     line-height: 1.2em;
     margin-top: 85px;
     padding-left: 30px;
@@ -22,19 +22,14 @@ a:active { text-decoration: none; }
 }
 
 #content > * {
-    /* make sure that content style is inherited by the children so no updates required */
-    font-family: inherit !important;
-    line-height: inherit !important;
-    font-size: inherit !important;
-    font-style: inherit !important;
+    /* make sure that content style is inherited by the children so minimal js required */
+    font-family: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-style: inherit;
     overflow-y: hidden;
     white-space: pre-wrap;
     overflow-x: hidden;
-}
-
-/* hide the buttons by default */
-.theme-btn > * {
-    display: none;
 }
 
 .hover-block {
