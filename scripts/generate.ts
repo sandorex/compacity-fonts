@@ -1,6 +1,3 @@
-// this script generates data about fonts available and paths to them so they
-// don't have to be added manually
-
 import * as fs from 'fs';
 import * as path from 'path'
 
@@ -10,6 +7,7 @@ const textsDir = path.join(rootDir, 'texts');
 const fontTextsDir = path.join(rootDir, 'fontTexts');
 const outDir = rootDir;
 
+// convenience function that returns list of files and directories in a dir
 function listDir(dir: string): { files: string[], dirs: string[] } {
     let files: string[] = [];
     let dirs: string[] = [];
@@ -31,51 +29,53 @@ function listDir(dir: string): { files: string[], dirs: string[] } {
 }
 
 (async () => {
-    let data: {
-        fonts: string[];
-        texts: string[];
-        fontTexts: Record<string, string[]>;
-    } = {} as any;
+    // find all fonts and make css to include them all
+    const fontFiles = listDir(fontsDir).files.reverse();
 
-    data.fonts = [];
-    data.texts = [];
-    data.fontTexts = {};
-
-    // generate css file that includes all the fonts and list of all fonts
+    let fonts: Record<string, [string, string][]> = {};
     let css = '';
-    listDir(fontsDir).files.forEach(f => {
+    fontFiles.forEach(f => {
         const name = path.parse(f).name;
+        let [family, style] = name.split('-');
 
-        css += `@font-face {
-    font-family: '$font';
-    src: url(fonts/$path);
-    font-weight: normal;
-    font-style: normal;
-}
-
+        css += `@font-face{font-family: '$font';src: url(fonts/$path);font-weight: normal;font-style: normal;}
 `.replace('$font', name).replace('$path', f);
-        data.fonts.push(name);
+
+        if (fonts[family] === undefined)
+            fonts[family] = [];
+
+        if (style === undefined)
+            style = 'Normal';
+
+        fonts[family].push([style, name]);
     });
 
-    // write a css file that includes all the fonts
     fs.writeFile(path.join(outDir, 'fonts.css'), css, (err: any) => {
         if (err)
             console.error("Error writing to file", err);
     });
 
-    // find all texts files but remove extension as all of them should be html
-    data.texts = listDir(textsDir).files.map(f => path.parse(f).name);
+    // get all the texts
+    let texts: string[] = [];
+    listDir(textsDir).files.forEach(f => texts.push(path.parse(f).name));
 
-    // find all font specific texts
+    // get all the font specific texts
+    let fontTexts: Record<string, string[]> = {};
     listDir(fontTextsDir).dirs.forEach(d => {
-        data.fontTexts[d] = listDir(path.join(fontTextsDir, d)).files.map(f => path.parse(f).name);
+        fontTexts[d] = listDir(path.join(fontTextsDir, d)).files.map(f => path.parse(f).name);
     });
 
-    // write all the data in easy readable JSON file
+    // map the data
+    const data = {
+        fonts: fonts,
+        texts: texts,
+        fontTexts: fontTexts,
+    };
+
+    // save as easy to read json
     fs.writeFile(path.join(outDir, 'data.json'), JSON.stringify(data), (err: any) => {
-        if (err) {
+        if (err)
             console.error("Error writing to file", err);
-        }
     });
 })();
 

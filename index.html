@@ -28,15 +28,18 @@
                     <label class="btn" for="btn-check-italic">
                         <i><b>I</b></i>
                     </label>
-                    <button type="button" class="btn" onclick="btnSwap();">
-                        <b>R</b>
-                    </button>
-                    <select class="form-select" id="font-select" onchange="setFont(this.selectedOptions[0].value)">
-                        <option hidden selected value="">Select a font</option>
-                        <option value="">Default</option>
+                    <input type="checkbox" class="btn-check" id="btn-check-enable" autocomplete="off" checked onchange="btnEnable(this.checked);">
+                    <label class="btn" for="btn-check-enable">
+                        <b>E</b>
+                    </label>
+                    <select class="form-select" id="font-family-select" onchange="setFontFamily(this.selectedOptions[0].value)">
+                        <option hidden selected value="">Font</option>
                     </select>
-                    <select class="form-select" id="text-select" onchange="selectText(this.selectedOptions[0].value);">
-                        <option hidden selected value=""> Select a text</option>
+                    <select class="form-select" id="font-style-select" disabled onchange="setFont(this.selectedOptions[0].value)">
+                        <option hidden selected value="">Style</option>
+                    </select>
+                    <select class="form-select" id="text-select" disabled onchange="selectText(this.selectedOptions[0].value);">
+                        <option hidden selected value="">Text</option>
                     </select>
                 </div>
             </ul>
