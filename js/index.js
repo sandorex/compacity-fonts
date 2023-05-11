@@ -6,14 +6,12 @@ const FONT_STYLE_SELECT = document.getElementById('font-style-select');
 const TEXT_SELECT = document.getElementById('text-select');
 
 let fontFamilies = [];
-let fonts = [];
 let texts = [];
 let fontTexts = {};
 
-function clearTexts() {
-    // remove all options
-    while (TEXT_SELECT.options.length)
-        TEXT_SELECT.options.remove(0);
+function clearSelectOptions(selectEl) {
+    // remove all options but the hidden ones
+    Array.from(selectEl.options).reverse().filter(o => o.hidden !== true).forEach(o => o.remove());
 }
 
 function loadTexts() {
@@ -28,16 +26,14 @@ function loadFontTexts(fontFamily) {
     if (fontFamily === '')
         return;
 
-    // TODO: this does not work, it filters out everything
-    Object.entries(fontTexts).filter((k, v) => fontFamily.toString().startsWith(k)).forEach((k, v) => {
-        TEXT_SELECT.add(new Option(k + '/' + v.replaceAll('-', ' '), "../fontTexts/" + v + ".html"))
+    Object.entries(fontTexts).filter(f => fontFamily.toString().startsWith(f[0])).forEach(f => {
+        TEXT_SELECT.add(new Option(f[1].toString().replace('-', ' '), "../fontTexts/" + fontFamily + '/' + f[1] + ".html"))
     });
 }
 
 function getFont() {
     return CONTENT.style.fontFamily;
 }
-
 
 function setFont(font) {
     CONTENT.style.fontFamily = font;
@@ -46,13 +42,17 @@ function setFont(font) {
 }
 
 function setFontFamily(fontFamily) {
+    // clear styles
+    clearSelectOptions(FONT_STYLE_SELECT);
+
     fontFamilies[fontFamily].forEach(fonts => {
         FONT_STYLE_SELECT.add(new Option(fonts[0].toString().replace(/([A-Z])/g, ' $1').trim(), fonts[1]))
     });
 
     FONT_STYLE_SELECT.disabled = false;
 
-    clearTexts();
+    // clear texts
+    clearSelectOptions(TEXT_SELECT);
     loadFontTexts(fontFamily);
     loadTexts();
 }

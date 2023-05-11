@@ -17,9 +17,8 @@
     <nav class="navbar navbar-expand fixed-top" style="border-bottom: 1px solid #BBBBBB; background-color: var(--bs-body-bg);">
         <div class="container-fluid">
             <a class="navbar-brand d-none d-sm-inline" href="#"><b>Compacity Fonts</b></a>
-            <img src="img/favicon-32x32.png" class="d-inline d-sm-none" style="max-height: 32px;"></img>
             <ul class="navbar-nav me-auto mb-0">
-                <div class="input-group">
+                <div class="input-group me-grow">
                     <input type="checkbox" class="btn-check" id="btn-check-bold" autocomplete="off" onchange="btnBold(this.checked);">
                     <label class="btn" for="btn-check-bold">
                         <b>B</b>
@@ -32,18 +31,18 @@
                     <label class="btn" for="btn-check-enable">
                         <b>E</b>
                     </label>
-                    <select class="form-select" id="font-family-select" onchange="setFontFamily(this.selectedOptions[0].value)">
+                    <select required class="form-select" id="font-family-select" onchange="setFontFamily(this.selectedOptions[0].value)">
                         <option hidden selected value="">Font</option>
                     </select>
-                    <select class="form-select" id="font-style-select" disabled onchange="setFont(this.selectedOptions[0].value)">
+                    <select required class="form-select" id="font-style-select" disabled onchange="setFont(this.selectedOptions[0].value)">
                         <option hidden selected value="">Style</option>
                     </select>
-                    <select class="form-select" id="text-select" disabled onchange="selectText(this.selectedOptions[0].value);">
+                    <select required class="form-select" id="text-select" disabled onchange="selectText(this.selectedOptions[0].value);">
                         <option hidden selected value="">Text</option>
                     </select>
                 </div>
             </ul>
-            <ul class="navbar-nav mb-2" style="padding-left: 6px;">
+            <ul class="navbar-nav mb-2 d-none d-sm-inline" style="padding-left: 6px;">
                 <button type="button" class="btn" id="theme-toggle" onclick="toggleTheme();">
                     <!-- SUN ICON FROM BOOTSTRAP ICONS -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">

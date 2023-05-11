@@ -4,6 +4,15 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
+/* highlight placeholder options in selections */
+/* i don't know if there is a way to do it without per-theme but eh */
+[data-bs-theme="dark"] select:invalid {
+    color: #686e73;
+}
+[data-bs-theme="light"] select:invalid {
+    color: #8f9fb0;
+}
+
 #content {
     font-size: 24px !important;
     line-height: 1.2em;
