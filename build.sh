@@ -77,22 +77,27 @@ fontforge -quiet -version | head -n 1
 
 for font in "$@"; do
     if [ -n "$GENERATE" ]; then
+        echo "INFO: Generating assets for $font"
+
         # this cannot be run with the fontforge python
         python3 "$FONTS_DIR/$font/generator.py"
     fi
+
+    # remove all the old fonts
+    rm ./build/*
 
     # the module is responsible for building itself
     fontforge -quiet -script -m "$FONTS_DIR.$font"
 
     if [ -n "$CI" ]; then
+        echo "INFO: Packaging the fonts"
+
         for i in "$@"; do
-            7za a "Compacity${i^}.7z" ./build/Compacity"${i^}"* >/dev/null
+            7za a "Compacity${i^}.zip" ./build/Compacity"${i^}"* >/dev/null
         done
 
-        # a complete package with all fonts if there are more than one
-        if [[ "$#" -gt 1 ]]; then
-            7za a CompacityFonts.7z ./build/* >/dev/null
-        fi
+        # a complete package with all fonts for the CI
+        7za a CompacityFonts.zip ./build/* >/dev/null
     fi
 done
 

@@ -22,7 +22,7 @@ import os
 import errno
 import time
 
-from typing import Any, Tuple, List
+from typing import Any, List
 
 class GlyphBuilder:
     def __init__(self, font):

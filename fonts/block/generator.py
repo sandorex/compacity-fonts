@@ -21,9 +21,6 @@
 import pathlib
 DIR = pathlib.Path(__file__).parent.resolve()
 
-import logging
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
-
 OUTPUT_DIR = DIR / 'out'
 NAME_FORMAT = '{index}.svg'
 
@@ -45,8 +42,6 @@ def generate():
     # this does not need to be called all the time anyways
     import drawsvg as dsvg
     import os
-
-    logging.info(f'Generating assets')
 
     # make the directories ignore existing
     os.makedirs(OUTPUT_DIR, exist_ok=True)
