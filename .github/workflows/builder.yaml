@@ -31,19 +31,14 @@ jobs:
       - name: Build and package the fonts
         run: ./build.sh --package --all
 
-      - name: Get Version
-        shell: bash
-        id: version
-        run: |
-          echo "commit=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-
       - name: Release Dev Build
         uses: softprops/action-gh-release@v1
         with:
-          name: Dev Build (${{ steps.version.outputs.commit }})
+          name: Dev Build
           tag_name: DEV
           fail_on_unmatched_files: true
           prerelease: true
+          body: "Latest dev build"
           files: | # NOTE: files have to be overriden otherwise they will stay outdated so no version in name
             CompacityFonts.zip
 
