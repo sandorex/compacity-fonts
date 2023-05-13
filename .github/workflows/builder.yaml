@@ -1,0 +1,61 @@
+name: builder
+
+on:
+  push:
+    branches:
+      - docs
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download the font and generate the info
+        run: |
+          mkdir -p fonts
+
+          # test with DEV as the old versions are named differently
+          wget "https://github.com/sandorex/compacity-fonts/releases/download/DEV/CompacityFonts.zip"
+          mv *.zip fonts/
+
+          # unzip is going to unzip in current dir
+          pushd fonts
+          unzip *.zip
+          rm *zip
+          popd
+
+          # install the deps
+          npm install
+
+          # run json generator script
+          npm run gen
+
+          # bloat
+          rm -rf node_modules
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
