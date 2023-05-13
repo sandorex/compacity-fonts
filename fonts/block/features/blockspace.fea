@@ -1,0 +1,35 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+
+
+# GSUB
+
+
+lookup caltCABlockspace {
+  lookupflag 0;
+    @cc1_match_1 = [\A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q \R \S \T \U \V \W \X \Y \Z \a \b \c \d \e \f \g \h \i \j
+	\k \l \m \n \o \p \q \r \s \t \u \v \w \x \y \z ];
+    @cc1_match_2 = [\space ];
+    @cc1_back_1 = [\A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q \R \S \T \U \V \W \X \Y \Z \a \b \c \d \e \f \g \h \i \j
+	\k \l \m \n \o \p \q \r \s \t \u \v \w \x \y \z ];
+    @cc1_back_2 = [\space ];
+    @cc1_ahead_1 = [\A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q \R \S \T \U \V \W \X \Y \Z \a \b \c \d \e \f \g \h \i \j
+	\k \l \m \n \o \p \q \r \s \t \u \v \w \x \y \z ];
+    @cc1_ahead_2 = [\space ];
+    sub @cc1_back_1 @cc1_match_2' @cc1_ahead_1  by [\blockspace ] ;
+} caltCABlockspace;
+
+feature calt {
+ script DFLT;
+     language dflt ;
+      lookup caltCABlockspace;
+
+ script latn;
+     language dflt ;
+      lookup caltCABlockspace;
+} calt;
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+
+table GDEF {
+} GDEF;
+

@@ -1,1 +1,0 @@
-"""Buildsystem for Compacity Fonts"""
