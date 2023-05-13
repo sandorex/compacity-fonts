@@ -4,7 +4,7 @@
     "description": "Website for compacity fonts",
     "main": "index.js",
     "scripts": {
-        "gen": "ts-node ./scripts/generate.ts",
+        "gen": "ts-node ./scripts/generate.ts"
     },
     "devDependencies": {
         "ts-node": "^10.9.1"
