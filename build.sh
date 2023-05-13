@@ -2,6 +2,8 @@
 #
 # build.sh
 
+set -e
+
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
 # directory where the fonts are located
@@ -19,8 +21,8 @@ while [ $# -gt 0 ]; do
             ALL=1
             shift
             ;;
-        --ci)
-            CI=1
+        --package)
+            PACKAGE=1
             shift
             ;;
         -h|--help)
@@ -39,7 +41,7 @@ while [ $# -gt 0 ]; do
     esac
 done
 
-# find all project automatically
+# find all projects automatically
 if [[ -n "$ALL" ]]; then
     # clear previous ones as they are useless
     POSITIONAL_ARGS=()
@@ -58,18 +60,24 @@ set -- "${POSITIONAL_ARGS[@]}"
 # print help if no args, or if no command is supplied
 if [ -n "$HELP" ] || [ -z "$1" ]; then
     cat <<EOF
-Usage: $0 [--generate] [--ci] [-h/--help] [--all] <fonts...>
+Usage: $0 [<arguments...>] <fonts...>
 
 Optional arguments:
-    --all               Builds all fonts, any positional argument is ignored
-    --generate          Generates the assets used in the font, not needed
-                        unless generator script is modified
-    --ci                Packages the fonts, used for the CI builds
-    -h/--help           Shows this message
+    --all                   Builds all fonts, any positional argument is ignored
+    --generate              Generates the assets used in the font, not needed
+                            unless generator script is modified
+    --package               Package the fonts
+    --help                  Shows this message
 
 EOF
     exit
 fi
+
+# make sure dir exists
+mkdir -p ./build
+
+# remove all the old fonts
+rm -f ./build/*
 
 # show fontforge version in log
 echo -n "INFO: "
@@ -83,13 +91,10 @@ for font in "$@"; do
         python3 "$FONTS_DIR/$font/generator.py"
     fi
 
-    # remove all the old fonts
-    rm ./build/*
-
     # the module is responsible for building itself
     fontforge -quiet -script -m "$FONTS_DIR.$font"
 
-    if [ -n "$CI" ]; then
+    if [ -n "$PACKAGE" ]; then
         echo "INFO: Packaging the fonts"
 
         for i in "$@"; do

@@ -1,0 +1,57 @@
+name: builder
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  build:
+    name: Build and package fonts
+    runs-on: ubuntu-latest
+    container:
+      # ubuntu does not have recent enough fontforge and using the appimage is
+      # pure pain, so i am just using what i tested with
+      image: fedora:38
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo dnf -y install fontforge python3 p7zip git
+
+      - name: Build and package the fonts
+        run: ./build.sh --package --all
+
+      - name: Get Version
+        shell: bash
+        id: version
+        run: |
+          echo "commit=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Release Dev Build
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Dev Build (${{ steps.version.outputs.commit }})
+          tag_name: DEV
+          fail_on_unmatched_files: true
+          prerelease: true
+          files: | # NOTE: files have to be overriden otherwise they will stay outdated so no version in name
+            CompacityFonts.zip
+
+      - name: Release Tagged Build
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          fail_on_unmatched_files: true
+          files: |
+            *.zip
+
