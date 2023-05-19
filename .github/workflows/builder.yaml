@@ -24,27 +24,46 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Download the font and generate the info
+      - name: Checkout (for dev)
+        uses: actions/checkout@v3
+        with:
+          path: 'dev'
+
+      - name: Build dev version
+        run: |
+          mkdir -p dev/fonts
+
+          pushd dev
+
+          pushd fonts
+          wget "https://github.com/sandorex/compacity-fonts/releases/download/DEV/CompacityFonts.zip"
+          unzip *.zip
+          rm *zip
+          popd # fonts
+
+          npm install
+          npm run gen
+
+          # remove bloat
+          rm -rf node_modules
+
+          popd # dev
+
+      - name: Build latest release
         run: |
           mkdir -p fonts
 
-          # test with DEV as the old versions are named differently
-          wget "https://github.com/sandorex/compacity-fonts/releases/download/DEV/CompacityFonts.zip"
-          mv *.zip fonts/
-
-          # unzip is going to unzip in current dir
-          pushd fonts
+          # build the latest release
+          pushd fonts/
+          wget "https://github.com/sandorex/compacity-fonts/releases/latest/download/CompacityFonts.zip"
           unzip *.zip
           rm *zip
           popd
 
-          # install the deps
           npm install
-
-          # run json generator script
           npm run gen
 
-          # bloat
+          # remove bloat
           rm -rf node_modules
 
       - name: Setup Pages
