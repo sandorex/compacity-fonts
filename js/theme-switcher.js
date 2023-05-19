@@ -40,7 +40,7 @@ function setTheme(value) {
     }
 }
 
-function toggleTheme() {
+function handleToggleTheme() {
     const theme = getCurrentTheme();
     if (theme == 'light')
         setTheme('dark');

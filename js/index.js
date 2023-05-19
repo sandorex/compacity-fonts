@@ -1,138 +1,160 @@
 'use strict';
 
+// globals //
 const CONTENT = document.getElementById('content');
-const FONT_FAMILY_SELECT = document.getElementById('font-family-select');
-const FONT_STYLE_SELECT = document.getElementById('font-style-select');
+const FONT_SELECT = document.getElementById('font-select');
 const TEXT_SELECT = document.getElementById('text-select');
+const ENABLE_BTN = document.getElementById('btn-check-enable');
+const ROOT = document.querySelector(':root');
 
-let fontFamilies = [];
-let texts = [];
-let fontTexts = {};
+// stores last selected font family
+let lastFontFamily = '';
 
-function clearSelectOptions(selectEl) {
-    // remove all options but the hidden ones
-    Array.from(selectEl.options).reverse().filter(o => o.hidden !== true).forEach(o => o.remove());
+// functions //
+function isEnabled() { return ENABLE_BTN.checked; }
+
+// inserts spaces before capital letters to format things properly
+function insertSpaces(x) {
+   return x.toString().replace(/([A-Z])/g, ' $1').trim();
 }
 
-function loadTexts() {
-    texts.forEach(t => {
-        // replace hyphens with spaces and prepend the path and extension
-        // so the logic below need not be changed if format changes
-        TEXT_SELECT.add(new Option(t.replaceAll('-', ' '), "texts/" + t + ".html"))
-    });
+function setMemes(value) {
+    if (value)
+        CONTENT.textContent = ''; // clear content
+
+    // hide / show all the memes
+    Array.from(document.getElementsByClassName('meme')).forEach(e => {
+        if (value)
+            e.classList.remove('hidden');
+        else
+            e.classList.add('hidden');
+    })
 }
 
-function loadFontTexts(fontFamily) {
-    if (fontFamily === '')
-        return;
-
-    Object.entries(fontTexts).filter(f => fontFamily.toString().startsWith(f[0])).forEach(f => {
-        TEXT_SELECT.add(new Option(f[1].toString().replace('-', ' '), "fontTexts/" + fontFamily + '/' + f[1] + ".html"))
-    });
+function clearContent() {
+    CONTENT.textContent = '';
 }
 
-function getFont() {
-    return CONTENT.style.fontFamily;
+function resetTextSelection() {
+    clearContent();
+    TEXT_SELECT.selectedIndex = 0;
+
+    setMemes(true);
 }
 
-function setFont(font) {
-    CONTENT.style.fontFamily = font;
-
-    TEXT_SELECT.disabled = false;
-}
-
-function setFontFamily(fontFamily) {
-    // clear styles
-    clearSelectOptions(FONT_STYLE_SELECT);
-
-    fontFamilies[fontFamily].forEach(fonts => {
-        FONT_STYLE_SELECT.add(new Option(fonts[0].toString().replace(/([A-Z])/g, ' $1').trim(), fonts[1]))
-    });
-
-    FONT_STYLE_SELECT.disabled = false;
-
-    // clear texts
-    clearSelectOptions(TEXT_SELECT);
-    loadFontTexts(fontFamily);
-    loadTexts();
-}
-
-function btnEnable(value) {
-    const font = FONT_STYLE_SELECT.selectedOptions[0].value;
-    if (font === '')
-        return;
-
-    if (value === true) {
-        setFont(FONT_STYLE_SELECT.selectedOptions[0].value);
-    } else {
-        setFont('');
-    }
-}
-
-function btnBold(value) {
+// handlers //
+function handleBoldToggle(value) {
     if (value === true)
         CONTENT.style.fontWeight = 'bold';
     else
         CONTENT.style.fontWeight = '';
 }
 
-function btnItalics(value) {
+function handleItalicsToggle(value) {
     if (value === true)
         CONTENT.style.fontStyle = 'italic';
     else
         CONTENT.style.fontStyle = '';
 }
 
-function selectText(value) {
-    if (value == "")
+function handleEnableToggle(value) {
+    const font = FONT_SELECT.selectedOptions[0].value;
+
+    // ignore invalid options
+    if (!font)
         return;
 
-    fetch(value)
+    if (value === true)
+        CONTENT.style.fontFamily = font;
+    else
+        CONTENT.style.fontFamily = '';
+}
+
+function handleSelectText(option) {
+    const value = option.value;
+
+    if (!value)
+        return;
+
+    fetch(option.value)
         .then(response => response.text())
         .then(data => {
             // clear the children
-            CONTENT.textContent = '';
+            clearContent();
 
             // insert new content
             CONTENT.innerHTML = data;
-        });
 
-    // remove all the memes q.q
-    Array.from(document.getElementsByClassName('meme')).forEach(e => e.remove());
+            setMemes(false);
+        });
 }
 
-// document.addEventListener('DOMContentLoaded', e => {
-//     let params = new URLSearchParams(location.search);
-//     const intro = params.get('intro')
-//     setFont(intro);
-//
-//     // swap to default
-//     lastFont = '';
-//
-//     // this is the intro so dont allow changing text
-//     TEXT_SELECT.disabled = true;
-//     TEXT_SELECT.add(new Option('Introduction', '', true, true))
-//
-//     params.get('name') # => "n1"
-//     params.getAll('name') # => ["n1", "n2"]
-// });
+function handleSelectFont(_) {
+    const fontOpt = FONT_SELECT.selectedOptions[0];
+    const font = fontOpt.value;
+    const fontFamily = fontOpt.dataset.fontFamily;
 
-FONT_STYLE_SELECT.disabled = true;
+    // set it globally so it can be used freely
+    ROOT.style.setProperty('--font-selected', font);
+
+    if (isEnabled())
+        handleEnableToggle(true);
+
+    if (lastFontFamily !== fontFamily) {
+        lastFontFamily = fontFamily;
+
+        Array.from(TEXT_SELECT.getElementsByTagName('option')).forEach(opt => {
+            if (opt.dataset.fontFamily !== undefined)
+                opt.hidden = opt.dataset.fontFamily !== fontFamily;
+        });
+
+        // reset if the text is hidden now
+        if (TEXT_SELECT.selectedOptions[0].hidden)
+            resetTextSelection();
+    }
+
+    TEXT_SELECT.disabled = false;
+}
+
+// initialization //
 TEXT_SELECT.disabled = true;
 
 fetch('data.json')
     .then((response) => response.json())
     .then((json) => {
-        fontFamilies = json['fonts'];
-        texts = json['texts'];
-        fontTexts = json['fontTexts'];
+        const fontFamilies = json['fonts'];
+        const texts = json['texts'];
+        const fontTexts = json['fontTexts'];
 
-        Object.keys(fontFamilies).forEach(f => FONT_FAMILY_SELECT.add(new Option(f.replace(/([A-Z])/g, ' $1').trim(), f)));
+        // add all fontTexts but hidden and with their own groups
+        Object.keys(fontTexts).forEach(family => {
+            fontTexts[family].forEach(text => {
+                var opt = new Option(text.toString().replace('-', ' '), 'fontTexts/' + family + '/' + text + '.html');
+                opt.dataset.fontFamily = family;
+                opt.hidden = true;
+
+                TEXT_SELECT.add(opt);
+            });
+        });
+
+        texts.forEach(text => TEXT_SELECT.add(new Option(text.replaceAll('-', ' '), "texts/" + text + ".html")));
+
+        // group up the variants by the family
+        Object.keys(fontFamilies).forEach(family => {
+            var group = document.createElement('optgroup');
+            group.label = insertSpaces(family);
+
+            fontFamilies[family].forEach(variant => {
+                var opt = new Option(variant[0], variant[1]);
+                opt.dataset.fontFamily = family;
+
+                group.appendChild(opt);
+            });
+
+            FONT_SELECT.add(group);
+        });
     })
     .catch(e => {
         if (e != null)
             console.error('Error fetching data.json ', e);
     });
-
-// document.addEventListener('DOMContentLoaded', e => {
-// }

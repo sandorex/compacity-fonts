@@ -1,3 +1,8 @@
+:root {
+    --font: 'Noto Sans';
+    --font-mono: 'Noto Sans Mono'
+}
+
 /* disable underline for all links */
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
@@ -13,6 +18,7 @@ a:active { text-decoration: none; }
     color: #8f9fb0;
 }
 
+/* TODO fix bottom and top bars overlapping text */
 #content {
     font-size: 24px;
     line-height: 1.2em;
@@ -21,6 +27,7 @@ a:active { text-decoration: none; }
     padding-right: 30px;
 }
 
+/* remove this and just rely on content css to use var(--font-selected) */
 #content > * {
     /* make sure that content style is inherited by the children so minimal js required */
     font-family: inherit;
@@ -30,6 +37,10 @@ a:active { text-decoration: none; }
     overflow-y: hidden;
     white-space: pre-wrap;
     overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
 }
 
 .hover-block {

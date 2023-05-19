@@ -7,6 +7,10 @@ const textsDir = path.join(rootDir, 'texts');
 const fontTextsDir = path.join(rootDir, 'fontTexts');
 const outDir = rootDir;
 
+// TODO rename fonts so that https://<website>.com/fonts.css can be used with
+// @import() and then use any of the fonts witohut downloading them
+// TODO do /dev version with dev version of the font
+
 // convenience function that returns list of files and directories in a dir
 function listDir(dir: string): { files: string[], dirs: string[] } {
     let files: string[] = [];

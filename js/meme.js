@@ -12,6 +12,9 @@ function memeGen() {
 
     loadingMeme = true;
 
+    // add cooldown to prevent spamming the API
+    setTimeout(() => { loadingMeme = false; }, 3000);
+
     // fetch a new meme
     fetch('https://meme-api.com/gimme')
         .then(response => response.json())
@@ -23,14 +26,11 @@ function memeGen() {
             MEME_IMG.setAttribute('src', json['url']);
             MEME_LABEL.innerText = json.title;
         })
-        .finally((_) => {
-            // allow trying to load another even if it failed
-            loadingMeme = false;
-        });
 }
 
-MEME_IMG.addEventListener('mouseup', e => {
-    if (e.shiftKey)
-        memeGen();
+// this works on both mobile and desktop!
+MEME_IMG.addEventListener("dblclick", event => {
+    memeGen();
+    event.preventDefault();
 });
 
