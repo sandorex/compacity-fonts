@@ -26,10 +26,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo dnf -y install fontforge python3 p7zip git
+          sudo dnf -y --setop=install_weak_deps=False install just fontforge python3 p7zip git
 
       - name: Build and package the fonts
-        run: ./build.sh --package --all
+        run: just package
 
       - name: Release Dev Build
         uses: softprops/action-gh-release@v1
@@ -49,4 +49,3 @@ jobs:
           fail_on_unmatched_files: true
           files: |
             *.zip
-
