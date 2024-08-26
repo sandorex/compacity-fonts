@@ -27,8 +27,8 @@ NAME_FORMAT = '{index}.svg'
 # name prefix for the block segments
 BBLOCK = 'bblock.'
 BLOCK_COUNT = 8
-BLOCK_WIDTH = 128
-BLOCK_HEIGHT = 128
+BLOCK_WIDTH = 100
+BLOCK_HEIGHT = 100
 LINE_W = BLOCK_WIDTH
 LINE_H = BLOCK_HEIGHT / 2
 
@@ -47,7 +47,8 @@ def generate():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     for i in range(BLOCK_COUNT):
-        d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
+        d = dsvg.Drawing(BLOCK_WIDTH, 1000)
+        #d = dsvg.Drawing(BLOCK_WIDTH, BLOCK_HEIGHT * BLOCK_COUNT)
         d.append(dsvg.Rectangle(0, BLOCK_HEIGHT * i, BLOCK_WIDTH + OVERLAP_W, BLOCK_HEIGHT + OVERLAP_H, fill='#000000'))
         d.save_svg(os.path.join(OUTPUT_DIR, NAME_FORMAT.format(index=i + 1)))
 

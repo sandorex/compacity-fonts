@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+venv/
 build/
 package/
 user_config.py

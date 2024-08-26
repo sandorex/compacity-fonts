@@ -19,7 +19,9 @@ import logging
 import copy
 
 from builder.font import Font
-from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS, project as p
+import config
+import project as p
+#from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS, project as p
 
 def main():
     # TODO when the file is generated from scratch just use globals from project.py
@@ -32,7 +34,7 @@ def main():
     # font.save('test.sfd')
     # font.close()
 
-    for variant in VARIANTS:
+    for variant in p.VARIANTS:
         # font = Font.open('test.sfd')
         # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
         font = Font()
