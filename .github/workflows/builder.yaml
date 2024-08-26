@@ -40,7 +40,7 @@ jobs:
           prerelease: true
           body: "Latest dev build"
           files: | # NOTE: files have to be overriden otherwise they will stay outdated so no version in name
-            CompacityFonts.zip
+            package/CompacityFonts.zip
 
       - name: Release Tagged Build
         uses: softprops/action-gh-release@v1
@@ -48,4 +48,4 @@ jobs:
         with:
           fail_on_unmatched_files: true
           files: |
-            *.zip
+            package/*.zip

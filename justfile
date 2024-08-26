@@ -86,12 +86,18 @@ package *target: (build target)
     # move to package build dir
     cd "{{ PACKAGE_DIR }}"
 
+    if command -v 7za &>/dev/null; then
+        _7ZIP=7za
+    else
+        _7ZIP=7z
+    fi
+
     # package each font
     for i in $FONTS; do
         echo "Packaging font $i"
-        7za a "Compacity${i^}.zip" "{{ BUILD_DIR }}/Compacity${i^}"* >/dev/null
+        "$_7ZIP" a "Compacity${i^}.zip" "{{ BUILD_DIR }}/Compacity${i^}"* >/dev/null
     done
 
     # package all the fonts for the CI
-    7za a CompacityFonts.zip "{{ BUILD_DIR }}"/* >/dev/null
+    "$_7ZIP" a CompacityFonts.zip "{{ BUILD_DIR }}"/* >/dev/null
 
