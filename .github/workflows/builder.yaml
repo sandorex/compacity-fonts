@@ -27,6 +27,7 @@ jobs:
       - name: Checkout (for dev)
         uses: actions/checkout@v3
         with:
+          ref: master
           path: 'dev'
 
       - name: Build dev version
@@ -38,7 +39,7 @@ jobs:
           pushd fonts
           wget "https://github.com/sandorex/compacity-fonts/releases/download/DEV/CompacityFonts.zip"
           unzip *.zip
-          rm *zip
+          rm *.zip
           popd # fonts
 
           npm install
