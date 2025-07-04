@@ -12,11 +12,16 @@
         font-size: 40px !important;
         line-height: 1.25em !important;
     }
+
+    @media print {
+        div {
+            break-inside: avoid;
+        }
+    }
 </style>
 
-<!-- TODO this is specific to block font do some special magic to show only with it -->
-<p class="nofont" style="font-size: 16px">On the left is all characters in alphabetical order, on the right they are grouped by complexity and similarity</p>
-<div style="display: flex; flex-wrap: nowrap; justify-content: center;">
+<div>
+    <span class="nofont" style="font-size: 16px">All characters displayed alphabetically</span>
     <div>
         <span class="auto">ABCD</span>
         <span class="auto">EFGH</span>
@@ -29,10 +34,14 @@
         <span class="auto">123</span>
         <span class="auto">456</span>
         <span class="auto">789</span>
-        <span class="auto"> 0 </span>
+        <span class="auto">0</span>
     </div>
+</div>
 
+<div>
+    <span class="nofont" style="font-size: 16px">All characters grouped by complexity or similarity, this is the recommended way to learn</span>
     <div>
+        <!-- TODO this is specific to block font do some special magic to show only with it -->
         <span class="auto">AEOF</span>
         <span class="auto">TDG</span>
         <span class="auto">CVW</span>
@@ -44,9 +53,8 @@
 
 <p>
 
-<span>The five boxing wizards jump quickly.</span>
-
-A B C D E F G H I J K L M N O P
+<span class="font">The five boxing wizards jump quickly.</span>
+<span class="nofont" style="font-size: 16px">The five boxing wizards jump quickly.</span>
 
 </p>
 
