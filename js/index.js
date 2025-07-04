@@ -1,5 +1,7 @@
 'use strict';
 
+const CONTENT_SCRIPT_CLASS = 'content-script';
+
 // globals //
 const CONTENT = document.getElementById('content');
 const FONT_SELECT = document.getElementById('font-select');
@@ -33,6 +35,7 @@ function setMemes(value) {
 
 function clearContent() {
     CONTENT.textContent = '';
+    CONTENT.innerHTML = '';
 }
 
 function resetTextSelection() {
@@ -79,11 +82,25 @@ function handleSelectText(option) {
     fetch(option.value)
         .then(response => response.text())
         .then(data => {
-            // clear the children
             clearContent();
 
             // insert new content
             CONTENT.innerHTML = data;
+
+            // recreate the script so it actually runs
+            Array.from(CONTENT.querySelectorAll("script")).forEach(oldScript => {
+                const newScript = document.createElement("script");
+                newScript.classList.add(CONTENT_SCRIPT_CLASS)
+
+                Array.from(oldScript.attributes).forEach(attr => {
+                    newScript.setAttribute(attr.name, attr.value) 
+                });
+
+                const scriptText = document.createTextNode(oldScript.innerHTML);
+                newScript.appendChild(scriptText);
+
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
 
             setMemes(false);
         });

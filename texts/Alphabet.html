@@ -1,5 +1,6 @@
 <style>
     .nofont {
+        /* TODO use variable for default non-custom font */
         font-family: 'Noto Sans Mono' !important;
     }
 
@@ -13,22 +14,32 @@
     }
 </style>
 
-<p class="nofont">This text just shows the individual characters</p>
+<!-- TODO this is specific to block font do some special magic to show only with it -->
+<p class="nofont" style="font-size: 16px">On the left is all characters in alphabetical order, on the right they are grouped by complexity and similarity</p>
+<div style="display: flex; flex-wrap: nowrap; justify-content: center;">
+    <div>
+        <span class="auto">ABCD</span>
+        <span class="auto">EFGH</span>
+        <span class="auto">IJKL</span>
+        <span class="auto">MNOP</span>
+        <span class="auto">QRST</span>
+        <span class="auto">UVWX</span>
+        <span class="auto">YZ</span>
 
-<div class='alphabet'>
-    <span class='font'>A</span><span class='nofont'> A </span><span class='font'>B</span><span class='nofont'> B </span><span class='font'>C</span><span class='nofont'> C </span><span class='font'>D</span><span class='nofont'> D </span>
-    <span class='font'>E</span><span class='nofont'> E </span><span class='font'>F</span><span class='nofont'> F </span><span class='font'>G</span><span class='nofont'> G </span><span class='font'>H</span><span class='nofont'> H </span>
-    <span class='font'>I</span><span class='nofont'> I </span><span class='font'>J</span><span class='nofont'> J </span><span class='font'>K</span><span class='nofont'> K </span><span class='font'>L</span><span class='nofont'> L </span>
-    <span class='font'>M</span><span class='nofont'> M </span><span class='font'>N</span><span class='nofont'> N </span><span class='font'>O</span><span class='nofont'> O </span><span class='font'>P</span><span class='nofont'> P </span>
-    <span class='font'>Q</span><span class='nofont'> Q </span><span class='font'>R</span><span class='nofont'> R </span><span class='font'>S</span><span class='nofont'> S </span><span class='font'>T</span><span class='nofont'> T </span>
-    <span class='font'>U</span><span class='nofont'> U </span><span class='font'>V</span><span class='nofont'> V </span><span class='font'>W</span><span class='nofont'> W </span><span class='font'>X</span><span class='nofont'> X </span>
-    <span class='font'>Y</span><span class='nofont'> Y </span><span class='font'>Z</span> <span class='nofont'> Z </span>
+        <span class="auto">123</span>
+        <span class="auto">456</span>
+        <span class="auto">789</span>
+        <span class="auto"> 0 </span>
+    </div>
 
-    <span class='font'>0</span><span class='nofont'> 0 </span><span class='font'>1</span><span class='nofont'> 1 </span><span class='font'>2</span><span class='nofont'> 2 </span><span class='font'>3</span><span class='nofont'> 3 </span>
-
-    <span class='font'>4</span><span class='nofont'> 4 </span><span class='font'>5</span><span class='nofont'> 5 </span><span class='font'>6</span><span class='nofont'> 6 </span><span class='font'>7</span><span class='nofont'> 7 </span>
-
-    <span class='font'>8</span><span class='nofont'> 8 </span><span class='font'>9</span><span class='nofont'> 9 </span>
+    <div>
+        <span class="auto">AEOF</span>
+        <span class="auto">TDG</span>
+        <span class="auto">CVW</span>
+        <span class="auto">RPS</span>
+        <span class="auto">KUIJLHB</span>
+        <span class="auto">MNQXYZ</span>
+    </div>
 </div>
 
 <p>
@@ -38,3 +49,27 @@
 A B C D E F G H I J K L M N O P
 
 </p>
+
+<script type="text/javascript">
+Array.from(document.getElementsByClassName("auto")).forEach(oldElem => {
+    const characters = Array.from(oldElem.textContent);
+
+    // clear the span
+    oldElem.textContent = '';
+    
+    characters.forEach(ch => {
+        let elemFont = document.createElement("span");
+        elemFont.classList.add("font");
+        elemFont.classList.add("alphabet");
+        elemFont.textContent = " " + ch + " ";
+
+        let elemNoFont = document.createElement("span");
+        elemNoFont.classList.add("nofont");
+        elemNoFont.classList.add("alphabet");
+        elemNoFont.textContent = ch + " ";
+
+        oldElem.appendChild(elemFont);
+        oldElem.appendChild(elemNoFont);
+    });
+});
+</script>
