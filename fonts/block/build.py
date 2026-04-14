@@ -17,45 +17,68 @@
 
 import logging
 import copy
+import tomllib
 
-from builder.font import Font
-from . import project as p, config, BUILD_DIR
-from . import config
+from builder.font import Font, GlyphBuilder
+from . import project as p, BUILD_DIR, BBLOCK, BLOCK_COUNT, BLOCK_WIDTH, ASSETS_DIR, NAME_FORMAT, PROJECT_ROOT
+from .config import Config, glyph_defaults, parse_block
 
-# TODO when the file is generated from scratch just use globals from project.py
-# font = Font.open(PROJECT_ROOT / PROJECT_FILE)
 logging.info(f"Building font '{p.PROJECT_FAMILY_NAME}' version {p.PROJECT_VERSION}")
 
-# font = Font()
-# TODO maybe save the common file here? but do not push to git
-# config.static_gen(font)
-# font.save('test.sfd')
-# font.close()
+# TODO do all variants as separate configs
+with open(PROJECT_ROOT / "config.toml", "rb") as fp:
+    cfg = Config.load(fp)
 
-for variant in p.VARIANTS:
-    # font = Font.open('test.sfd')
-    # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    font = Font()
-    font.version = p.PROJECT_VERSION
-    # TODO use data from project.py
-    # TODO set font.copyright
-    font.computer_name = 'CompacityBlock'
-    font.family_name = 'Compacity Block'
-    font.human_name = font.family_name
-    if variant.suffix:
-        font.computer_name += '-' + variant.suffix.replace(' ', '')
-        font.family_name += '-' + variant.suffix.replace(' ', '')
-        font.human_name += ' ' + variant.suffix
+font = Font()
+font.version = p.PROJECT_VERSION
+font.copyright = "?"
+
+font.computer_name = "CompacityBlock"
+font.family_name = "Compacity Block"
+font.human_name = font.family_name
+
+suffix = cfg.suffix
+if suffix:
+    font.computer_name += '-' + suffix.replace(' ', '')
+    font.family_name += '-' + suffix.replace(' ', '')
+    font.human_name += ' ' + suffix
 
     logging.info(f"Building variant '{font.human_name}'")
 
-    font.export_filename = font.computer_name
+font.export_filename = font.computer_name
 
-    config.static_gen(font) # TODO temp execute only once before and save it
-    config.gen(font, variant.options)
-    # font.font.unlinkReferences() # TODO?
+# add base glyphs
+for i in range(BLOCK_COUNT + 1):
+    font.glyph().name(BBLOCK + str(i)) \
+                .clear() \
+                .outline(ASSETS_DIR / NAME_FORMAT.format(index=i)) \
+                .width(0) \
+                .color(0xf22929)
 
-    for format_ in p.FORMATS:
-        font.export(BUILD_DIR, format_=format_)
+cfg.create_glyphs(font)
 
-    font.close()
+# removes the line outline, making it invisible
+if not cfg.options["line_separator"]:
+    font.glyph().name(BBLOCK + '0') \
+                .clear() \
+                .width(0) \
+                .color(0xf22929)
+
+# if enabled words will be connected with the line
+if not cfg.options["separate_words"]:
+    # this is the glyph that replaces space in variants with BLOCKSPACE
+    font.glyph().name('blockspace') \
+                .clear() \
+                .refs(parse_block('    ||    ')) \
+                .transform(psMat.scale(2, 1)) \
+                .width(BLOCK_WIDTH * 2) \
+                .do(glyph_defaults) \
+                .color(0xf22929)
+
+    # TODO these dont need to be in project.py
+    font.merge_feature(PROJECT_ROOT / p.FEATURES_DIR / p.FEATURE_BLOCKSPACE)
+
+for format_ in cfg.formats:
+    font.export(BUILD_DIR, format_=format_)
+
+font.close()

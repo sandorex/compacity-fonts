@@ -1,0 +1,102 @@
+suffix = ""
+description = ""
+formats = ["ttf"]
+
+[options]
+line_separator = true
+separate_words = true
+
+[glyph]
+"A" = { block = "  # ||    " }
+"B" = { block = "  # || #  " }
+"C" = { block = "    || ## " }
+"D" = { block = "    ||  # " }
+"E" = { block = " #  ||    " }
+"F" = { block = "# # ||    " }
+"G" = { block = "    || #  " }
+"H" = { block = " ## || #  " }
+"I" = { block = "### || ###" }
+"J" = { block = "### || ## " }
+"K" = { block = " #  ||  # " }
+"L" = { block = " ## || ## " }
+"M" = { block = "  # || ###" }
+"N" = { block = "  # || # #" }
+"O" = { block = "#   ||    " }
+"P" = { block = "##  ||    " }
+"Q" = { block = "#   ||   #" }
+"R" = { block = "### ||    " }
+"S" = { block = " ## ||    " }
+"T" = { block = "    ||   #" }
+"U" = { block = "##  ||  ##" }
+"V" = { block = "    ||  ##" }
+"W" = { block = "    || ###" }
+"X" = { block = "# # || # #" }
+"Y" = { block = "# # || ###" }
+"Z" = { block = "#   || ###" }
+
+"0" = { block = "#        #" }
+"1" = { block = "#       ##" }
+"2" = { block = "#      # #" }
+"3" = { block = "#      ###" }
+"4" = { block = "#    #   #" }
+"5" = { block = "#    #  ##" }
+"6" = { block = "#    # # #" }
+"7" = { block = "#    # ###" }
+"8" = { block = "#   #    #" }
+"9" = { block = "#   #   ##" }
+
+" " = { width = 2 }
+"." = { block = [["         #", [1, 0]]], width = 5 }
+"," = { block = [["        ##", [1, 0]]], width = 3 }
+"!" = { block = [["### ## # #", [1, 0]]], width = 3 }
+"?" = { block = [["# # ## ###", [1, 0]]], width = 3 }
+
+'"' = { block = [["##        ", [1, 0]]], width = 3 }
+
+[glyph."("]
+width = 4
+block = [
+    ["#         ", [1, 0]],
+    ["### ## ###", [1, 0]],
+]
+
+[glyph.")"]
+width = 4
+block = [
+    ["### ## ###", [1, 0]],
+    ["         #", [1, 0]],
+]
+
+[alias]
+zerowidth = ";:-`—@#$%^&*~/\\|_=+~<>"
+'"' = "“”‘’'"
+"(" = "[{"
+")" = "]}"
+
+# lowercase letters are same as uppercase ones
+"A" = "a"
+"B" = "b"
+"C" = "c"
+"D" = "d"
+"E" = "e"
+"F" = "f"
+"G" = "g"
+"H" = "h"
+"I" = "i"
+"J" = "j"
+"K" = "k"
+"L" = "l"
+"M" = "m"
+"N" = "n"
+"O" = "o"
+"P" = "p"
+"Q" = "q"
+"R" = "r"
+"S" = "s"
+"T" = "t"
+"U" = "u"
+"V" = "v"
+"W" = "w"
+"X" = "x"
+"Y" = "y"
+"Z" = "z"

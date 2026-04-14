@@ -40,6 +40,7 @@ class GlyphBuilder:
 
         return self
 
+    # TODO this could accept name or ch, if len is 1
     def char(self, ch):
         if self.glyph is None:
             if isinstance(ch, int):
