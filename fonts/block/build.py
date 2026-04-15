@@ -24,7 +24,7 @@ from . import BUILD_DIR, BBLOCK, BLOCK_COUNT, BLOCK_WIDTH, ASSETS_DIR, NAME_FORM
 from .config import Config, glyph_defaults, parse_block
 
 PROJECT_FAMILY_NAME = 'Compacity Block'
-PROJECT_VERSION = '0.2.1'
+PROJECT_VERSION = '2.0.1'
 
 FEATURES_DIR = 'features'
 FEATURE_BLOCKSPACE = PROJECT_ROOT / FEATURES_DIR / 'blockspace.fea'
