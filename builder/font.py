@@ -34,6 +34,13 @@ class GlyphBuilder:
         self.glyph.color = -1
         self.glyph.changed = True
 
+    def raw(self, glyph):
+        if self.glyph is None:
+            self.glyph = glyph
+
+        return self
+
+    # TODO this could accept name or ch, if len is 1
     def char(self, ch):
         if self.glyph is None:
             if isinstance(ch, int):

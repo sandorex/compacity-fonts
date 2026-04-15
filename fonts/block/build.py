@@ -17,47 +17,84 @@
 
 import logging
 import copy
+import tomllib
 
-from builder.font import Font
-import config
-import project as p
-#from . import config, PROJECT_FILE, PROJECT_ROOT, BUILD_DIR, FORMATS, VARIANTS, project as p
+from builder.font import Font, GlyphBuilder
+from . import BUILD_DIR, BBLOCK, BLOCK_COUNT, BLOCK_WIDTH, ASSETS_DIR, NAME_FORMAT, PROJECT_ROOT
+from .config import Config, glyph_defaults, parse_block
 
-def main():
-    # TODO when the file is generated from scratch just use globals from project.py
-    # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-    logging.info(f"Building font '{p.PROJECT_FAMILY_NAME}' version {p.PROJECT_VERSION}")
+PROJECT_FAMILY_NAME = 'Compacity Block'
+PROJECT_VERSION = '0.2.1'
 
-    # font = Font()
-    # TODO maybe save the common file here? but do not push to git
-    # config.static_gen(font)
-    # font.save('test.sfd')
-    # font.close()
+FEATURES_DIR = 'features'
+FEATURE_BLOCKSPACE = PROJECT_ROOT / FEATURES_DIR / 'blockspace.fea'
 
-    for variant in p.VARIANTS:
-        # font = Font.open('test.sfd')
-        # font = Font.open(PROJECT_ROOT / PROJECT_FILE)
-        font = Font()
-        font.version = p.PROJECT_VERSION
-        # TODO use data from project.py
-        # TODO set font.copyright
-        font.computer_name = 'CompacityBlock'
-        font.family_name = 'Compacity Block'
-        font.human_name = font.family_name
-        if variant.suffix:
-            font.computer_name += '-' + variant.suffix.replace(' ', '')
-            font.family_name += '-' + variant.suffix.replace(' ', '')
-            font.human_name += ' ' + variant.suffix
+logging.info(f"Building font '{PROJECT_FAMILY_NAME}' version {PROJECT_VERSION}")
+
+for path in (PROJECT_ROOT / "variants").iterdir():
+    if not path.is_file() or path.suffix != ".toml":
+        continue
+
+    try:
+        with open(path, "rb") as fp:
+            cfg = Config.load(fp)
+    except Exception:
+        print(f"Error loading the config '{path}'")
+        raise
+
+    font = Font()
+    font.version = PROJECT_VERSION
+    font.copyright = "Copyright (c) 2023 Aleksandar Radivojevic (@sandorex)"
+
+    font.computer_name = "CompacityBlock"
+    font.family_name = "Compacity Block"
+    font.human_name = font.family_name
+
+    suffix = cfg.suffix
+    if suffix:
+        font.computer_name += '-' + suffix.replace(' ', '')
+        font.family_name += '-' + suffix.replace(' ', '')
+        font.human_name += ' ' + suffix
 
         logging.info(f"Building variant '{font.human_name}'")
 
-        font.export_filename = font.computer_name
+    font.export_filename = font.computer_name
 
-        config.static_gen(font) # TODO temp execute only once before and save it
-        config.gen(font, variant.options)
-        # font.font.unlinkReferences() # TODO?
+    # add base glyphs
+    for i in range(BLOCK_COUNT + 1):
+        font.glyph().name(BBLOCK + str(i)) \
+                    .clear() \
+                    .outline(ASSETS_DIR / NAME_FORMAT.format(index=i)) \
+                    .width(0) \
+                    .color(0xf22929)
 
-        for format_ in FORMATS:
-            font.export(BUILD_DIR, format_=format_)
+    cfg.create_glyphs(font)
 
-        font.close()
+    line_separator = cfg.options["line_separator"]
+    separate_words = cfg.options["separate_words"]
+
+    # removes the line outline, making it invisible
+    if not line_separator:
+        font.glyph().name(BBLOCK + '0') \
+                    .clear() \
+                    .width(0) \
+                    .color(0xf22929)
+
+    # if enabled words will be connected with the line
+    if not separate_words and line_separator:
+        # this is the glyph that replaces space in variants with BLOCKSPACE
+        font.glyph().name('blockspace') \
+                    .clear() \
+                    .refs(parse_block('    ||    ')) \
+                    .transform(psMat.scale(2, 1)) \
+                    .width(BLOCK_WIDTH * 2) \
+                    .do(glyph_defaults) \
+                    .color(0xf22929)
+
+        font.merge_feature(FEATURE_BLOCKSPACE)
+
+    # export each format defined
+    for format_ in cfg.formats:
+        font.export(BUILD_DIR, format_=format_)
+
+    font.close()
