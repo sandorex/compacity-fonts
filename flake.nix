@@ -13,9 +13,12 @@
       devShells.${system}.default = pkgs.mkShellNoCC {
         packages = with pkgs; [
           fontforge-gtk
-          just
           p7zip
-          python3
+          just
+          basedpyright
+          (python3.withPackages (python-pkgs: [
+            python-pkgs.drawsvg
+          ]))
         ];
       };
     };

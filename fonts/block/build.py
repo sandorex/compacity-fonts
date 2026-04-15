@@ -20,65 +20,81 @@ import copy
 import tomllib
 
 from builder.font import Font, GlyphBuilder
-from . import project as p, BUILD_DIR, BBLOCK, BLOCK_COUNT, BLOCK_WIDTH, ASSETS_DIR, NAME_FORMAT, PROJECT_ROOT
+from . import BUILD_DIR, BBLOCK, BLOCK_COUNT, BLOCK_WIDTH, ASSETS_DIR, NAME_FORMAT, PROJECT_ROOT
 from .config import Config, glyph_defaults, parse_block
 
-logging.info(f"Building font '{p.PROJECT_FAMILY_NAME}' version {p.PROJECT_VERSION}")
+PROJECT_FAMILY_NAME = 'Compacity Block'
+PROJECT_VERSION = '0.2.1'
 
-# TODO do all variants as separate configs
-with open(PROJECT_ROOT / "config.toml", "rb") as fp:
-    cfg = Config.load(fp)
+FEATURES_DIR = 'features'
+FEATURE_BLOCKSPACE = PROJECT_ROOT / FEATURES_DIR / 'blockspace.fea'
 
-font = Font()
-font.version = p.PROJECT_VERSION
-font.copyright = "?"
+logging.info(f"Building font '{PROJECT_FAMILY_NAME}' version {PROJECT_VERSION}")
 
-font.computer_name = "CompacityBlock"
-font.family_name = "Compacity Block"
-font.human_name = font.family_name
+for path in (PROJECT_ROOT / "variants").iterdir():
+    if not path.is_file() or path.suffix != ".toml":
+        continue
 
-suffix = cfg.suffix
-if suffix:
-    font.computer_name += '-' + suffix.replace(' ', '')
-    font.family_name += '-' + suffix.replace(' ', '')
-    font.human_name += ' ' + suffix
+    try:
+        with open(path, "rb") as fp:
+            cfg = Config.load(fp)
+    except Exception:
+        print(f"Error loading the config '{path}'")
+        raise
 
-    logging.info(f"Building variant '{font.human_name}'")
+    font = Font()
+    font.version = PROJECT_VERSION
+    font.copyright = "?"
 
-font.export_filename = font.computer_name
+    font.computer_name = "CompacityBlock"
+    font.family_name = "Compacity Block"
+    font.human_name = font.family_name
 
-# add base glyphs
-for i in range(BLOCK_COUNT + 1):
-    font.glyph().name(BBLOCK + str(i)) \
-                .clear() \
-                .outline(ASSETS_DIR / NAME_FORMAT.format(index=i)) \
-                .width(0) \
-                .color(0xf22929)
+    suffix = cfg.suffix
+    if suffix:
+        font.computer_name += '-' + suffix.replace(' ', '')
+        font.family_name += '-' + suffix.replace(' ', '')
+        font.human_name += ' ' + suffix
 
-cfg.create_glyphs(font)
+        logging.info(f"Building variant '{font.human_name}'")
 
-# removes the line outline, making it invisible
-if not cfg.options["line_separator"]:
-    font.glyph().name(BBLOCK + '0') \
-                .clear() \
-                .width(0) \
-                .color(0xf22929)
+    font.export_filename = font.computer_name
 
-# if enabled words will be connected with the line
-if not cfg.options["separate_words"]:
-    # this is the glyph that replaces space in variants with BLOCKSPACE
-    font.glyph().name('blockspace') \
-                .clear() \
-                .refs(parse_block('    ||    ')) \
-                .transform(psMat.scale(2, 1)) \
-                .width(BLOCK_WIDTH * 2) \
-                .do(glyph_defaults) \
-                .color(0xf22929)
+    # add base glyphs
+    for i in range(BLOCK_COUNT + 1):
+        font.glyph().name(BBLOCK + str(i)) \
+                    .clear() \
+                    .outline(ASSETS_DIR / NAME_FORMAT.format(index=i)) \
+                    .width(0) \
+                    .color(0xf22929)
 
-    # TODO these dont need to be in project.py
-    font.merge_feature(PROJECT_ROOT / p.FEATURES_DIR / p.FEATURE_BLOCKSPACE)
+    cfg.create_glyphs(font)
 
-for format_ in cfg.formats:
-    font.export(BUILD_DIR, format_=format_)
+    line_separator = cfg.options["line_separator"]
+    separate_words = cfg.options["separate_words"]
 
-font.close()
+    # removes the line outline, making it invisible
+    if not line_separator:
+        font.glyph().name(BBLOCK + '0') \
+                    .clear() \
+                    .width(0) \
+                    .color(0xf22929)
+
+    # if enabled words will be connected with the line
+    if not separate_words and line_separator:
+        # this is the glyph that replaces space in variants with BLOCKSPACE
+        font.glyph().name('blockspace') \
+                    .clear() \
+                    .refs(parse_block('    ||    ')) \
+                    .transform(psMat.scale(2, 1)) \
+                    .width(BLOCK_WIDTH * 2) \
+                    .do(glyph_defaults) \
+                    .color(0xf22929)
+
+        font.merge_feature(FEATURE_BLOCKSPACE)
+
+    # export each format defined
+    for format_ in cfg.formats:
+        font.export(BUILD_DIR, format_=format_)
+
+    font.close()
