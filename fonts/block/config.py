@@ -30,26 +30,40 @@ SYMBOL_COLOR = 0xdede59
 # returns names of glyphs not file paths
 def block(x: str):
     '''Transforms a string into list of base glyph names'''
-    blocks = []
+
+    TRUE = '#'
+    LINE = '||'
+
+    # make sure the input is 10 characters long
+    assert len(x) == 10
 
     top = x[:3]
-    middle = x[4:6]
-    bottom = x[7:]
+    mid = x[4:6]
+    bot = x[7:10]
 
-    for i in range(3):
-        if top[i] != ' ':
-            blocks.append(1 + i)
+    blocks = []
+    if x[0] == TRUE:
+        blocks.append(1)
+    if x[1] == TRUE:
+        blocks.append(2)
+    if x[2] == TRUE:
+        blocks.append(3)
 
-    if middle == '||':
-        blocks.append(0)
+    if x[4:6] == LINE:
+        # prepend so they are in order
+        blocks.insert(0, 0)
     else:
-        for i in range(2):
-            if middle[i] != ' ':
-                blocks.append(4 + i)
+        if x[4] == TRUE:
+            blocks.append(4)
+        if x[5] == TRUE:
+            blocks.append(5)
 
-    for i in range(3):
-        if bottom[i] != ' ':
-            blocks.append(6 + i)
+    if x[7] == TRUE:
+        blocks.append(6)
+    if x[8] == TRUE:
+        blocks.append(7)
+    if x[9] == TRUE:
+        blocks.append(8)
 
     return [ g.BBLOCK + str(x) for x in blocks ]
 
@@ -201,7 +215,7 @@ def static_gen(font: font.Font):
     for i in '“”"‘’\'':
         font.glyph().char(i) \
                     .clear() \
-                    .refs(block('##         ')) \
+                    .refs(block('##        ')) \
                     .transform(psMat.translate(g.BLOCK_WIDTH, 0)) \
                     .width(g.BLOCK_WIDTH * 3) \
                     .do(defaults) \
