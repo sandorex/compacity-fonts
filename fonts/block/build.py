@@ -44,7 +44,7 @@ for path in (PROJECT_ROOT / "variants").iterdir():
 
     font = Font()
     font.version = PROJECT_VERSION
-    font.copyright = "?"
+    font.copyright = "Copyright (c) 2023 Aleksandar Radivojevic (@sandorex)"
 
     font.computer_name = "CompacityBlock"
     font.family_name = "Compacity Block"
