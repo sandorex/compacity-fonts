@@ -2,8 +2,17 @@ name: builder
 
 on:
   push:
+    # build if the docs change
     branches:
       - docs
+
+    # build if any tags are made so its up to date without cronjobs
+    tags:
+      - 'v*'
+
+    # ignore documentation
+    paths-ignore:
+      - '**/*.md'
 
 permissions:
   contents: read
